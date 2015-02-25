@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Category;
 
 class CategoriesController extends Controller {
 
@@ -12,9 +13,10 @@ class CategoriesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Category $category)
 	{
-		return view('categories.index');
+		$categories = $category->get();
+		return view('categories.index' , compact('categories'));
 	}
 
 	/**
@@ -32,9 +34,10 @@ class CategoriesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Requests\CategoryFormRequest $request , Category $category)
 	{
-		return "Categories store"; 
+		$category->create($request->all());
+		return redirect()->route('categories.index');
 	}
 
 	/**
@@ -43,9 +46,9 @@ class CategoriesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show(Category $category)
 	{
-		return "Categories show";
+		return view('categories.show' , compact('category'));
 	}
 
 	/**
@@ -54,9 +57,9 @@ class CategoriesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit(Category $category)
 	{
-		return "Categories edit";
+		return view('categories.edit' , compact('category'));
 	}
 
 	/**
@@ -65,9 +68,10 @@ class CategoriesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($category , Request $req)
 	{
-		return "Categories update";
+		$category->fill($req->input())->save();
+		return redirect('categories');
 	}
 
 	/**
@@ -76,9 +80,10 @@ class CategoriesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(Category $category)
 	{
-		return "Categories destroy";
+		$category->delete();
+		return redirect('categories');
 	}
 
 }
