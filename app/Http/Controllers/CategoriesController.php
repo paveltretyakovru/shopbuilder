@@ -48,7 +48,21 @@ class CategoriesController extends Controller {
 	 */
 	public function show(Category $category)
 	{
-		return view('categories.show' , compact('category'));
+		if(strpos($category->parameters, ',')){
+			$parameters 	= explode(',', $category->parameters);
+		}else{
+			$parameters 	= array();
+			$parameters[] 	= $category->parameters;
+		}
+
+		if(strpos($category->searchparameters, ',')){
+			$searchparameters 	= explode(',', $category->searchparameters);
+		}else{
+			$searchparameters 	= array();
+			$searchparameters[] = $category->searchparameters;
+		}
+
+		return view('categories.show' , compact('category' , 'parameters' , 'searchparameters'));
 	}
 
 	/**

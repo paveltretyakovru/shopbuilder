@@ -14,7 +14,7 @@
 	    <div class="navbar-header">
 	    		<ul class="nav navbar-nav">
 			      	<li>
-			      		<a class="navbar-brand" href="#">
+			      		<a class="navbar-brand" href="admin">
 			        	{!! HTML::image('i/logo/s.jpg' , 'logo' , array('style' => 'height: 30px') ) !!}
 			      		</a>
 			      	</li>
@@ -25,9 +25,25 @@
 	  </div>
 	</nav>
 	
+
 	<div class="container">
+		<ol class="breadcrumb">
+			@yield('breadcrumb')
+		</ol>
+
 		@yield('content')
 	</div>
+
+	{!! HTML::script('js/libs/jquery.min.js') !!}
+	{!! HTML::script('js/libs/underscore-min.js') !!}
+	{!! HTML::script('js/libs/backbone-min.js') !!}
+
+	{!! HTML::script('js/system/system.js') !!}
+
+	<script type="text/javascript">
+		var view = Backbone.View.extend({});
+		var test = new view();
+	</script>
 
 </body>
 </html>
