@@ -24,4 +24,8 @@
 		@endfor
 	</div>
 
+	<hr>
+
+	{!! link_to_route('categories.edit' , 'Редактировать' , [$category->id] , array('class' => 'btn btn-primary btn-xs')) !!}
+
 @stop

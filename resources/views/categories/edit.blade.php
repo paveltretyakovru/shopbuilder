@@ -9,7 +9,7 @@
 @section('content')
 	{!! Form::model($category , ['route' => ['categories.update' , $category->id] , 'method' => 'PATCH']) !!}
 
-		@include('categories.form')
+		@include('categories.form' , ['parameters' => $parameters])
 
 	{!! Form::close() !!}
 

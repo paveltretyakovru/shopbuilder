@@ -14,31 +14,40 @@ AdminApp.Views.categoryParameters = Backbone.View.extend({
   el: '#edit-categories-form',
   $elParams: $('#category-edit-parameters'),
   $elLabels: $('#parameters-links'),
+  $elSearchParams: $('#category-edit-searchparameters'),
   parameters: [],
+  searchParameters: [],
   events: {
-    'keypress #category-edit-parameters': 'enterText'
+    'keypress #category-edit-parameters': 'enterText',
+    'click .parameter-label': 'clickParameterLebel'
   },
   enterText: function(e) {
-    var parameter, parameters, _i, _len;
     this.parameters = [];
-    parameters = this.$elParams.val().split(',');
-    for (_i = 0, _len = parameters.length; _i < _len; _i++) {
-      parameter = parameters[_i];
-      this.addParameter(parameter);
-    }
+    this.updateParameters(this.$elParams, this.parameters);
     return this.insertLabels();
   },
-  addParameter: function(parameter) {
+  updateParameters: function(el, array) {
+    var parameter, parameters, _i, _len, _results;
+    parameters = el.val().split(',');
+    _results = [];
+    for (_i = 0, _len = parameters.length; _i < _len; _i++) {
+      parameter = parameters[_i];
+      _results.push(this.addParameter(parameter, array));
+    }
+    return _results;
+  },
+  addParameter: function(parameter, array) {
     parameter = $.trim(parameter);
-    if (this.parameters.indexOf(parameter) === -1 && parameter !== '') {
-      return this.parameters.push(parameter);
+    if (array.indexOf(parameter) === -1 && parameter !== '') {
+      return array.push(parameter);
     }
   },
   insertLabels: function() {
     var createLink, parameter, string, _i, _len, _ref;
+    console.log(this.parameters);
     string = "";
     createLink = function(parameter) {
-      return " <a href='#' class='label label-primary'>" + parameter + "</a> ";
+      return "<a href='#' class='label label-primary parameter-label'>" + parameter + "</a>&nbsp;";
     };
     _ref = this.parameters;
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -46,6 +55,17 @@ AdminApp.Views.categoryParameters = Backbone.View.extend({
       string += createLink(parameter);
     }
     return this.$elLabels.html(string);
+  },
+  insertSearchParameter: function() {},
+  clickParameterLebel: function(e) {
+    var el, join_parameters;
+    e.preventDefault();
+    el = $(e.target);
+    this.$elSearchParams.html(this.$elSearchParams.html() + ',' + el.html());
+    this.searchParameters = [];
+    this.updateParameters(this.$elSearchParams, this.searchParameters);
+    join_parameters = this.searchParameters.join();
+    return this.$elSearchParams.html(join_parameters);
   }
 });
 

@@ -11,8 +11,12 @@
 
 	<div class="form-group">
 		{!! Form::label('searchparameters', 'Параметры для поиска:') !!}
-		<div id="parameters-links"></div>
-		{!! Form::textarea('searchparameters' , null , ['class' => 'form-control' , 'style' => 'height: 50px']) !!}
+		<div id="parameters-links">
+			@for ($i = 0; $i < count($parameters); $i++)
+				&nbsp;<a href="#" class='label label-primary parameter-label'>{{ $parameters[$i] }}</a>
+			@endfor
+		</div>
+		{!! Form::textarea('searchparameters' , null , ['class' => 'form-control' , 'style' => 'height: 50px' , 'id' => 'category-edit-searchparameters']) !!}
 	</div>
 
 	<div class="form-group">

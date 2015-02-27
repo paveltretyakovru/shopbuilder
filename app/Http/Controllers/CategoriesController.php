@@ -73,7 +73,14 @@ class CategoriesController extends Controller {
 	 */
 	public function edit(Category $category)
 	{
-		return view('categories.edit' , compact('category'));
+		if(strpos($category->parameters, ',')){
+			$parameters 	= explode(',', $category->parameters);
+		}else{
+			$parameters 	= array();
+			$parameters[] = $category->parameters;
+		}
+
+		return view('categories.edit' , compact('category' , 'parameters'));
 	}
 
 	/**

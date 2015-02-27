@@ -6,7 +6,6 @@
 @stop
 
 @section('content')
-	<h1>Категории товаров</h1>
 
 	<ul class='list-group'>
 	@foreach ($categories as $category)
