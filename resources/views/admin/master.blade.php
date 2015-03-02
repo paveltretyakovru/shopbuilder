@@ -6,6 +6,7 @@
 
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	{!! HTML::style('css/system.css') !!}
+	{!! HTML::style('css/libs/jquery.tagsinput.css') !!}
 </head>
 <body>
 
@@ -35,9 +36,13 @@
 	</div>
 
 	{!! HTML::script('js/libs/jquery.min.js') !!}
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js'></script>
+	
 	{!! HTML::script('js/libs/underscore-min.js') !!}
 	{!! HTML::script('js/libs/backbone-min.js') !!}
-
+	
+	{!! HTML::script('js/libs/jquery.tagsinput.js') !!}
+	
 	{!! HTML::script('js/system/system.js') !!}
 
 	<script type="text/javascript">

@@ -14,55 +14,57 @@ AdminApp.Views.categoryParameters = Backbone.View.extend
 	
 	parameters 			: []
 	searchParameters 	: []
+
+	initialize : ->
+		console.log 'Initialize categoryParameters viw'
+
+		# создание метки добавления параметров для поиска
+		insertLabel = (tagname) =>
+			console.log 'insertLabel'
+			label =	"<a href='#' class='label label-primary parameter-label'>" + tagname + "</a> "		
+			@$elLabels.append label
+
+		# при удалении тега в параметрах, удаляем этот тег везде
+		deleteLabel = (tagname) =>
+			@$elLabels.find('a:contains(' + tagname + ')').remove();
+			@$elSearchParams.removeTag tagname
+
+		# предотвращаем добавления поискового тега которого нет в параметрах
+		addSearchTag = (tagname) =>
+			@$elSearchParams.removeTag tagname if not @$elParams.tagExist tagname
+
+		# активируем плагин тегов у параметров
+		@$elParams.tagsInput
+			'width' 		: '100%'
+			'defaultText' 	: 'добавить параметр'
+			'onAddTag'		: (tagname) ->
+				insertLabel tagname
+			'onRemoveTag'	: (tagname) ->
+				deleteLabel tagname
+		
+		# активируем плагин тегов у параметров для поиска
+		@$elSearchParams.tagsInput
+			'width' 		: '100%'
+			'defaultText' 	: ''
+			'onAddTag'		: (tagname) ->
+				addSearchTag tagname
 	
+	# EVENTS
 	events 		:
 		'keypress #category-edit-parameters' 	: 'enterText'
 		'click .parameter-label' 				: 'clickParameterLebel'
-	
-	enterText 	: (e) ->
-		# чистим массив с параметрами для новой выборки
-		@parameters = [];
-		# после обновления inputa показываем обновляем список параметров
-		@updateParameters(@$elParams , @parameters)
-		# обнавляем ссылки
-		@insertLabels()
-
-	updateParameters : (el  , array) ->
-		# разбиваем значение в тектовом поле в массив из параметров
-		parameters = el.val().split ','
-		# сохраняем параметры в массив
-		@addParameter(parameter , array) for parameter in parameters
-
-	addParameter : (parameter , array) ->
-		parameter = $.trim parameter
-
-		if array.indexOf(parameter) == -1 and parameter != ''
-			array.push parameter
-	
-	insertLabels : ->
-		console.log @parameters
-		string = ""
-
-		createLink = (parameter) ->
-			" <a href='#' class='label label-primary parameter-label'>" + parameter + "</a> "
-		
-		# перебираем введеные параметры 
-		string += createLink(parameter) for parameter in @parameters
-		@$elLabels.html string
 
 	insertSearchParameter : ->
 
-
+	# клик по меткам добавляет тег у параметров для поиска
 	clickParameterLebel : (e) ->
 		e.preventDefault()
-		el = $ e.target
+		el 	= $ e.target
+		tag = el.html()
 
-		@$elSearchParams.html @$elSearchParams.html() + ',' + el.html()
-
-		@searchParameters = []
-		@updateParameters(@$elSearchParams , @searchParameters);
-		join_parameters = @searchParameters.join();
-		@$elSearchParams.html join_parameters;
+		if not @$elSearchParams.tagExist tag
+			@$elSearchParams.addTag tag
+		else console.log 'Параметр уже существует'
 
 
 
