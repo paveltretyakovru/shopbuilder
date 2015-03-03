@@ -21,6 +21,7 @@
 			      	</li>
 		        	<!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
 		        	<li>{!! link_to_route('categories.index' , 'Категории') !!}</li>
+		        	<li>{!! link_to_route('products.index' , 'Продукция') !!}</li>
         		</ul>
 	    </div>
 	  </div>

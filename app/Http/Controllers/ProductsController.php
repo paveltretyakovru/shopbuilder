@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Category;
+use App\Product;
 
 class ProductsController extends Controller {
 
-	public function index()
+	public function index(Product $product)
 	{
-		return view('products.index');
+		$products = $product->get();
+		return view('products.index' , compact('products'));
 	}
 
 	public function create()
@@ -26,19 +28,27 @@ class ProductsController extends Controller {
 		return view('products.create' , compact('categorieslist'));
 	}
 
-	public function store()
+	public function store(Requests\ProductFormRequest $request , Product $product)
 	{
-		return 'Products store';
+		$product->create($request->all());
+		return redirect()->route('products.index');
 	}
 
-	public function show($id)
+	public function show(Product $product)
 	{
-		return 'Products show';
+		return view('products.show' , compact('product'));
 	}
 
-	public function edit($id)
+	public function edit(Product $product)
 	{
-		return 'Products edit';
+		$categorieslist = array();
+		$categories = $this->getCategoriesTitlesList();
+
+		for ($i=0; $i < count($categories); $i++) { 
+			$categorieslist[$categories[$i]['id']] = $categories[$i]['title'];
+		}
+
+		return view('products.edit' , compact('categorieslist' , 'product'));
 	}
 	
 	public function update($id)

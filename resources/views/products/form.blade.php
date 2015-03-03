@@ -10,7 +10,7 @@
 	{{-- CATEGORY --}}
 	<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
 		{!! Form::label('category', 'Категория:') !!}
-		{!! Form::select('size', $categorieslist); !!}
+		{!! Form::select('category', $categorieslist); !!}
 		{!! $errors->first('category', '<span class="help-block">:message</span>') !!}
 	</div>
 

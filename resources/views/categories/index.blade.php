@@ -11,7 +11,7 @@
 	@foreach ($categories as $category)
 		<li class='list-group-item'>
 			{!! link_to_route('categories.show' , $category->title , [$category->id]) !!}
-			{!! link_to_route('categories.edit' , 'Редактировать' , [$category->id] , array('class' => 'btn btn-primary btn-xs')) !!}
+			{!! link_to_route('categories.edit' , 'Редактировать' , [$category->id] , array('class' => 'btn btn-primary btn-xs edit-btn')) !!}
 		</li>
 	@endforeach
 	</ul>

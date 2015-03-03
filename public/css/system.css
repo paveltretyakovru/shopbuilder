@@ -1,4 +1,7 @@
 .container{width: 	750px}
+.edit-btn , .params-value{float: right}
+
+.params-value{font-weight: bold;}
 
 #categories-list li{margin-bottom: 10px;list-style-type: square;}
 

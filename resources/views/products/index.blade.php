@@ -2,13 +2,18 @@
 
 @section('breadcrumb')
 	<li>{!! link_to('admin' , "Административная панель") !!}</li>
-	<li class="active">Продукты</li>
+	<li class="active">Продукция</li>
 @stop
 
 @section('content')
 
 	<ul class='list-group'>
-	
+		@foreach ($products as $product)
+			<li class='list-group-item'>
+				{!! link_to_route('products.show' , $product->title , [$product->id]) !!}
+				{!! link_to_route('products.edit' , 'Редактировать' , [$product->id] , array('class' => 'btn btn-primary btn-xs edit-btn')) !!}
+			</li>
+		@endforeach
 	</ul>
 
 	<hr>
