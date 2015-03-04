@@ -15,10 +15,10 @@
 			
 			@for ($i = 0; $i < count($parameters); $i++)
 				<li class='list-group-item'>
-					@if (!empty($issetparameters[str_replace(' ', '_' , $parameters[$i])]))
+					@if (array_key_exists(str_replace(' ', '_' , $parameters[$i]),$issetparameters))
 						{{ $parameters[$i] }} {!! FORM::text($parameters[$i] , $issetparameters[str_replace(' ', '_' , $parameters[$i])]) !!}
 					@else
-						{{ $parameters[$i] }} {!! FORM::text($parameters[$i] , $issetparameters[str_replace(' ', '_' , $parameters[$i])]) !!}
+						{{ $parameters[$i] }} {!! FORM::text($parameters[$i]) !!}
 					@endif
 
 					

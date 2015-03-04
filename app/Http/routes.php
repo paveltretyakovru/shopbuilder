@@ -11,6 +11,10 @@ Route::bind('parameters' , function($product){
 	return App\Product::whereId($product)->first();
 });
 
+Route::bind('views' , function($product){
+	return App\Product::whereId($product)->first();
+});
+
 $router->get('admin', function()
 {
 	return view('admin.index');
@@ -26,8 +30,12 @@ $router->resource('categories', 'CategoriesController');
 $router->resource('parameters', 'ParametersController' , [
 		'only' => ['edit' , 'update']
 	]);
-
 $router->post('parameters/{products}' , 'ParametersController@update');
+
+// Внешний вид продукта
+$router->resource('views', 'ViewsController' , [
+		'only' => ['edit' , 'update']
+	]);
 
 $router->get('/', function(){
 	return view('index');

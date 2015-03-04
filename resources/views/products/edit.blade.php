@@ -12,7 +12,7 @@
 	<hr>
 	{!! link_to_route('parameters.edit' , 'Параметры' , [$product->id] , array('class' => 'btn btn-default')) !!}
 
-	{!! link_to_route('products.edit' , 'Внешний вид' , [$product->id] , array('class' => 'btn btn-default')) !!}
+	{!! link_to_route('views.edit' , 'Внешний вид' , [$product->id] , array('class' => 'btn btn-default')) !!}
 	<hr>
 
 	{!! Form::model($product , ['route' => ['products.update' , $product->id] , 'method' => 'PATCH']) !!}
