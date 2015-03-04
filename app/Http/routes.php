@@ -1,5 +1,4 @@
 <?php
-
 Route::bind('categories' , function($category){
 	return App\Category::whereId($category)->first();
 });
@@ -8,16 +7,27 @@ Route::bind('products' , function($product){
 	return App\Product::whereId($product)->first();
 });
 
+Route::bind('parameters' , function($product){
+	return App\Product::whereId($product)->first();
+});
+
 $router->get('admin', function()
 {
 	return view('admin.index');
 });
 
+// ТОВАРЫ
 $router->resource('products', 'ProductsController');
+
+// КАТЕГОРИИ
 $router->resource('categories', 'CategoriesController');
+
+// ПРОДУКЦИЯ
 $router->resource('parameters', 'ParametersController' , [
-		'only' => ['edit']
+		'only' => ['edit' , 'update']
 	]);
+
+$router->post('parameters/{products}' , 'ParametersController@update');
 
 $router->get('/', function(){
 	return view('index');

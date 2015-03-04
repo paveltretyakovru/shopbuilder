@@ -4,4 +4,12 @@
 		$form .= Form::submit($label , ['class' => 'btn btn-danger']);
 		return $form .= Form::close();
 	}
+
+	function explodeParameters($parameters){
+		if (strpos($parameters, ',')) {
+			return explode(',', $parameters);
+		}else{
+			return array($parameters);
+		}
+	}
 ?>

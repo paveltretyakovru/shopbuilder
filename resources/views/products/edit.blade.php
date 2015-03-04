@@ -3,7 +3,8 @@
 @section('breadcrumb')
 	<li>{!! link_to('admin' , "Административная панель") !!}</li>
 	<li>{!! link_to('products' , 'Продукция') !!}</li>
-	<li class="active">Редактирование товара {{ $product->title }}</li>
+	<li>{!! link_to_route('products.show' , $product->title , [$product->id]) !!}</li>
+	<li class="active">Редактор</li>
 @stop
 
 @section('content')

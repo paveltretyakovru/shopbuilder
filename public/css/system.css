@@ -3,6 +3,8 @@
 
 .params-value{font-weight: bold;}
 
+.input-list input{float: right;}
+
 #categories-list li{margin-bottom: 10px;list-style-type: square;}
 
 #parameters-links{min-height: 15px; margin-bottom: 10px;}

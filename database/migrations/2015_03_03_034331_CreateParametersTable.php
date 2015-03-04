@@ -16,6 +16,7 @@ class CreateParametersTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('title');
+			$table->string('value')->nullable();
 			$table->string('unit')->nullable();
 			
 			$table->integer('product')->unsigned();
