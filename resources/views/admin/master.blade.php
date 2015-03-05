@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	{!! HTML::style('css/system.css') !!}
 	{!! HTML::style('css/libs/jquery.tagsinput.css') !!}
+	{!! HTML::style('css/libs/jquery.gridster.css') !!}
 </head>
 <body>
 
@@ -43,13 +44,9 @@
 	{!! HTML::script('js/libs/backbone-min.js') !!}
 	
 	{!! HTML::script('js/libs/jquery.tagsinput.js') !!}
-	
-	{!! HTML::script('js/system/system.js') !!}
+	{!! HTML::script('js/libs/jquery.gridster.min.js') !!}
 
-	<script type="text/javascript">
-		var view = Backbone.View.extend({});
-		var test = new view();
-	</script>
+	{!! HTML::script('js/system/system.js') !!}
 
 </body>
 </html>

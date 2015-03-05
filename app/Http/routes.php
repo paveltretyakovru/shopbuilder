@@ -37,6 +37,7 @@ $router->resource('views', 'ViewsController' , [
 		'only' => ['edit' , 'update']
 	]);
 
+// Главная страница
 $router->get('/', function(){
 	return view('index');
 });

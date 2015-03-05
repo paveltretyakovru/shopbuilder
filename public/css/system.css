@@ -8,3 +8,16 @@
 #categories-list li{margin-bottom: 10px;list-style-type: square;}
 
 #parameters-links{min-height: 15px; margin-bottom: 10px;}
+
+.gridster ul{list-style: none}
+
+#gridster-control-panel{
+	border-bottom: 1px dashed #ccc;
+	margin-bottom: 5px;
+	padding-bottom: 10px;
+}
+
+.gridster .gs-w {background: #f6f6f6; cursor: pointer; border: 1px dashed #ccc}
+.gridster .preview-holder {border: none!important;
+    background: red!important;
+}
