@@ -67,9 +67,11 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 	$selectedWiget 	: null
 	$deleteWidget	: $ '#delete-grid-widget'
 	$editWidget		: $ '#edit-grid-widget'
+	$editModal	 	: $ '#edit-widget-modal'
 
 	initialize 	: ->
 		console.log 'Inititalize viewsGridSystem'
+		# Инициализируем сетку
 		@$gridster = $('.gridster > ul').gridster
 			widget_margins			: [2, 2]
 			widget_base_dimensions	: [140, 140]
@@ -79,15 +81,32 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 				enabled : true
 		.data 'gridster'
 
+		# Слушаем отрктие редактора
+		@$editModal.on 'shown.bs.modal' , =>
+			console.log 'Открываем редактор для ' +  @$selectedWiget.attr('data-widget-type')
+			@initEditor  @$selectedWiget.attr('data-widget-type')
+
 	events 		:
 		'click #add-grid-widget'	: 'addWidget'
 		'click .gs-w'				: 'clickWidget'
-		'click document'			: 'unselectWidget'
 		'click #delete-grid-widget'	: 'deleteWidget'
 		'click #edit-grid-widget'	: 'openEditDialog'
 
+	changeTypeWidget : ->
+		console.log 'type widget'# + @$typeWidget.val()
+
+	# Обработка события при открытии окна с редактором виджетов
 	openEditDialog : ->
-		console.log 'Opening edit dialog'
+		# Обработчика не нужно!!! Обработчик срабатывает автоматом в bootstrap.js
+		# В инициализации поставлена прослушка на откртие модального окна
+
+	initEditor 	: (type) ->
+		switch	type
+			when 'text'
+				@initTextEditor()
+
+	initTextEditor : ->
+		console.log 'Init text editor'
 
 	deleteWidget : ->
 		# Отключяем кнопки удаления и редактирования
@@ -104,8 +123,11 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 		@$selectedWiget = null
 
 	addWidget : (e) ->
-		console.log 'Click add widget'
-		@$gridster.add_widget '<li>Клик по элементу для изменения параметров</li>' , 1 , 1
+		e.preventDefault()
+		el 	= $ e.target
+		type = el.attr('data-widget-type');
+		console.log 'Click add widget ' + type
+		@$gridster.add_widget '<li data-widget-type="'+type+'">Виджет '+el.html()+'</li>' , 1 , 1
 
 	clickWidget : (e) ->
 		console.log 'Click on widget'
@@ -128,3 +150,8 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 # INITIALIZE VIEWS
 AdminApp.initViews.categoryParameters 	= new AdminApp.Views.categoryParameters()
 AdminApp.initViews.viewsGridSystem		= new AdminApp.Views.viewsGridSystem()
+
+###
+$('#typeWidget').on 'change' , ->
+	console.log "Test change"
+###

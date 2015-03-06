@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Web-store</title>
 
+	{!! HTML::style('css/libs/jquery-ui.css') !!}
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	{!! HTML::style('css/system.css') !!}
 	{!! HTML::style('css/libs/jquery.tagsinput.css') !!}
@@ -38,13 +39,17 @@
 	</div>
 
 	{!! HTML::script('js/libs/jquery.min.js') !!}
-	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js'></script>
+	{!! HTML::script('js/libs/jquery-ui.min.js') !!}
+
+	<!-- <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js'></script> -->
 	
 	{!! HTML::script('js/libs/underscore-min.js') !!}
 	{!! HTML::script('js/libs/backbone-min.js') !!}
 	
 	{!! HTML::script('js/libs/jquery.tagsinput.js') !!}
 	{!! HTML::script('js/libs/jquery.gridster.min.js') !!}
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 	{!! HTML::script('js/system/system.js') !!}
 

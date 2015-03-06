@@ -79,9 +79,10 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend({
   $selectedWiget: null,
   $deleteWidget: $('#delete-grid-widget'),
   $editWidget: $('#edit-grid-widget'),
+  $editModal: $('#edit-widget-modal'),
   initialize: function() {
     console.log('Inititalize viewsGridSystem');
-    return this.$gridster = $('.gridster > ul').gridster({
+    this.$gridster = $('.gridster > ul').gridster({
       widget_margins: [2, 2],
       widget_base_dimensions: [140, 140],
       autogrow_cols: true,
@@ -90,16 +91,31 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend({
         enabled: true
       }
     }).data('gridster');
+    return this.$editModal.on('shown.bs.modal', (function(_this) {
+      return function() {
+        console.log('Открываем редактор для ' + _this.$selectedWiget.attr('data-widget-type'));
+        return _this.initEditor(_this.$selectedWiget.attr('data-widget-type'));
+      };
+    })(this));
   },
   events: {
     'click #add-grid-widget': 'addWidget',
     'click .gs-w': 'clickWidget',
-    'click document': 'unselectWidget',
     'click #delete-grid-widget': 'deleteWidget',
     'click #edit-grid-widget': 'openEditDialog'
   },
-  openEditDialog: function() {
-    return console.log('Opening edit dialog');
+  changeTypeWidget: function() {
+    return console.log('type widget');
+  },
+  openEditDialog: function() {},
+  initEditor: function(type) {
+    switch (type) {
+      case 'text':
+        return this.initTextEditor();
+    }
+  },
+  initTextEditor: function() {
+    return console.log('Init text editor');
   },
   deleteWidget: function() {
     this.$deleteWidget.attr('disabled', 'disabled');
@@ -116,8 +132,12 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend({
     return this.$selectedWiget = null;
   },
   addWidget: function(e) {
-    console.log('Click add widget');
-    return this.$gridster.add_widget('<li>Клик по элементу для изменения параметров</li>', 1, 1);
+    var el, type;
+    e.preventDefault();
+    el = $(e.target);
+    type = el.attr('data-widget-type');
+    console.log('Click add widget ' + type);
+    return this.$gridster.add_widget('<li data-widget-type="' + type + '">Виджет ' + el.html() + '</li>', 1, 1);
   },
   clickWidget: function(e) {
     console.log('Click on widget');
@@ -138,3 +158,9 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend({
 AdminApp.initViews.categoryParameters = new AdminApp.Views.categoryParameters();
 
 AdminApp.initViews.viewsGridSystem = new AdminApp.Views.viewsGridSystem();
+
+
+/*
+$('#typeWidget').on 'change' , ->
+	console.log "Test change"
+ */
