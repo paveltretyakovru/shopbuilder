@@ -76,10 +76,15 @@ AdminApp.Views.categoryParameters = Backbone.View.extend({
 AdminApp.Views.viewsGridSystem = Backbone.View.extend({
   el: '#gridster-system',
   $gridster: {},
+  quillObject: {},
   $selectedWiget: null,
   $deleteWidget: $('#delete-grid-widget'),
   $editWidget: $('#edit-grid-widget'),
   $editModal: $('#edit-widget-modal'),
+  $templateTextEditor: $('#template-text-editor'),
+  $widgetEditorBody: $('#widget-editor-body'),
+  idTextEditor: 'full-editor',
+  idTextEditorsToolbar: 'full-toolbar',
   initialize: function() {
     console.log('Inititalize viewsGridSystem');
     this.$gridster = $('.gridster > ul').gridster({
@@ -102,20 +107,37 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend({
     'click #add-grid-widget': 'addWidget',
     'click .gs-w': 'clickWidget',
     'click #delete-grid-widget': 'deleteWidget',
-    'click #edit-grid-widget': 'openEditDialog'
+    'click #edit-grid-widget': 'openEditDialog',
+    'click #widget-save-changes': 'saveWidgetContent'
   },
-  changeTypeWidget: function() {
-    return console.log('type widget');
+  saveWidgetContent: function() {
+    var type;
+    type = this.$selectedWiget.attr('data-widget-type');
+    switch (type) {
+      case 'text':
+        return this.saveTextWidget();
+    }
+  },
+  saveTextWidget: function() {
+    var html;
+    html = this.quillObject.getHTML();
+    console.log(html);
+    return this.$selectedWiget.html(html + '<span class="gs-resize-handle gs-resize-handle-both"></span>');
   },
   openEditDialog: function() {},
   initEditor: function(type) {
+    this.$widgetEditorBody.html('');
     switch (type) {
       case 'text':
         return this.initTextEditor();
     }
   },
   initTextEditor: function() {
-    return console.log('Init text editor');
+    var content;
+    content = this.$selectedWiget.html();
+    this.$widgetEditorBody.html(this.$templateTextEditor.html());
+    $('#' + this.idTextEditor).html(content);
+    return this.quillObject = makeQuill(this.idTextEditor, this.idTextEditorsToolbar);
   },
   deleteWidget: function() {
     this.$deleteWidget.attr('disabled', 'disabled');
@@ -137,16 +159,22 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend({
     el = $(e.target);
     type = el.attr('data-widget-type');
     console.log('Click add widget ' + type);
-    return this.$gridster.add_widget('<li data-widget-type="' + type + '">Виджет ' + el.html() + '</li>', 1, 1);
+    return this.$gridster.add_widget('<li data-widget-type="' + type + '">Виджет ' + el.text() + '</li>', 1, 1);
   },
   clickWidget: function(e) {
+    var el;
+    e.preventDefault();
+    el = $(e.target);
+    if (!el.is('li')) {
+      el = el.parent('li.gs-w');
+    }
     console.log('Click on widget');
     if (this.$selectedWiget != null) {
       this.$selectedWiget.css({
         'border': '1px dashed #ccc'
       });
     }
-    this.$selectedWiget = $(e.target);
+    this.$selectedWiget = el;
     this.$deleteWidget.removeAttr('disabled');
     this.$editWidget.removeAttr('disabled');
     return this.$selectedWiget.css({

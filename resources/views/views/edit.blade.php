@@ -57,11 +57,13 @@
 						<h4 class="modal-title">Редакатирование виджета</h4>
 					</div>
 					<div class="modal-body">
-						<p>One fine body&hellip;</p>
+						<div id="widget-editor-body">
+							
+						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal" id="widget-save-changes">Сохранить изменения</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
@@ -71,6 +73,8 @@
 
 	
 
-	<script type="text/template" id=""></script>
+	<script type="text/template" id="template-text-editor">
+		@include('templates.texteditor')
+	</script>
 
 @stop

@@ -62,12 +62,17 @@ AdminApp.Views.categoryParameters = Backbone.View.extend
 
 
 AdminApp.Views.viewsGridSystem = Backbone.View.extend
-	el 				: '#gridster-system'	
-	$gridster		: {}
-	$selectedWiget 	: null
-	$deleteWidget	: $ '#delete-grid-widget'
-	$editWidget		: $ '#edit-grid-widget'
-	$editModal	 	: $ '#edit-widget-modal'
+	el 					: '#gridster-system'	
+	$gridster			: {}
+	quillObject			: {}
+	$selectedWiget 		: null
+	$deleteWidget		: $ '#delete-grid-widget'
+	$editWidget			: $ '#edit-grid-widget'
+	$editModal	 		: $ '#edit-widget-modal'
+	$templateTextEditor : $ '#template-text-editor'
+	$widgetEditorBody	: $ '#widget-editor-body'
+	idTextEditor		: 'full-editor'
+	idTextEditorsToolbar: 'full-toolbar'
 
 	initialize 	: ->
 		console.log 'Inititalize viewsGridSystem'
@@ -91,23 +96,46 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 		'click .gs-w'				: 'clickWidget'
 		'click #delete-grid-widget'	: 'deleteWidget'
 		'click #edit-grid-widget'	: 'openEditDialog'
+		'click #widget-save-changes': 'saveWidgetContent'
 
-	changeTypeWidget : ->
-		console.log 'type widget'# + @$typeWidget.val()
+	# Сохраняем изменения полученные от редактора виджетов
+	saveWidgetContent : ->
+		type = @$selectedWiget.attr('data-widget-type');
+		switch type
+			when 'text'
+				@saveTextWidget()
+	
+	# Событие при нажатии на кнопку сохранить изменения в редакторе виджетов
+	# ЕСЛИ ОТКРЫТ РЕДАКТОР ТЕКСА
+	saveTextWidget : ->
+		html = @quillObject.getHTML()
+		console.log html
+		@$selectedWiget.html(html + '<span class="gs-resize-handle gs-resize-handle-both"></span>')
 
 	# Обработка события при открытии окна с редактором виджетов
 	openEditDialog : ->
 		# Обработчика не нужно!!! Обработчик срабатывает автоматом в bootstrap.js
 		# В инициализации поставлена прослушка на откртие модального окна
 
+	# Инициализируем модальное окно радактора виджетов
 	initEditor 	: (type) ->
+		@$widgetEditorBody.html('')
 		switch	type
 			when 'text'
 				@initTextEditor()
 
+	# Инициализируем тектовый редактор
 	initTextEditor : ->
-		console.log 'Init text editor'
+		# сохраняем текущий контент
+		content = @$selectedWiget.html();
+		# вставляем шаблон текстового редактора в модальное окно
+		@$widgetEditorBody.html(@$templateTextEditor.html());
+		# Вставляем вставляем контент виджета
+		$('#' + @idTextEditor).html(content)
+		# Применяем плагин текстовго редактора
+		@quillObject = makeQuill @idTextEditor , @idTextEditorsToolbar 
 
+	# Событие нажатия на кнопку - Удалить
 	deleteWidget : ->
 		# Отключяем кнопки удаления и редактирования
 		@$deleteWidget.attr('disabled' , 'disabled');
@@ -122,19 +150,29 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 			@$selectedWiget.css 'background' : '#ddd'
 		@$selectedWiget = null
 
+	# Событие при нажатии на ссылки добавления виджетов
 	addWidget : (e) ->
 		e.preventDefault()
 		el 	= $ e.target
+
 		type = el.attr('data-widget-type');
 		console.log 'Click add widget ' + type
-		@$gridster.add_widget '<li data-widget-type="'+type+'">Виджет '+el.html()+'</li>' , 1 , 1
+		@$gridster.add_widget '<li data-widget-type="'+type+'">Виджет '+el.text()+'</li>' , 1 , 1
 
+	# Выделение кликнутого виджета и работа с ним
 	clickWidget : (e) ->
+		e.preventDefault()
+		el = $ e.target
+		
+		# Работает только с самим блоком
+		if not el.is 'li'
+			el = el.parent 'li.gs-w'
+
 		console.log 'Click on widget'
 		if @$selectedWiget?
 			@$selectedWiget.css 'border' : '1px dashed #ccc'
 
-		@$selectedWiget = $ e.target
+		@$selectedWiget = el
 
 		# Активируем кнопку удаления и редактирования
 		@$deleteWidget.removeAttr('disabled');

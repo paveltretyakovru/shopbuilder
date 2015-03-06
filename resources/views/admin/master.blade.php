@@ -9,6 +9,7 @@
 	{!! HTML::style('css/system.css') !!}
 	{!! HTML::style('css/libs/jquery.tagsinput.css') !!}
 	{!! HTML::style('css/libs/jquery.gridster.css') !!}
+	{!! HTML::style('css/libs/quill.snow.css') !!}
 </head>
 <body>
 
@@ -50,6 +51,9 @@
 	{!! HTML::script('js/libs/jquery.gridster.min.js') !!}
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="//cdn.quilljs.com/0.19.8/quill.js"></script>
+
+	{!! HTML::script('js/libs/configs/quill.js') !!}
 
 	{!! HTML::script('js/system/system.js') !!}
 
