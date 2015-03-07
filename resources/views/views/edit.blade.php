@@ -77,4 +77,8 @@
 		@include('templates.texteditor')
 	</script>
 
+	<script type="text/template" id="template-load-views-image">
+		@include('templates.loadviewsimage')
+	</script>
+
 @stop

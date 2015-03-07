@@ -1,5 +1,7 @@
 window.makeQuill = function (idEditor , idToolbar){
 
+  console.log ('Initialize quill editor' , idEditor , idToolbar);
+
   // Initialize editor with custom theme and modules
   var fullEditor = new Quill('#'+idEditor, {
     modules: {

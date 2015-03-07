@@ -70,6 +70,7 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 	$editWidget			: $ '#edit-grid-widget'
 	$editModal	 		: $ '#edit-widget-modal'
 	$templateTextEditor : $ '#template-text-editor'
+	$templateLoadImage 	: $ '#template-load-views-image'
 	$widgetEditorBody	: $ '#widget-editor-body'
 	idTextEditor		: 'full-editor'
 	idTextEditorsToolbar: 'full-toolbar'
@@ -79,17 +80,20 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 		# Инициализируем сетку
 		@$gridster = $('.gridster > ul').gridster
 			widget_margins			: [2, 2]
-			widget_base_dimensions	: [140, 140]
+			widget_base_dimensions	: [25 , 25]
 			autogrow_cols			: true
-			max_cols				: 5
+			max_cols				: 25
 			resize : 
 				enabled : true
 		.data 'gridster'
 
 		# Слушаем отрктие редактора
 		@$editModal.on 'shown.bs.modal' , =>
-			console.log 'Открываем редактор для ' +  @$selectedWiget.attr('data-widget-type')
-			@initEditor  @$selectedWiget.attr('data-widget-type')
+			console.log 'Открываем редактор для ' +  @$selectedWiget.attr 'data-widget-type'
+			@initEditor  @$selectedWiget.attr 'data-widget-type'
+
+		@$editModal.on 'hide.bs.modal' , =>
+			@$widgetEditorBody.html ' '
 
 	events 		:
 		'click #add-grid-widget'	: 'addWidget'
@@ -119,10 +123,16 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 
 	# Инициализируем модальное окно радактора виджетов
 	initEditor 	: (type) ->
-		@$widgetEditorBody.html('')
 		switch	type
 			when 'text'
 				@initTextEditor()
+
+			when 'image'
+				@initImageEditor()
+
+	initImageEditor : ->
+		console.log 'Init image editor'
+		@$widgetEditorBody.html(@$templateLoadImage.html());
 
 	# Инициализируем тектовый редактор
 	initTextEditor : ->
@@ -157,7 +167,7 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 
 		type = el.attr('data-widget-type');
 		console.log 'Click add widget ' + type
-		@$gridster.add_widget '<li data-widget-type="'+type+'">Виджет '+el.text()+'</li>' , 1 , 1
+		@$gridster.add_widget '<li data-widget-type="'+type+'">Виджет '+el.text()+'</li>' , 3 , 3
 
 	# Выделение кликнутого виджета и работа с ним
 	clickWidget : (e) ->
