@@ -15,6 +15,8 @@ Route::bind('views' , function($product){
 	return App\Product::whereId($product)->first();
 });
 
+$router->post('getImageFile' , 'FilesController@getImageFile');
+
 $router->get('admin', function()
 {
 	return view('admin.index');

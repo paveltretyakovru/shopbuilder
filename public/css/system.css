@@ -1,13 +1,97 @@
-.container					{width: 750px}
-.edit-btn , .params-value	{float: right}
-.params-value				{font-weight: bold;}
-.gridster ul 				{list-style: none}
-.input-list input: ;		{float: right;}
-.gridster .gs-w 			{background: #f6f6f6; cursor: pointer; border: 1px dashed #ccc}
-.gridster .preview-holder 	{border: none!important; background: red!important;}
+.container {
+    width: 750px
+}
+.edit-btn, .params-value {
+    float: right
+}
+.params-value {
+    font-weight: bold;
+}
+.gridster ul {
+    list-style: none
+}
+.input-list input: ;
+{
+    float: right;
+}
+.gridster .gs-w {
+    background: #f6f6f6;
+    cursor: pointer;
+    border: 1px dashed #ccc
+}
+.gridster .preview-holder {
+    border: none!important;
+    background: red!important;
+}
 
-#categories-list li 	{margin-bottom: 10px;list-style-type: square;}
-#widget-editor-body		{min-height: 300px}
-#parameters-links		{min-height: 15px; margin-bottom: 10px;}
-#gridster-control-panel	{border-bottom: 1px dashed #ccc;margin-bottom: 5px;padding-bottom: 10px}
+.image-widget{
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
+.product-title{
+    font-size: 32px;
+    text-align: center;
+}
+
+#result-load-image{
+    width: 100%;    
+    background-size: contain;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#status-load-image{
+    color: red;
+}
+
+#categories-list li {
+    margin-bottom: 10px;
+    list-style-type: square;
+}
+#widget-editor-body {
+    min-height: 300px;
+    background-color: #f6f6f6;
+}
+#parameters-links {
+    min-height: 15px;
+    margin-bottom: 10px;
+}
+#gridster-control-panel {
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 5px;
+    padding-bottom: 10px
+}
+
+.loader {
+    font-size: 20px;
+    margin: 5em auto;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    text-indent: -9999em;
+    -webkit-animation: load4 1.3s infinite linear;
+    animation: load4 1.3s infinite linear;
+}
+@-webkit-keyframes load4 {
+    0%, 100% {box-shadow: 0em -3em 0em 0.2em #0DCECB, 2em -2em 0 0em #0DCECB, 3em 0em 0 -0.5em #0DCECB, 2em 2em 0 -0.5em #0DCECB, 0em 3em 0 -0.5em #0DCECB, -2em 2em 0 -0.5em #0DCECB, -3em 0em 0 -0.5em #0DCECB, -2em -2em 0 0em #0DCECB;}
+    12.5% {box-shadow: 0em -3em 0em 0em #0DCECB, 2em -2em 0 0.2em #0DCECB, 3em 0em 0 0em #0DCECB, 2em 2em 0 -0.5em #0DCECB, 0em 3em 0 -0.5em #0DCECB, -2em 2em 0 -0.5em #0DCECB, -3em 0em 0 -0.5em #0DCECB, -2em -2em 0 -0.5em #0DCECB;}
+    25% {box-shadow: 0em -3em 0em -0.5em #0DCECB, 2em -2em 0 0em #0DCECB, 3em 0em 0 0.2em #0DCECB, 2em 2em 0 0em #0DCECB, 0em 3em 0 -0.5em #0DCECB, -2em 2em 0 -0.5em #0DCECB, -3em 0em 0 -0.5em #0DCECB, -2em -2em 0 -0.5em #0DCECB;}
+    37.5% {box-shadow: 0em -3em 0em -0.5em #0DCECB, 2em -2em 0 -0.5em #0DCECB, 3em 0em 0 0em #0DCECB, 2em 2em 0 0.2em #0DCECB, 0em 3em 0 0em #0DCECB, -2em 2em 0 -0.5em #0DCECB, -3em 0em 0 -0.5em #0DCECB, -2em -2em 0 -0.5em #0DCECB;}
+    50% {box-shadow: 0em -3em 0em -0.5em #0DCECB, 2em -2em 0 -0.5em #0DCECB, 3em 0em 0 -0.5em #0DCECB, 2em 2em 0 0em #0DCECB, 0em 3em 0 0.2em #0DCECB, -2em 2em 0 0em #0DCECB, -3em 0em 0 -0.5em #0DCECB, -2em -2em 0 -0.5em #0DCECB;}
+    62.5% {box-shadow: 0em -3em 0em -0.5em #0DCECB, 2em -2em 0 -0.5em #0DCECB, 3em 0em 0 -0.5em #0DCECB, 2em 2em 0 -0.5em #0DCECB, 0em 3em 0 0em #0DCECB, -2em 2em 0 0.2em #0DCECB, -3em 0em 0 0em #0DCECB, -2em -2em 0 -0.5em #0DCECB;}
+    75% {box-shadow: 0em -3em 0em -0.5em #0DCECB, 2em -2em 0 -0.5em #0DCECB, 3em 0em 0 -0.5em #0DCECB, 2em 2em 0 -0.5em #0DCECB, 0em 3em 0 -0.5em #0DCECB, -2em 2em 0 0em #0DCECB, -3em 0em 0 0.2em #0DCECB, -2em -2em 0 0em #0DCECB;}
+    87.5% {box-shadow: 0em -3em 0em 0em #0DCECB, 2em -2em 0 -0.5em #0DCECB, 3em 0em 0 -0.5em #0DCECB, 2em 2em 0 -0.5em #0DCECB, 0em 3em 0 -0.5em #0DCECB, -2em 2em 0 0em #0DCECB, -3em 0em 0 0em #0DCECB, -2em -2em 0 0.2em #0DCECB;}
+}
+@keyframes load4 {
+    0%, 100% {box-shadow: 0em -3em 0em 0.2em #0DCECB, 2em -2em 0 0em #0DCECB, 3em 0em 0 -0.5em #0DCECB, 2em 2em 0 -0.5em #0DCECB, 0em 3em 0 -0.5em #0DCECB, -2em 2em 0 -0.5em #0DCECB, -3em 0em 0 -0.5em #0DCECB, -2em -2em 0 0em #0DCECB;}
+    12.5% {box-shadow: 0em -3em 0em 0em #0DCECB, 2em -2em 0 0.2em #0DCECB, 3em 0em 0 0em #0DCECB, 2em 2em 0 -0.5em #0DCECB, 0em 3em 0 -0.5em #0DCECB, -2em 2em 0 -0.5em #0DCECB, -3em 0em 0 -0.5em #0DCECB, -2em -2em 0 -0.5em #0DCECB;}
+    25% {box-shadow: 0em -3em 0em -0.5em #0DCECB, 2em -2em 0 0em #0DCECB, 3em 0em 0 0.2em #0DCECB, 2em 2em 0 0em #0DCECB, 0em 3em 0 -0.5em #0DCECB, -2em 2em 0 -0.5em #0DCECB, -3em 0em 0 -0.5em #0DCECB, -2em -2em 0 -0.5em #0DCECB;}
+    37.5% {box-shadow: 0em -3em 0em -0.5em #0DCECB, 2em -2em 0 -0.5em #0DCECB, 3em 0em 0 0em #0DCECB, 2em 2em 0 0.2em #0DCECB, 0em 3em 0 0em #0DCECB, -2em 2em 0 -0.5em #0DCECB, -3em 0em 0 -0.5em #0DCECB, -2em -2em 0 -0.5em #0DCECB;}
+    50% {box-shadow: 0em -3em 0em -0.5em #0DCECB, 2em -2em 0 -0.5em #0DCECB, 3em 0em 0 -0.5em #0DCECB, 2em 2em 0 0em #0DCECB, 0em 3em 0 0.2em #0DCECB, -2em 2em 0 0em #0DCECB, -3em 0em 0 -0.5em #0DCECB, -2em -2em 0 -0.5em #0DCECB;}
+    62.5% {box-shadow: 0em -3em 0em -0.5em #0DCECB, 2em -2em 0 -0.5em #0DCECB, 3em 0em 0 -0.5em #0DCECB, 2em 2em 0 -0.5em #0DCECB, 0em 3em 0 0em #0DCECB, -2em 2em 0 0.2em #0DCECB, -3em 0em 0 0em #0DCECB, -2em -2em 0 -0.5em #0DCECB;}
+    75% {box-shadow: 0em -3em 0em -0.5em #0DCECB, 2em -2em 0 -0.5em #0DCECB, 3em 0em 0 -0.5em #0DCECB, 2em 2em 0 -0.5em #0DCECB, 0em 3em 0 -0.5em #0DCECB, -2em 2em 0 0em #0DCECB, -3em 0em 0 0.2em #0DCECB, -2em -2em 0 0em #0DCECB;}
+    87.5% {box-shadow: 0em -3em 0em 0em #0DCECB, 2em -2em 0 -0.5em #0DCECB, 3em 0em 0 -0.5em #0DCECB, 2em 2em 0 -0.5em #0DCECB, 0em 3em 0 -0.5em #0DCECB, -2em 2em 0 0em #0DCECB, -3em 0em 0 0em #0DCECB, -2em -2em 0 0.2em #0DCECB;}
+}

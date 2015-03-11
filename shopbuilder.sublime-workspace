@@ -1,0 +1,1225 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Form",
+				"Form::submit	Generate a Submit button (value, attributes)"
+			],
+			[
+				"id",
+				"idTextEditorsToolbar"
+			],
+			[
+				"type",
+				"typeWidget"
+			],
+			[
+				"di",
+				"disabled	Attr"
+			],
+			[
+				"add",
+				"add_widget"
+			],
+			[
+				"grid",
+				"gridster"
+			],
+			[
+				"backgrou",
+				"background-color"
+			],
+			[
+				"back",
+				"background-clip"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"prod",
+				"productparams"
+			],
+			[
+				"pro",
+				"productparams"
+			],
+			[
+				"por",
+				"productparams"
+			],
+			[
+				"Input",
+				"Input::all	Retrieve all Inputs"
+			],
+			[
+				"catego",
+				"category"
+			],
+			[
+				"tag",
+				"tagname"
+			],
+			[
+				"categ",
+				"categorieslist"
+			],
+			[
+				"el",
+				"elSearchParams"
+			],
+			[
+				"paramete",
+				"parameters"
+			],
+			[
+				"parame",
+				"parameters"
+			],
+			[
+				"cate",
+				"category-edit-parameters"
+			],
+			[
+				"Route",
+				"Route::get	Basic Route with Closure"
+			],
+			[
+				"Requ",
+				"Request"
+			],
+			[
+				"route",
+				"routeParams"
+			],
+			[
+				"function",
+				"create_function"
+			],
+			[
+				"link",
+				"link_to_route"
+			],
+			[
+				"songs",
+				"songs_path"
+			],
+			[
+				"res",
+				"resource"
+			],
+			[
+				"Song",
+				"SongsController"
+			],
+			[
+				"method",
+				"runkit_method_add"
+			],
+			[
+				"foreach",
+				"foreach	blade-foreach"
+			],
+			[
+				"view",
+				"view"
+			],
+			[
+				"array",
+				"array"
+			],
+			[
+				"init",
+				"initialize"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "public/js/system/system.coffee",
+			"settings":
+			{
+				"buffer_size": 5955,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Павел/OneDrive/Repositories/css/css-loaders/index.html",
+			"settings":
+			{
+				"buffer_size": 24287,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/js/libs/configs/quill.js",
+			"settings":
+			{
+				"buffer_size": 389,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/views/edit.blade.php",
+			"settings":
+			{
+				"buffer_size": 2699,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/css/system.css",
+			"settings":
+			{
+				"buffer_size": 4745,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/templates/loadviewsimage.blade.php",
+			"settings":
+			{
+				"buffer_size": 404,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/templates/texteditor.blade.php",
+			"settings":
+			{
+				"buffer_size": 7288,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/ViewsController.php",
+			"settings":
+			{
+				"buffer_size": 326,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/categories/form.blade.php",
+			"settings":
+			{
+				"buffer_size": 1124,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/categories/edit.blade.php",
+			"settings":
+			{
+				"buffer_size": 516,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/js/system/system.js",
+			"settings":
+			{
+				"buffer_size": 6607,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 215.0,
+		"selected_items":
+		[
+			[
+				"prettify",
+				"HTMLPrettify"
+			],
+			[
+				"css",
+				"CodeFormatter: Format as CSS Syntax"
+			],
+			[
+				"prettfi",
+				"HTMLPrettify"
+			],
+			[
+				"prett",
+				"HTMLPrettify"
+			],
+			[
+				"formatter",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"codeformatter",
+				"CodeFormatter: Format as CSS Syntax"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"prettif",
+				"HTMLPrettify: Set Prettify Preferences"
+			],
+			[
+				"indeti",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"coffee",
+				"Coffee: Check Syntax"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"men",
+				"View: Toggle Menu"
+			]
+		],
+		"width": 408.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/server/htdocs/shopbuilder",
+		"/E/server/htdocs/shopbuilder/resources",
+		"/E/server/htdocs/shopbuilder/resources/views",
+		"/E/server/htdocs/shopbuilder/resources/views/categories",
+		"/E/server/htdocs/shopbuilder/resources/views/templates"
+	],
+	"file_history":
+	[
+		"/E/server/htdocs/shopbuilder/public/index.php",
+		"/E/server/htdocs/shopbuilder/resources/views/products/index.blade.php",
+		"/E/server/htdocs/shopbuilder/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/YtsSpecificationExamples.yml",
+		"/E/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php",
+		"/E/server/htdocs/shopbuilder/app/Http/Controllers/ViewsController.php",
+		"/E/server/htdocs/shopbuilder/app/Http/Controllers/ProductsController.php",
+		"/E/server/htdocs/shopbuilder/app/Http/Controllers/Controller.php",
+		"/E/server/htdocs/shopbuilder/composer.json",
+		"/E/server/htdocs/shopbuilder/app/Category.php",
+		"/E/server/htdocs/shopbuilder/resources/views/admin/master.blade.php",
+		"/E/server/htdocs/shopbuilder/resources/views/templates/texteditor.blade.php",
+		"/E/server/htdocs/shopbuilder/public/js/libs/configs/quill.js",
+		"/E/server/htdocs/shopbuilder/config/app.php",
+		"/E/server/htdocs/shopbuilder/public/css/system.css",
+		"/E/server/htdocs/shopbuilder/public/js/libs/quill.min.js",
+		"/E/server/htdocs/shopbuilder/public/css/libs/quill.snow.css",
+		"/E/server/htdocs/shopbuilder/public/js/quill/quill.js",
+		"/E/server/htdocs/shopbuilder/config/queue.php",
+		"/C/Users/Павел/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/E/server/htdocs/shopbuilder/vendor/illuminate/html/FormBuilder.php",
+		"/E/server/htdocs/shopbuilder/vendor/phpspec/phpspec/features/options/developer_chooses_stop_on_failure.feature",
+		"/E/server/htdocs/shopbuilder/resources/views/products/edit.blade.php",
+		"/E/server/htdocs/shopbuilder/resources/views/parameters/edit.blade.php",
+		"/E/server/htdocs/shopbuilder/resources/views/categories/edit.blade.php",
+		"/E/server/htdocs/shopbuilder/resources/views/views/edit.blade.php",
+		"/E/server/htdocs/shopbuilder/resources/views/categories/form.blade.php",
+		"/E/server/htdocs/shopbuilder/public/js/system/system.js",
+		"/E/server/htdocs/shopbuilder/public/js/system/system.coffee",
+		"/E/server/htdocs/shopbuilder/app/Http/routes.php",
+		"/E/server/htdocs/shopbuilder/app/Http/Controllers/CategoriesController.php",
+		"/E/server/htdocs/shopbuilder/resources/views/products/form.blade.php",
+		"/E/server/htdocs/shopbuilder/app/Product.php",
+		"/E/server/htdocs/shopbuilder/app/Http/Requests/CategoryFormRequest.php",
+		"/E/server/htdocs/shopbuilder/app/Http/Requests/ProductFormRequest.php",
+		"/E/server/htdocs/shopbuilder/resources/lang/ru/validation.php",
+		"/E/server/htdocs/shopbuilder/resources/lang/en/validation.php",
+		"/E/server/htdocs/shopbuilder/resources/views/categories/index.blade.php",
+		"/E/server/htdocs/shopbuilder/app/Http/helpers.php",
+		"/E/server/htdocs/shopbuilder/public/css/libs/jquery.gridster.css",
+		"/E/server/htdocs/shopbuilder/resources/views/categories/show.blade.php",
+		"/E/server/htdocs/shopbuilder/resources/views/products/show.blade.php",
+		"/E/server/htdocs/shopbuilder/resources/views/products/create.blade.php",
+		"/E/server/htdocs/shopbuilder/app/Http/Controllers/ParametersController.php",
+		"/E/server/htdocs/shopbuilder/app/Parameters.php",
+		"/E/server/htdocs/shopbuilder/database/migrations/categories/2015_02_24_150836_CreateCategoriesTable.php",
+		"/E/server/htdocs/shopbuilder/app/Parameter.php",
+		"/E/server/htdocs/shopbuilder/database/migrations/2015_03_03_034331_CreateParametersTable.php",
+		"/E/server/htdocs/shopbuilder/app/Providers/ConfigServiceProvider.php",
+		"/E/server/htdocs/shopbuilder/vendor/phpunit/php-file-iterator/build/PHPCS/Sniffs/ControlStructures/ControlSignatureSniff.php",
+		"/E/server/htdocs/shopbuilder/artisan",
+		"/E/server/htdocs/shopbuilder/resources/assets/less/bootstrap/grid.less",
+		"/E/server/htdocs/shopbuilder/vendor/phpunit/phpunit/tests/TextUI/group-isolation.phpt",
+		"/E/server/htdocs/shopbuilder/public/fonts/glyphicons-halflings-regular.svg",
+		"/E/server/htdocs/shopbuilder/gulpfile.js",
+		"/E/server/htdocs/shopbuilder/vendor/phpunit/phpunit/tests/_files/ExceptionInTearDownTest.php",
+		"/E/server/htdocs/shopbuilder/vendor/phpspec/phpspec/src/PhpSpec/Event/EventInterface.php",
+		"/E/server/htdocs/shopbuilder/resources/views/master.blade.php",
+		"/E/server/htdocs/shopbuilder/vendor/phpspec/phpspec/spec/PhpSpec/Util/MethodAnalyserSpec.php",
+		"/E/server/htdocs/shopbuilder/vendor/phpspec/phpspec/src/PhpSpec/Util/MethodAnalyser.php",
+		"/E/server/htdocs/shopbuilder/config/mail.php",
+		"/E/server/htdocs/shopbuilder/vendor/phpunit/phpunit/src/Framework/Constraint/IsEmpty.php",
+		"/E/server/htdocs/shopbuilder/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/ImmutableEventDispatcher.php",
+		"/E/server/htdocs/shopbuilder/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/EventObject.php",
+		"/E/server/htdocs/shopbuilder/vendor/symfony/console/Symfony/Component/Console/Output/ConsoleOutput.php",
+		"/E/server/htdocs/shopbuilder/config/view.php",
+		"/E/server/htdocs/shopbuilder/vendor/symfony/finder/Symfony/Component/Finder/Expression/ValueInterface.php",
+		"/E/server/htdocs/shopbuilder/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/Debug/TraceableEventDispatcher.php",
+		"/E/server/htdocs/shopbuilder/vendor/swiftmailer/swiftmailer/doc/overview.rst",
+		"/E/server/htdocs/shopbuilder/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/InterfaceNotFoundException.php",
+		"/E/server/htdocs/shopbuilder/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/.gitignore",
+		"/E/server/htdocs/shopbuilder/vendor/illuminate/html/helpers.php",
+		"/E/server/htdocs/shopbuilder/vendor/illuminate/html/HtmlBuilder.php",
+		"/E/server/htdocs/shopbuilder/config/database.php",
+		"/E/server/htdocs/shopbuilder/vendor/phpunit/phpunit/tests/_files/DummyException.php",
+		"/E/server/htdocs/shopbuilder/storage/framework/sessions/bf452b9f570f3590aa96775321337ecad0d3975a",
+		"/E/server/htdocs/shopbuilder/vendor/phpunit/phpunit/src/Framework/BaseTestListener.php",
+		"/E/server/htdocs/shopbuilder/vendor/sebastian/global-state/src/Blacklist.php",
+		"/E/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Support/Facades/Blade.php",
+		"/E/server/htdocs/shopbuilder/resources/views/index.blade.php",
+		"/E/server/htdocs/shopbuilder/vendor/phpunit/phpunit-mock-objects/tests/ProxyObjectTest.php",
+		"/E/server/htdocs/shopbuilder/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Event/PostResponseEvent.php",
+		"/E/server/htdocs/shopbuilder/resources/views/categories/create.blade.php",
+		"/E/server/htdocs/shopbuilder/vendor/danielstjules/stringy/tests/CreateTest.php",
+		"/E/server/htdocs/shopbuilder/resources/assets/less/bootstrap/mixins/hide-text.less",
+		"/E/server/htdocs/shopbuilder/vendor/illuminate/html/HtmlFacade.php",
+		"/E/server/htdocs/shopbuilder/vendor/monolog/monolog/src/Monolog/Formatter/HtmlFormatter.php",
+		"/E/server/htdocs/shopbuilder/vendor/phpunit/phpunit/build/phar-autoload.php.in",
+		"/E/server/htdocs/shopbuilder/vendor/symfony/console/Symfony/Component/Console/Helper/HelperSet.php",
+		"/E/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Routing/ControllerServiceProvider.php",
+		"/E/server/htdocs/shopbuilder/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Controller/ControllerReference.php",
+		"/E/server/htdocs/shopbuilder/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/EventDispatcherInterface.php",
+		"/E/server/htdocs/shopbuilder/vendor/league/flysystem/src/Plugin/EmptyDir.php",
+		"/E/server/htdocs/shopbuilder/app/Events/Event.php",
+		"/E/server/htdocs/shopbuilder/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php",
+		"/E/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Auth/Passwords/CanResetPassword.php",
+		"/E/server/htdocs/shopbuilder/vendor/monolog/monolog/src/Monolog/Handler/SlackHandler.php",
+		"/E/server/htdocs/shopbuilder/server.php",
+		"/E/server/htdocs/shopbuilder/resources/views/admin/index.blade.php",
+		"/E/server/htdocs/shopbuilder/vendor/symfony/routing/Symfony/Component/Routing/Tests/RouteTest.php",
+		"/E/server/htdocs/shopbuilder/app/Providers/RouteServiceProvider.php",
+		"/E/server/htdocs/shopbuilder/resources/assets/less/bootstrap/component-animations.less",
+		"/E/server/htdocs/shopbuilder/vendor/symfony/process/Symfony/Component/Process/ProcessUtils.php",
+		"/E/server/htdocs/shopbuilder/vendor/phpspec/phpspec/src/PhpSpec/Locator/PSR0/PSR0Resource.php",
+		"/E/server/htdocs/shopbuilder/package.json",
+		"/E/server/htdocs/shopbuilder/vendor/phpunit/phpunit/src/Framework/Constraint/IsNull.php",
+		"/E/server/htdocs/shop/app/Http/Controllers/ProductsController.php",
+		"/E/server/htdocs/shop/resources/views/index.blade.php",
+		"/E/server/htdocs/shop/app/Http/routes.php",
+		"/E/server/htdocs/shop/app/Http/Controllers/CategoriesController.php",
+		"/E/server/htdocs/shop/resources/views/categories/index.blade.php",
+		"/E/server/htdocs/shop/resources/views/master.blade.php",
+		"/E/server/htdocs/shop/resources/views/categories/create.blade.php",
+		"/E/server/htdocs/shop/config/app.php",
+		"/E/server/htdocs/shop/resources/views/categories/store.blade.php",
+		"/E/server/htdocs/shop/config/database.php",
+		"/E/server/htdocs/shop/database/migrations/products/2015_02_23_190310_CreateProductsTable.php",
+		"/E/server/htdocs/shop/database/migrations/categories/2015_02_24_150836_CreateCategoriesTable.php",
+		"/E/server/htdocs/shop/database/migrations/2015_02_24_150836_CreateCategoriesTable.php",
+		"/E/server/htdocs/shop/database/migrations/2015_02_23_190310_CreateProductsTable.php",
+		"/E/server/htdocs/task/app/Http/Controllers/SongsController.php",
+		"/E/server/htdocs/task/composer.json",
+		"/E/server/htdocs/task/app/Http/helpers.php",
+		"/E/server/htdocs/task/resources/views/songs/form.blade.php",
+		"/E/server/htdocs/task/app/Http/Requests/SongFormRequest.php",
+		"/E/server/htdocs/task/resources/views/songs/edit.blade.php",
+		"/E/server/htdocs/task/vendor/illuminate/html/FormBuilder.php",
+		"/E/server/htdocs/task/resources/views/songs/create.blade.php",
+		"/E/server/htdocs/task/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 92.0,
+		"where_history":
+		[
+			"E:\\server\\htdocs\\task"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"#ffffff",
+			"закр",
+			"изменения",
+			"authorship\"",
+			" ->",
+			"viewsGridSystem",
+			"color",
+			"list-style",
+			"color",
+			"price",
+			"HTML",
+			"'\n",
+			"htmlbuilder",
+			"htmlbuilder {",
+			"routes.php",
+			"model(",
+			"model",
+			"FormBuilder.php",
+			":get",
+			"helpers.php",
+			"db",
+			"home",
+			"homes",
+			"home",
+			"generator",
+			"collection",
+			"model",
+			"view"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"#0DCECB",
+			"visible",
+			"count",
+			"Collection",
+			"Model",
+			"View"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/js/system/system.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5955,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3121,
+								3121
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1155.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Павел/OneDrive/Repositories/css/css-loaders/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 24287,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3772,
+								3772
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 529.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/js/libs/configs/quill.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 389,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								116,
+								116
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "resources/views/views/edit.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2699,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1566,
+								1566
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 525.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/css/system.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4745,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2459,
+								2459
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "resources/views/templates/loadviewsimage.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 404,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								143,
+								143
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "resources/views/templates/texteditor.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7288,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7279,
+								7279
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/Http/Controllers/ViewsController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 326,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "resources/views/categories/form.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1124,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								304,
+								328
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "resources/views/categories/edit.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 516,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								448,
+								427
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "public/js/system/system.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6607,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4959,
+								4959
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2115.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 24.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 98.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "shopbuilder.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"index.html",
+				"C:\\Users\\Павел\\OneDrive\\Repositories\\css\\css-loaders\\index.html"
+			],
+			[
+				"sysstem",
+				"public\\css\\system.css"
+			],
+			[
+				"system",
+				"public\\css\\system.css"
+			],
+			[
+				"quill",
+				"public\\js\\libs\\configs\\quill.js"
+			],
+			[
+				"viewscont",
+				"app\\Http\\Controllers\\ViewsController.php"
+			],
+			[
+				"system.js",
+				"public\\js\\system\\system.js"
+			],
+			[
+				"master",
+				"resources\\views\\admin\\master.blade.php"
+			],
+			[
+				"coffee",
+				"public\\js\\system\\system.coffee"
+			],
+			[
+				"edit.blade",
+				"resources\\views\\views\\edit.blade.php"
+			],
+			[
+				"edit.bl",
+				"resources\\views\\views\\edit.blade.php"
+			],
+			[
+				"syscss",
+				"public\\css\\system.css"
+			],
+			[
+				"syst",
+				"public\\css\\system.css"
+			],
+			[
+				"syste",
+				"public\\css\\system.css"
+			],
+			[
+				"edit",
+				"resources\\views\\views\\edit.blade.php"
+			],
+			[
+				"master.",
+				"resources\\views\\admin\\master.blade.php"
+			],
+			[
+				"system.coff",
+				"public\\js\\system\\system.coffee"
+			],
+			[
+				"gridster",
+				"public\\css\\libs\\jquery.gridster.css"
+			],
+			[
+				"eidt.blad",
+				"resources\\views\\views\\edit.blade.php"
+			],
+			[
+				"edit.bldae",
+				"resources\\views\\views\\edit.blade.php"
+			],
+			[
+				"edit.blade.php",
+				"resources\\views\\views\\edit.blade.php"
+			],
+			[
+				"viewsco",
+				"app\\Http\\Controllers\\ViewsController.php"
+			],
+			[
+				"parameterscon",
+				"app\\Http\\Controllers\\ParametersController.php"
+			],
+			[
+				"routes",
+				"app\\Http\\routes.php"
+			],
+			[
+				"edit.blde",
+				"resources\\views\\products\\edit.blade.php"
+			],
+			[
+				"viewscon",
+				"app\\Http\\Controllers\\ViewsController.php"
+			],
+			[
+				"route",
+				"app\\Http\\routes.php"
+			],
+			[
+				"edit.balde",
+				"resources\\views\\parameters\\edit.blade.php"
+			],
+			[
+				"parameters",
+				"app\\Http\\Controllers\\ParametersController.php"
+			],
+			[
+				"categories",
+				"app\\Http\\Controllers\\CategoriesController.php"
+			],
+			[
+				"parametersc",
+				"app\\Http\\Controllers\\ParametersController.php"
+			],
+			[
+				"createparam",
+				"database\\migrations\\2015_03_03_034331_CreateParametersTable.php"
+			],
+			[
+				"",
+				"app\\Http\\Controllers\\ParametersController.php"
+			],
+			[
+				"parameter",
+				"app\\Parameter.php"
+			],
+			[
+				"category",
+				"app\\Category.php"
+			],
+			[
+				"categor1",
+				"database\\migrations\\categories\\2015_02_24_150836_CreateCategoriesTable.php"
+			],
+			[
+				"helpers",
+				"app\\Http\\helpers.php"
+			],
+			[
+				"edit.bld",
+				"resources\\views\\products\\edit.blade.php"
+			],
+			[
+				"edit.b",
+				"resources\\views\\categories\\edit.blade.php"
+			],
+			[
+				"edit.blde.",
+				"resources\\views\\parameters\\edit.blade.php"
+			],
+			[
+				"form.blade",
+				"resources\\views\\products\\form.blade.php"
+			],
+			[
+				"parameterscontr",
+				"app\\Http\\Controllers\\ParametersController.php"
+			],
+			[
+				"index.blde",
+				"resources\\views\\products\\index.blade.php"
+			],
+			[
+				"form.bl",
+				"resources\\views\\products\\form.blade.php"
+			],
+			[
+				"edit.blade.",
+				"resources\\views\\products\\edit.blade.php"
+			],
+			[
+				"index.blade.php",
+				"resources\\views\\products\\index.blade.php"
+			],
+			[
+				"helpers.php",
+				"app\\Http\\helpers.php"
+			],
+			[
+				"products",
+				"app\\Http\\Controllers\\ProductsController.php"
+			],
+			[
+				"categoriescont",
+				"app\\Http\\Controllers\\CategoriesController.php"
+			],
+			[
+				"product.php",
+				"app\\Product.php"
+			],
+			[
+				"createparama",
+				"database\\migrations\\2015_03_03_034331_CreateParametersTable.php"
+			],
+			[
+				"edit.",
+				"resources\\views\\products\\edit.blade.php"
+			],
+			[
+				"show.blade",
+				"resources\\views\\products\\show.blade.php"
+			],
+			[
+				"product",
+				"app\\Http\\Controllers\\ProductsController.php"
+			],
+			[
+				"controllerproducts",
+				"app\\Http\\Controllers\\ProductsController.php"
+			],
+			[
+				"prod",
+				"app\\Http\\Controllers\\ProductsController.php"
+			],
+			[
+				"create.",
+				"resources\\views\\products\\create.blade.php"
+			],
+			[
+				"show.",
+				"resources\\views\\products\\show.blade.php"
+			],
+			[
+				"show",
+				"resources\\views\\products\\show.blade.php"
+			],
+			[
+				"index",
+				"resources\\views\\products\\index.blade.php"
+			],
+			[
+				"index.blade",
+				"resources\\views\\categories\\index.blade.php"
+			],
+			[
+				"categor",
+				"app\\Http\\Controllers\\CategoriesController.php"
+			],
+			[
+				"categori",
+				"app\\Http\\Controllers\\CategoriesController.php"
+			],
+			[
+				"categoriesc",
+				"app\\Http\\Controllers\\CategoriesController.php"
+			],
+			[
+				"productsco",
+				"app\\Http\\Controllers\\ProductsController.php"
+			],
+			[
+				"create",
+				"resources\\views\\songs\\create.blade.php"
+			],
+			[
+				"helpre",
+				"vendor\\illuminate\\html\\helpers.php"
+			],
+			[
+				"html",
+				"vendor\\illuminate\\html\\HtmlBuilder.php"
+			],
+			[
+				"form",
+				"vendor\\illuminate\\html\\FormBuilder.php"
+			],
+			[
+				"index.bl",
+				"resources\\views\\songs\\index.blade.php"
+			],
+			[
+				"people",
+				"app\\Http\\Controllers\\PeopleController.php"
+			],
+			[
+				"song",
+				"app\\Song.php"
+			],
+			[
+				"songscon",
+				"app\\Http\\Controllers\\SongsController.php"
+			],
+			[
+				"formbu",
+				"vendor\\illuminate\\html\\FormBuilder.php"
+			],
+			[
+				"routes.php",
+				"app\\Http\\routes.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 387.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

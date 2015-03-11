@@ -78,12 +78,15 @@
     el: '#gridster-system',
     $gridster: {},
     quillObject: {},
+    responseData: {},
     $selectedWiget: null,
     $deleteWidget: $('#delete-grid-widget'),
     $editWidget: $('#edit-grid-widget'),
     $editModal: $('#edit-widget-modal'),
     $templateTextEditor: $('#template-text-editor'),
     $templateLoadImage: $('#template-load-views-image'),
+    $templateParameters: $('#product-parameters-template'),
+    $templateProductTitle: $('#product-title-template'),
     $widgetEditorBody: $('#widget-editor-body'),
     idTextEditor: 'full-editor',
     idTextEditorsToolbar: 'full-toolbar',
@@ -106,7 +109,8 @@
       })(this));
       return this.$editModal.on('hide.bs.modal', (function(_this) {
         return function() {
-          return _this.$widgetEditorBody.html(' ');
+          _this.$widgetEditorBody.html(' ');
+          return _this.$widgetEditorBody.append('<div class="loader"></div>');
         };
       })(this));
     },
@@ -115,7 +119,8 @@
       'click .gs-w': 'clickWidget',
       'click #delete-grid-widget': 'deleteWidget',
       'click #edit-grid-widget': 'openEditDialog',
-      'click #widget-save-changes': 'saveWidgetContent'
+      'click #widget-save-changes': 'saveWidgetContent',
+      'submit #widget-editor-body form': 'loadImage'
     },
     saveWidgetContent: function() {
       var type;
@@ -123,6 +128,8 @@
       switch (type) {
         case 'text':
           return this.saveTextWidget();
+        case 'image':
+          return this.saveImageWidget();
       }
     },
     saveTextWidget: function() {
@@ -140,9 +147,55 @@
           return this.initImageEditor();
       }
     },
+    saveImageWidget: function() {
+      console.log('Close image widget');
+      this.$selectedWiget.html('<span class="gs-resize-handle gs-resize-handle-both"></span>');
+      return this.$selectedWiget.css({
+        'background-repeat': 'no-repeat',
+        'background-image': 'url(' + this.responseData.imageurl + ')',
+        'background-size': 'contain'
+      });
+    },
+    loadImage: function(e) {
+      var data, form, pb, resdiv, status, xhr;
+      e.preventDefault();
+      form = e.target;
+      data = new FormData(form);
+      xhr = new XMLHttpRequest();
+      pb = $('#progress-load-image');
+      status = $('#status-load-image');
+      resdiv = $('#result-load-image');
+      if ($(form).find('input[type=file]').val() !== '') {
+        xhr.open('POST', form.action);
+        xhr.onload = (function(_this) {
+          return function(e) {
+            var result;
+            status.text(e.currentTarget.responseText);
+            result = JSON.parse(e.currentTarget.responseText);
+            console.log(result.imageurl);
+            resdiv.css('background-image', 'url(' + result.imageurl + ')');
+            return _this.responseData = result;
+          };
+        })(this);
+        xhr.upload.onprogress = function(e) {
+          return pb.progressbar("value", e.loaded / e.total * 100);
+        };
+        return xhr.send(data);
+      } else {
+        return status.text("Необходимо выбрать файл");
+      }
+    },
     initImageEditor: function() {
       console.log('Init image editor');
-      return this.$widgetEditorBody.html(this.$templateLoadImage.html());
+      this.$widgetEditorBody.html(this.$templateLoadImage.html());
+      $('#progress-load-image').progressbar({
+        option: {
+          value: false
+        }
+      });
+      if (!window.FormData) {
+        return $('#status-load-image').text("Ваш браузер не потдерживает FormData");
+      }
     },
     initTextEditor: function() {
       var content;
@@ -166,12 +219,19 @@
       return this.$selectedWiget = null;
     },
     addWidget: function(e) {
-      var el, type;
+      var el, text, type;
       e.preventDefault();
       el = $(e.target);
       type = el.attr('data-widget-type');
-      console.log('Click add widget ' + type);
-      return this.$gridster.add_widget('<li data-widget-type="' + type + '">Виджет ' + el.text() + '</li>', 3, 3);
+      text = el.text();
+      switch (type) {
+        case 'parameters':
+          text = this.$templateParameters.html();
+          break;
+        case 'title':
+          text = this.$templateProductTitle.html();
+      }
+      return this.$gridster.add_widget('<li data-widget-type="' + type + '" class="' + type + '-widget">' + text + '</li>', 4, 4);
     },
     clickWidget: function(e) {
       var el;

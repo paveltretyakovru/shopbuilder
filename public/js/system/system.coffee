@@ -65,12 +65,18 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 	el 					: '#gridster-system'	
 	$gridster			: {}
 	quillObject			: {}
+	responseData		: {}
 	$selectedWiget 		: null
 	$deleteWidget		: $ '#delete-grid-widget'
 	$editWidget			: $ '#edit-grid-widget'
 	$editModal	 		: $ '#edit-widget-modal'
+	
+	# templates
 	$templateTextEditor : $ '#template-text-editor'
 	$templateLoadImage 	: $ '#template-load-views-image'
+	$templateParameters : $ '#product-parameters-template'
+	$templateProductTitle : $ '#product-title-template' 
+
 	$widgetEditorBody	: $ '#widget-editor-body'
 	idTextEditor		: 'full-editor'
 	idTextEditorsToolbar: 'full-toolbar'
@@ -94,13 +100,15 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 
 		@$editModal.on 'hide.bs.modal' , =>
 			@$widgetEditorBody.html ' '
+			@$widgetEditorBody.append '<div class="loader"></div>'
 
 	events 		:
-		'click #add-grid-widget'	: 'addWidget'
-		'click .gs-w'				: 'clickWidget'
-		'click #delete-grid-widget'	: 'deleteWidget'
-		'click #edit-grid-widget'	: 'openEditDialog'
-		'click #widget-save-changes': 'saveWidgetContent'
+		'click #add-grid-widget'			: 'addWidget'
+		'click .gs-w'						: 'clickWidget'
+		'click #delete-grid-widget'			: 'deleteWidget'
+		'click #edit-grid-widget'			: 'openEditDialog'
+		'click #widget-save-changes'		: 'saveWidgetContent'
+		'submit #widget-editor-body form' 	: 'loadImage'
 
 	# Сохраняем изменения полученные от редактора виджетов
 	saveWidgetContent : ->
@@ -108,6 +116,9 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 		switch type
 			when 'text'
 				@saveTextWidget()
+			when 'image'
+				@saveImageWidget()
+
 	
 	# Событие при нажатии на кнопку сохранить изменения в редакторе виджетов
 	# ЕСЛИ ОТКРЫТ РЕДАКТОР ТЕКСА
@@ -130,9 +141,50 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 			when 'image'
 				@initImageEditor()
 
+	saveImageWidget : ->
+		console.log 'Close image widget'
+		@$selectedWiget.html('<span class="gs-resize-handle gs-resize-handle-both"></span>')
+		@$selectedWiget.css
+			'background-repeat'	: 'no-repeat'
+			'background-image' 	: 'url(' + @responseData.imageurl + ')'
+			'background-size'	: 'contain'
+
+	loadImage : (e) ->
+		e.preventDefault()
+		form 	= e.target
+		data 	= new FormData form
+		xhr 	= new XMLHttpRequest()
+		pb 		= $ '#progress-load-image'
+		status 	= $ '#status-load-image'
+		resdiv	= $ '#result-load-image'
+
+		if $(form).find('input[type=file]').val() != ''
+			xhr.open 'POST' , form.action
+			xhr.onload = (e) =>
+				status.text e.currentTarget.responseText
+				result = JSON.parse e.currentTarget.responseText
+				console.log result.imageurl
+				resdiv.css('background-image' , 'url('+result.imageurl+')')
+				@responseData = result
+
+			xhr.upload.onprogress = (e) ->
+				pb.progressbar "value" , e.loaded / e.total * 100
+
+			xhr.send data
+		else
+			status.text "Необходимо выбрать файл"
+
 	initImageEditor : ->
 		console.log 'Init image editor'
 		@$widgetEditorBody.html(@$templateLoadImage.html());
+		# Инициализирукм прогресс бар
+		$('#progress-load-image').progressbar
+			option :
+				value : false
+		# Проверяем возможность загрузки изображий
+		if not window.FormData
+			$('#status-load-image').text "Ваш браузер не потдерживает FormData"
+
 
 	# Инициализируем тектовый редактор
 	initTextEditor : ->
@@ -163,11 +215,19 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 	# Событие при нажатии на ссылки добавления виджетов
 	addWidget : (e) ->
 		e.preventDefault()
-		el 	= $ e.target
+		
+		el 	 = $ e.target
+		type = el.attr 'data-widget-type'
+		text = el.text()					# текст в виджете
 
-		type = el.attr('data-widget-type');
-		console.log 'Click add widget ' + type
-		@$gridster.add_widget '<li data-widget-type="'+type+'">Виджет '+el.text()+'</li>' , 3 , 3
+		# Если перед добавлением виджета необходимы действия
+		switch type
+			when 'parameters'
+				text = @$templateParameters.html()
+			when 'title'
+				text = @$templateProductTitle.html()
+		
+		@$gridster.add_widget '<li data-widget-type="'+type+'" class="'+type+'-widget">'+text+'</li>' , 4 , 4
 
 	# Выделение кликнутого виджета и работа с ним
 	clickWidget : (e) ->

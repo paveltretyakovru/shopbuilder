@@ -25,6 +25,7 @@
 						<li><a href="#" data-widget-type="text">с текстом</a></li>
 						<li><a href="#" data-widget-type="image">с изображением</a></li>
 						<li><a href="#" data-widget-type="parameters">с параметрами товара</a></li>
+						<li><a href="#" data-widget-type="title">с названием товара</a></li>
 					<!--
 					<li class="divider"></li>
 					<li><a href="#">Separated link</a></li>
@@ -41,8 +42,7 @@
 			</div>
 
 		</div>
-
-
+		
 		<div class="gridster">
 		    <ul>
 		    	
@@ -71,7 +71,15 @@
 
 	</div>
 
-	
+	<script type="text/template" id="product-title-template">
+		<div class="product-title">
+			{{ $product->title }}
+		</div>
+	</script>
+
+	<script type="text/template" id="product-parameters-template">
+		@include('parameters.list')
+	</script>
 
 	<script type="text/template" id="template-text-editor">
 		@include('templates.texteditor')

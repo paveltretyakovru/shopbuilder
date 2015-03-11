@@ -12,7 +12,8 @@ use App\Parameter;
 class ViewsController extends Controller {
 
 	public function edit(Product $product){
-		return view('views.edit' , compact('product'));
+		$parameters = Parameter::where(['product' => $product->id])->get();
+		return view('views.edit' , compact('product' , 'parameters'));
 	}
 
 }
