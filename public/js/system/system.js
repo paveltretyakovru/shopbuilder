@@ -124,7 +124,7 @@
       'click #edit-grid-widget': 'openEditDialog',
       'click #widget-save-changes': 'saveWidgetContent',
       'submit #widget-editor-body form': 'loadImage',
-      'click #serialize-grid': 'serializeGrid'
+      'click #serialize-grid': ' '
     },
     serializeParameters: function(widget, wgd) {
       var content, params, type;
@@ -178,12 +178,12 @@
       }
     },
     saveImageWidget: function() {
+      var imagediv;
       console.log('Close image widget');
-      this.$selectedWiget.html('<span class="gs-resize-handle gs-resize-handle-both"></span>');
-      return this.$selectedWiget.css({
-        'background-repeat': 'no-repeat',
-        'background-image': 'url(' + this.responseData.imageurl + ')',
-        'background-size': 'contain'
+      this.$selectedWiget.html('<div class="image-widget-backdiv"></div><span class="gs-resize-handle gs-resize-handle-both"></span>');
+      imagediv = this.$selectedWiget.find('.image-widget-backdiv');
+      return imagediv.css({
+        'background-image': 'url(' + this.responseData.imageurl + ')'
       });
     },
     loadImage: function(e) {
@@ -192,7 +192,7 @@
       form = e.target;
       data = new FormData(form);
       xhr = new XMLHttpRequest();
-      pb = $('#progress-load-image');
+      pb = $('#progress-load-image').find('.progress-bar');
       status = $('#status-load-image');
       resdiv = $('#result-load-image');
       if ($(form).find('input[type=file]').val() !== '') {
@@ -208,7 +208,8 @@
           };
         })(this);
         xhr.upload.onprogress = function(e) {
-          return pb.progressbar("value", e.loaded / e.total * 100);
+          pb.attr("aria-valuenow", e.loaded / e.total * 100);
+          return pb.css("width", (e.loaded / e.total * 100) + '%');
         };
         return xhr.send(data);
       } else {
@@ -218,11 +219,6 @@
     initImageEditor: function() {
       console.log('Init image editor');
       this.$widgetEditorBody.html(this.$templateLoadImage.html());
-      $('#progress-load-image').progressbar({
-        option: {
-          value: false
-        }
-      });
       if (!window.FormData) {
         return $('#status-load-image').text("Ваш браузер не потдерживает FormData");
       }

@@ -112,7 +112,7 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 		'click #edit-grid-widget'			: 'openEditDialog'
 		'click #widget-save-changes'		: 'saveWidgetContent'
 		'submit #widget-editor-body form' 	: 'loadImage'
-		'click #serialize-grid'				: 'serializeGrid'
+		'click #serialize-grid'				: ' '
 
 	# Функция для сохранения видов блока
 	serializeParameters : (widget , wgd) ->
@@ -172,18 +172,21 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 
 	saveImageWidget : ->
 		console.log 'Close image widget'
-		@$selectedWiget.html('<span class="gs-resize-handle gs-resize-handle-both"></span>')
-		@$selectedWiget.css
-			'background-repeat'	: 'no-repeat'
-			'background-image' 	: 'url(' + @responseData.imageurl + ')'
-			'background-size'	: 'contain'
+		# Добавляем новый блок в ктором будет фоновое изображение, а так же метку растягивания виджета
+		@$selectedWiget.html('<div class="image-widget-backdiv"></div><span class="gs-resize-handle gs-resize-handle-both"></span>')
+		
+		imagediv = @$selectedWiget.find('.image-widget-backdiv');
+		# Вставляем фоновое, загруженное изображение
+		imagediv.css 'background-image' 	: 'url(' + @responseData.imageurl + ')'
+
+
 
 	loadImage : (e) ->
 		e.preventDefault()
 		form 	= e.target
 		data 	= new FormData form
 		xhr 	= new XMLHttpRequest()
-		pb 		= $ '#progress-load-image'
+		pb 		= $('#progress-load-image').find '.progress-bar'
 		status 	= $ '#status-load-image'
 		resdiv	= $ '#result-load-image'
 
@@ -197,7 +200,8 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 				@responseData = result
 
 			xhr.upload.onprogress = (e) ->
-				pb.progressbar "value" , e.loaded / e.total * 100
+				pb.attr "aria-valuenow" , e.loaded / e.total * 100
+				pb.css "width" , (e.loaded / e.total * 100) + '%'
 
 			xhr.send data
 		else
@@ -207,9 +211,9 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 		console.log 'Init image editor'
 		@$widgetEditorBody.html(@$templateLoadImage.html());
 		# Инициализирукм прогресс бар
-		$('#progress-load-image').progressbar
-			option :
-				value : false
+		#$('#progress-load-image').progressbar
+		#	option :
+		#		value : false
 		# Проверяем возможность загрузки изображий
 		if not window.FormData
 			$('#status-load-image').text "Ваш браузер не потдерживает FormData"

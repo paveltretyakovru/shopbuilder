@@ -48,7 +48,10 @@
 		    	
 		    </ul>
 
-		    <button id="serialize-grid">Serialize</button>
+			<div id="save-prouct-view-panel">
+
+		    	<button id="serialize-grid">Сохранить внешний вид товара</button>
+			</div>
 		</div>
 
 		<div class="modal fade bs-example-modal-lg" id="edit-widget-modal">
@@ -89,4 +92,8 @@
 		@include('templates.loadviewsimage')
 	</script>
 
+@stop
+
+@section('jsincludes')
+	@include('products.jsobject')
 @stop

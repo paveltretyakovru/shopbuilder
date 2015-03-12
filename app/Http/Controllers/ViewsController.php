@@ -16,4 +16,8 @@ class ViewsController extends Controller {
 		return view('views.edit' , compact('product' , 'parameters'));
 	}
 
+	public function saveProductView(Request $request){
+
+	}
+
 }

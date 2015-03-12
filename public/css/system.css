@@ -24,10 +24,13 @@
     background: red!important;
 }
 
-.image-widget{
-    background-size: contain;
-    background-repeat: no-repeat;
-}
+.image-widget{}
+    .image-widget-backdiv{
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+    }
 
 .product-title{
     font-size: 32px;

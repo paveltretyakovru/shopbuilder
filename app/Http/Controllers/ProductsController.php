@@ -51,9 +51,18 @@ class ProductsController extends Controller {
 		return view('products.edit' , compact('categorieslist' , 'product'));
 	}
 	
-	public function update($id)
-	{
-		return 'Products update';
+	public function update(Request $request){
+
+		if ($request->format() == 'json') {
+			$product = Product::where(['id' => $request->id])->firstOrFail();
+
+			$product->price 	= $request->price;
+			$product->title 	= $request->title;
+			$product->count 	= $request->count;
+			$product->category 	= $request->category;
+			$product->view 		= $request->view;
+			$product->save();		
+		}
 	}
 	
 	public function destroy($id)
