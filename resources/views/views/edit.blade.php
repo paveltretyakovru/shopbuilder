@@ -47,6 +47,8 @@
 		    <ul>
 		    	
 		    </ul>
+
+		    <button id="serialize-grid">Serialize</button>
 		</div>
 
 		<div class="modal fade bs-example-modal-lg" id="edit-widget-modal">
@@ -72,9 +74,7 @@
 	</div>
 
 	<script type="text/template" id="product-title-template">
-		<div class="product-title">
-			{{ $product->title }}
-		</div>
+		@include('products.title');
 	</script>
 
 	<script type="text/template" id="product-parameters-template">

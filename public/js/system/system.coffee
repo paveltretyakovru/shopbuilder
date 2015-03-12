@@ -1,4 +1,4 @@
-AdminApp = 
+window.AdminApp = 
 	Views 			: {}
 	Collections 	: {}
 	Models			: {}
@@ -91,6 +91,9 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 			max_cols				: 25
 			resize : 
 				enabled : true
+			# Описываем сохранение виджетов
+			serialize_params		: ($w , wgd) =>
+				@serializeParameters $($w) , wgd
 		.data 'gridster'
 
 		# Слушаем отрктие редактора
@@ -109,6 +112,32 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 		'click #edit-grid-widget'			: 'openEditDialog'
 		'click #widget-save-changes'		: 'saveWidgetContent'
 		'submit #widget-editor-body form' 	: 'loadImage'
+		'click #serialize-grid'				: 'serializeGrid'
+
+	# Функция для сохранения видов блока
+	serializeParameters : (widget , wgd) ->
+		type    = widget.attr 'data-widget-type'
+		
+		# Прописываем нужный контент для системы
+		switch type
+			when 'title'
+				content = "{!! @include('products.title') !!}"
+			when 'parameters'
+				content = "{!! @include('parameters.list') !!}"
+
+			else content = widget.html()
+
+		params = 
+			id 	: wgd.el[0].id,
+			col : wgd.col,
+			row : wgd.row,
+			htmlContent: content
+
+		params
+
+	serializeGrid : ->
+		test = @$gridster.serialize()
+		console.log test
 
 	# Сохраняем изменения полученные от редактора виджетов
 	saveWidgetContent : ->
