@@ -56,12 +56,14 @@
 		<div class="gridster">
 		    <ul>
 		    	
-		    </ul>
+		    </ul>			
+		</div>
 
-			<div id="save-prouct-view-panel">
+		<div id="save-prouct-view-panel">
 
-		    	<button id="serialize-grid">Сохранить внешний вид товара</button>
-			</div>
+		    	<button id="serialize-grid" class="btn btn-default">Сохранить внешний вид товара</button>
+		    	<button id="serialize-log-grid" class="btn btn-default">Вывести JSON вида в лог</button>
+
 		</div>
 
 		<div class="modal fade bs-example-modal-lg" id="edit-widget-modal">
@@ -87,12 +89,15 @@
 	</div>
 
 	<script type="text/template" id="product-title-template">
-		@include('products.title');
+		@include('products.title')
 	</script>
+		{{-- Подключаем шаблон для underscore шаблонизатора --}}
+		@include('products.title' , ['underscore' => true])
 
 	<script type="text/template" id="product-parameters-template">
 		@include('parameters.list')
 	</script>
+		@include('parameters.list' , ['underscore' => true])
 
 	<script type="text/template" id="template-text-editor">
 		@include('templates.texteditor')
@@ -105,7 +110,7 @@
 @stop
 
 @section('jsincludes')
-	@include('products.jsobject')
+	@include('products.initJSModel')
 	{!! HTML::script('js/system/views/viewsGridSystem.view.js') !!}
 	{!! HTML::script('js/system/views/viewsTemplates.view.js') !!}
 @stop

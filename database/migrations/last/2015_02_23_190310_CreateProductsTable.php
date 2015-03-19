@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration {
 			$table->foreign('category')->references('id')->on('categories');
 			$table->text('parameters')->nullable();
 			$table->text('view')->nullable();
+			$table->string('editview')->nullable();
 			$table->boolean('visible')->dafault(true);
 			$table->timestamps();
 		});

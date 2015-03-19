@@ -1,3 +1,5 @@
+# Модели системы
+
 AdminApp.Models.Product = Backbone.Model.extend
 	urlRoot : '/products'
 

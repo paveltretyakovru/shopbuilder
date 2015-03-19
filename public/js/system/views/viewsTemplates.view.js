@@ -9,22 +9,44 @@
   AdminApp.Views.viewsTemplates = Backbone.View.extend({
     el: '#views-templates-list',
     currentTemplate: {},
+    $gridster: AdminApp.globalObjects.$gridster,
     initialize: function() {
-      console.log('Init viewsTemplates view test');
-      window.testTemplate = this.viewsTemplatesList[0];
+      console.log('Init viewsTemplates view test', this.$gridster);
+      window.testTemplate = this.currentTemplate;
       return this.initTemplatesList();
     },
     events: {
-      'click': 'insertViewsTemplate'
+      'click': 'selectTemplate'
     },
-    insertViewsTemplate: function(e) {
+    selectTemplate: function(e) {
       var el, num;
       console.log('insertViewsTemplate function');
       e.preventDefault();
       el = $(e.target);
       num = el.attr('data-template-num');
       this.currentTemplate = this.viewsTemplatesList[num];
-      return console.log(this.currentTemplate);
+      console.log('Current template: ', this.currentTemplate);
+      return this.renderGridsterTemplate();
+    },
+    renderGridsterTemplate: function() {
+      _.each(this.currentTemplate.template, (function(_this) {
+        return function(cell, index) {
+          var compiled;
+          compiled = _.template(cell.htmlContent);
+          return cell.htmlContent = compiled(_this.model.toJSON());
+        };
+      })(this));
+      console.log(this.currentTemplate.template);
+      return this.createGridster();
+    },
+    createGridster: function() {
+      return _.each(this.currentTemplate.template, (function(_this) {
+        return function(cell, index) {
+          var widget;
+          widget = _this.$gridster.add_widget('<li data-widget-type="' + cell.type + '" class="' + cell.type + '-widget">' + cell.htmlContent + '</li>', cell.size_x, cell.size_y, cell.col, cell.row);
+          return _this.$gridster.resize_widget(widget, cell.size_x, cell.size_y);
+        };
+      })(this));
     },
     initTemplatesList: function() {
       return _.each(this.viewsTemplatesList, (function(_this) {
@@ -37,11 +59,13 @@
       {
         title: "Телефоны",
         type: "phones",
-        template: [{"id":"","col":1,"row":1,"htmlContent":"<div class=\"image-widget-backdiv\" style=\"background-image: url(http://localhost:8000/upimages/products_1_87543.jpeg);\"></div><span class=\"gs-resize-handle gs-resize-handle-both\"></span>"},{"id":"","col":11,"row":8,"htmlContent":"<div><span style=\"font-size: 18px;\"><b>Корпус с отделкой под настоящую кожу</b></span></div><div style=\"text-align: justify;\"><span style=\"color: rgb(41, 41, 41); font-family: Arial, sans-serif;\">Оформленный «под кожу» корпус Samsung GALAXY Note3 Neo с отделкой декоративным стежком мгновенно выделяет смартфон среди других моделей и привлекает взгляды. Покрытие «под кожу» не только придает устройству элегантность и дополнительно защищает корпус от царапин, но и удобно ложится в ладонь, не грозя выскользнуть при неловком движении. Тонкость и изящество смартфона производят незабываемое впечатление. Вы можете придерживаться традиционной черной или белой цветовой схемы или попробовать более смелый ментоловый оттенок, если хотите выразить свое чувство стиля и оригинальность</span></div><div><br></div><span class=\"gs-resize-handle gs-resize-handle-both\"></span>"},{"id":"","col":11,"row":1,"htmlContent":"<%= title %>"},{"id":"","col":11,"row":3,"htmlContent":"<%= parameters %>"}]
+        template: [{"id":"","col":1,"row":1,"size_x":25,"size_y":2,"type":"title","htmlContent":"<div class=\"product-title\"><%= title %></div>\n\t"},{"id":"","col":11,"row":3,"size_x":7,"size_y":5,"type":"parameters","htmlContent":"<%= parameters %>"},{"id":"","col":11,"row":8,"size_x":15,"size_y":9,"type":"text","htmlContent":"<div><b><span style=\"font-size: 18px;\">Корпус с отделкой под настоящую кожу</span></b></div><div style=\"text-align: justify;\">Оформленный «под кожу» корпус Samsung GALAXY Note3 Neo с отделкой декоративным стежком мгновенно выделяет смартфон среди других моделей и привлекает взгляды. Покрытие «под кожу» не только придает устройству элегантность и дополнительно защищает корпус от царапин, но и удобно ложится в ладонь, не грозя выскользнуть при неловком движении. Тонкость и изящество смартфона производят незабываемое впечатление. Вы можете придерживаться традиционной черной или белой цветовой схемы или попробовать более смелый ментоловый оттенок, если хотите выразить свое чувство стиля и оригинальность</div><div><br></div><span class=\"gs-resize-handle gs-resize-handle-both\"></span>"},{"id":"","col":1,"row":3,"size_x":10,"size_y":14,"type":"image","htmlContent":"<div class=\"image-widget-backdiv\" style=\"background-image: url(http://localhost:8000/upimages/products_1_39238.jpeg);\"></div><span class=\"gs-resize-handle gs-resize-handle-both\"></span>"}]
       }
     ]
   });
 
-  AdminApp.initViews.viewsTemplates = new AdminApp.Views.viewsTemplates();
+  AdminApp.initViews.viewsTemplates = new AdminApp.Views.viewsTemplates({
+    model: AdminApp.initModels.Product
+  });
 
 }).call(this);

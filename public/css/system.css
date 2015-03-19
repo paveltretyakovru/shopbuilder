@@ -37,6 +37,10 @@
     text-align: center;
 }
 
+#save-prouct-view-panel{
+    margin-top: 10px;
+}
+
 #result-load-image{
     width: 100%;    
     background-size: contain;

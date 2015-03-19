@@ -53,32 +53,55 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 		'click #widget-save-changes'		: 'saveWidgetContent'
 		'submit #widget-editor-body form' 	: 'loadImage'
 		'click #serialize-grid'				: 'serializeGrid'
-		
+		'click #serialize-log-grid'			: 'serializeLogGrid'
 
-	# Функция для сохранения видов блока
+	# Параметры для преобр
 	serializeParameters : (widget , wgd) ->
 		type    = widget.attr 'data-widget-type'
 		
 		# Прописываем нужный контент для системы
 		switch type
 			when 'title'
-				content = "{!! @include(\"products.title\") !!}"
+				content = '{!! @include("products.title") !!}'
 			when 'parameters'
-				content = "{!! @include(\"parameters.list\") !!}"
+				content = '{!! @include("parameters.list") !!}'
 
 			else content = widget.html()
 
 		params = 
-			id 	: wgd.el[0].id,
-			col : wgd.col,
-			row : wgd.row,
-			htmlContent: content
+			id 			: wgd.el[0].id
+			col 		: wgd.col
+			row 		: wgd.row
+			size_x 		: wgd.size_x
+			size_y		: wgd.size_y
+			type 		: type
+			htmlContent	: content
 
 		params
 
+	# Преобразование gridster.js сетки в JSON обеъкт для сохранения внешнего вида товара
 	serializeGrid : ->
-		test = @$gridster.serialize()
-		console.log test
+		editview 	= JSON.stringify @$gridster.serialize()
+		view 		= '<div class="gridster ready">' + $('.gridster.ready').html() + '</div>'
+
+		@model.set('view' , view)
+		@model.set('editview' , editview)
+		@model.save()
+
+	# Преобразование gridster.js сетки в JSON обеъкта для вывода лога шаблона
+	serializeLogGrid : ->
+		jsongrid = @$gridster.serialize()
+		console.log 'jsongrid' , jsongrid
+
+		_.each jsongrid , (cell , index) ->
+			type = cell.type
+			switch type
+				when 'title'
+					cell.htmlContent = $('#underscore-product-title-template').html()
+				when 'parameters'
+					cell.htmlContent = $('#underscore-product-parameters-template').html()
+
+		console.log 'rendered jsongrid' , JSON.stringify jsongrid
 
 	# Сохраняем изменения полученные от редактора виджетов
 	saveWidgetContent : ->
@@ -225,4 +248,5 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 		# Выделеям виджет
 		@$selectedWiget.css 'border' : '1px solid #ccc'
 
-AdminApp.initViews.viewsGridSystem = new AdminApp.Views.viewsGridSystem();
+AdminApp.initViews.viewsGridSystem = new AdminApp.Views.viewsGridSystem
+	model : AdminApp.initModels.Product

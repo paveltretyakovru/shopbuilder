@@ -61,7 +61,10 @@ class ProductsController extends Controller {
 			$product->count 	= $request->count;
 			$product->category 	= $request->category;
 			$product->view 		= $request->view;
+			$product->editview	= $request->editview;
 			$product->save();		
+		}else{
+			dd($request);
 		}
 	}
 	

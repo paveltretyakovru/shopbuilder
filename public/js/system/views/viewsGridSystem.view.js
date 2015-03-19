@@ -53,17 +53,18 @@
       'click #edit-grid-widget': 'openEditDialog',
       'click #widget-save-changes': 'saveWidgetContent',
       'submit #widget-editor-body form': 'loadImage',
-      'click #serialize-grid': 'serializeGrid'
+      'click #serialize-grid': 'serializeGrid',
+      'click #serialize-log-grid': 'serializeLogGrid'
     },
     serializeParameters: function(widget, wgd) {
       var content, params, type;
       type = widget.attr('data-widget-type');
       switch (type) {
         case 'title':
-          content = "{!! @include(\"products.title\") !!}";
+          content = '{!! @include("products.title") !!}';
           break;
         case 'parameters':
-          content = "{!! @include(\"parameters.list\") !!}";
+          content = '{!! @include("parameters.list") !!}';
           break;
         default:
           content = widget.html();
@@ -72,14 +73,36 @@
         id: wgd.el[0].id,
         col: wgd.col,
         row: wgd.row,
+        size_x: wgd.size_x,
+        size_y: wgd.size_y,
+        type: type,
         htmlContent: content
       };
       return params;
     },
     serializeGrid: function() {
-      var test;
-      test = this.$gridster.serialize();
-      return console.log(test);
+      var editview, view;
+      editview = JSON.stringify(this.$gridster.serialize());
+      view = '<div class="gridster ready">' + $('.gridster.ready').html() + '</div>';
+      this.model.set('view', view);
+      this.model.set('editview', editview);
+      return this.model.save();
+    },
+    serializeLogGrid: function() {
+      var jsongrid;
+      jsongrid = this.$gridster.serialize();
+      console.log('jsongrid', jsongrid);
+      _.each(jsongrid, function(cell, index) {
+        var type;
+        type = cell.type;
+        switch (type) {
+          case 'title':
+            return cell.htmlContent = $('#underscore-product-title-template').html();
+          case 'parameters':
+            return cell.htmlContent = $('#underscore-product-parameters-template').html();
+        }
+      });
+      return console.log('rendered jsongrid', JSON.stringify(jsongrid));
     },
     saveWidgetContent: function() {
       var type;
@@ -210,6 +233,8 @@
     }
   });
 
-  AdminApp.initViews.viewsGridSystem = new AdminApp.Views.viewsGridSystem();
+  AdminApp.initViews.viewsGridSystem = new AdminApp.Views.viewsGridSystem({
+    model: AdminApp.initModels.Product
+  });
 
 }).call(this);
