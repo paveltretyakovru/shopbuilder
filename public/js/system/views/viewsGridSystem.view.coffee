@@ -59,9 +59,18 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 		'click #serialize-log-grid'			: 'serializeLogGrid'
 
 	initIssetView : ->
-		editview = JSON.parse @model.get 'editview'
+		# Получаем объект с текущим видом товара
+		editview = @model.get 'editview'
 		console.log 'Уже существует шаблон. Выводим его...' , editview
 
+		_.each editview , (cell , index) =>
+			compiled = _.template cell.htmlContent
+			cell.htmlContent = compiled @model.toJSON()		
+
+		@$gridster.remove_all_widgets()
+		_.each editview , (cell , index) =>
+			widget = @$gridster.add_widget '<li data-widget-type="'+cell.type+'" class="'+cell.type+'-widget">'+cell.htmlContent+'</li>', cell.size_x, cell.size_y, cell.col, cell.row
+			@$gridster.resize_widget widget , cell.size_x , cell.size_y
 
 
 	# Параметры для преобр
@@ -90,7 +99,7 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 
 	# Преобразование gridster.js сетки в JSON обеъкт для сохранения внешнего вида товара
 	serializeGrid : ->
-		editview 	= JSON.stringify @$gridster.serialize()
+		editview 	= @serializeLogGrid()
 		view 		= '<div class="gridster ready">' + $('.gridster.ready').html() + '</div>'
 
 		@model.set('view' , view)
@@ -111,6 +120,9 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 					cell.htmlContent = $('#underscore-product-parameters-template').html()
 
 		console.log 'rendered jsongrid' , JSON.stringify jsongrid
+
+		JSON.stringify jsongrid
+
 
 	# Сохраняем изменения полученные от редактора виджетов
 	saveWidgetContent : ->

@@ -40,6 +40,7 @@
       return this.createGridster();
     },
     createGridster: function() {
+      this.$gridster.remove_all_widgets();
       return _.each(this.currentTemplate.template, (function(_this) {
         return function(cell, index) {
           var widget;

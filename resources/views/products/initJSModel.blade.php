@@ -6,7 +6,7 @@
 		count		: {{ $product->count 	}} ,
 		category	: {{ $product->category }} ,
 		view		: "{{ str_replace(array("\r\n", "\r", "\n"), '', $product->view) }}" ,
-		editview	: "{{ $product->editview}}" ,
+		editview	: {!! str_replace(array("\r\n", "\r", "\n"), '', $product->editview) !!} ,
 		parameters 	: "@include('parameters.list')"
 	});
 

@@ -44,10 +44,10 @@ AdminApp.Views.viewsTemplates = Backbone.View.extend
 		@createGridster()
 
 	createGridster : ->
-		#@$gridster.remove_all_widgets()
+		@$gridster.remove_all_widgets()
 		_.each @currentTemplate.template , (cell , index) =>
 			widget = @$gridster.add_widget '<li data-widget-type="'+cell.type+'" class="'+cell.type+'-widget">'+cell.htmlContent+'</li>', cell.size_x, cell.size_y, cell.col, cell.row
-			@$gridster.resize_widget widget , cell.size_x , cell.size_y			
+			@$gridster.resize_widget widget , cell.size_x , cell.size_y
 
 
 	# Инициализируем список шаблонов

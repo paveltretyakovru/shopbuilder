@@ -61,8 +61,23 @@
     },
     initIssetView: function() {
       var editview;
-      editview = JSON.parse(this.model.get('editview'));
-      return console.log('Уже существует шаблон. Выводим его...', editview);
+      editview = this.model.get('editview');
+      console.log('Уже существует шаблон. Выводим его...', editview);
+      _.each(editview, (function(_this) {
+        return function(cell, index) {
+          var compiled;
+          compiled = _.template(cell.htmlContent);
+          return cell.htmlContent = compiled(_this.model.toJSON());
+        };
+      })(this));
+      this.$gridster.remove_all_widgets();
+      return _.each(editview, (function(_this) {
+        return function(cell, index) {
+          var widget;
+          widget = _this.$gridster.add_widget('<li data-widget-type="' + cell.type + '" class="' + cell.type + '-widget">' + cell.htmlContent + '</li>', cell.size_x, cell.size_y, cell.col, cell.row);
+          return _this.$gridster.resize_widget(widget, cell.size_x, cell.size_y);
+        };
+      })(this));
     },
     serializeParameters: function(widget, wgd) {
       var content, params, type;
@@ -90,7 +105,7 @@
     },
     serializeGrid: function() {
       var editview, view;
-      editview = JSON.stringify(this.$gridster.serialize());
+      editview = this.serializeLogGrid();
       view = '<div class="gridster ready">' + $('.gridster.ready').html() + '</div>';
       this.model.set('view', view);
       this.model.set('editview', editview);
@@ -110,7 +125,8 @@
             return cell.htmlContent = $('#underscore-product-parameters-template').html();
         }
       });
-      return console.log('rendered jsongrid', JSON.stringify(jsongrid));
+      console.log('rendered jsongrid', JSON.stringify(jsongrid));
+      return JSON.stringify(jsongrid);
     },
     saveWidgetContent: function() {
       var type;
