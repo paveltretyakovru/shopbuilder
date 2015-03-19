@@ -15,3 +15,7 @@
 
 	{!! delete_form(['categories.destroy' , $category->id]) !!}
 @stop
+
+@section('jsincludes')	
+	{!! HTML::script('js/system/views/categoryParameters.view.js') !!}
+@stop

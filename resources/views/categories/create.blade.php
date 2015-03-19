@@ -11,3 +11,7 @@
 		@include('categories.form')
 	{!! Form::close() !!}
 @stop
+
+@section('jsincludes')	
+	{!! HTML::script('js/system/views/categoryParameters.view.js') !!}
+@stop

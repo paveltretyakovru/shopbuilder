@@ -38,6 +38,16 @@
 					<button type="button" class="btn btn-default" aria-expanded="false" id="edit-grid-widget" disabled  data-toggle="modal" data-target="#edit-widget-modal">
 	            		Редактировать
 					</button>
+
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+							Использовать шаблон <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" role="menu" id="views-templates-list">
+							
+						</ul>
+					</div>
+
 				</div>
 			</div>
 
@@ -96,4 +106,6 @@
 
 @section('jsincludes')
 	@include('products.jsobject')
+	{!! HTML::script('js/system/views/viewsGridSystem.view.js') !!}
+	{!! HTML::script('js/system/views/viewsTemplates.view.js') !!}
 @stop

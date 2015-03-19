@@ -5,7 +5,8 @@
 		title	: "{{ $product->title 	}}",
 		count	: {{ $product->count 	}} ,
 		category: {{ $product->category }} ,
-		view	: "{{ $product->view	}}"
+		view	: "{{ $product->view	}}" ,
+		parameters : "@include('parameters.list')"
 	});
 
 </script>
