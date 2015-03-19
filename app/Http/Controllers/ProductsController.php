@@ -51,20 +51,29 @@ class ProductsController extends Controller {
 		return view('products.edit' , compact('categorieslist' , 'product'));
 	}
 	
-	public function update(Request $request){
+	public function update($product , Request $request){
 
+		$product->price 	= ($request->has('price')) 		? $request->price : $product->price;
+		$product->title 	= ($request->has('title')) 		? $request->title : $product->title;
+		$product->count 	= ($request->has('count')) 		? $request->count : $product->count;;
+		$product->category 	= ($request->has('category')) 	? $request->category : $product->category;
+		$product->view 		= ($request->has('view')) 		? $request->view : $product->view;
+		$product->editview	= ($request->has('editview')) 	? $request->editview : $product->editview;
+		$result = $product->save();
+
+		// Если передано ajax-ом
 		if ($request->format() == 'json') {
-			$product = Product::where(['id' => $request->id])->firstOrFail();
-
-			$product->price 	= $request->price;
-			$product->title 	= $request->title;
-			$product->count 	= $request->count;
-			$product->category 	= $request->category;
-			$product->view 		= $request->view;
-			$product->editview	= $request->editview;
-			$product->save();		
+			if ($result) {
+				return response()->json(['success' , 'message' => 'Изменения сохранены!']);
+			}else{
+				return response()->json(['error' , 'error' => 'Возникла ошибка при обновлении данных']);
+			}
 		}else{
-			dd($request);
+			if ($result) {
+				return redirect()->back()->with('success' , 'Изменения сохранены!');
+			}else{
+				return redirect()->back()->with('error' , 'Возникла ошибка при обновлении данных');
+			}
 		}
 	}
 	

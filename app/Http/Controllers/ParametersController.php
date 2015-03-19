@@ -47,7 +47,7 @@ class ParametersController extends Controller {
 				if($control->value !== $value){
 					$control->value = $value;
 
-					$control->save();
+					$result = $control->save();
 				}
 			}else{
 				if(!empty($value)){
@@ -57,14 +57,17 @@ class ParametersController extends Controller {
 					$parameter->product 	= $product->id;
 					$parameter->category 	= $product->category;
 
-					$parameter->save();
+					$result = $parameter->save();
 				}				
 			}
 
 		}
 
-		// возвращаемся на предыдущую страницу
-		return redirect()->back();
+		if ($result) {
+			return redirect()->back()->with('success' , 'Изменения сохранены!');
+		}else{
+			return redirect()->back()->with('error' , 'Возникла ошибка при обновлении данных');
+		}
 	}
 
 }

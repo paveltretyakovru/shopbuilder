@@ -104,12 +104,30 @@
       return params;
     },
     serializeGrid: function() {
-      var editview, view;
+      var editview, hideMessage, view;
       editview = this.serializeLogGrid();
       view = '<div class="gridster ready">' + $('.gridster.ready').html() + '</div>';
-      this.model.set('view', view);
-      this.model.set('editview', editview);
-      return this.model.save();
+      hideMessage = function() {
+        return $('#viwes-messages .alert').fadeOut(1000);
+      };
+      return this.model.save({
+        'view': view,
+        'editview': editview
+      }, {
+        success: function(model, response) {
+          console.log('Query result:', model, response);
+          if ('message' in response) {
+            $('#viwes-messages').html('<div class="alert alert-success" role="alert">' + response.message + '</div>');
+          } else {
+            $('#viwes-messages').html('<div class="alert alert-success" role="alert">Запрос успешно выполнен</div>');
+          }
+          return setTimeout(hideMessage, 1000);
+        },
+        error: function(model, response) {
+          $('#viwes-messages').html('<div class="alert alert-danger" role="alert">Произошла ошибка во время выполнения запроса. Попробуйте еще раз</div>');
+          return setTimeout(hideMessage, 1000);
+        }
+      });
     },
     serializeLogGrid: function() {
       var jsongrid;

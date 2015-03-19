@@ -1,5 +1,13 @@
 <div id="edit-products-form">
 
+	@if (Session::has('success'))
+		<div class="alert alert-success" role="alert">{{ session('success') }}</div>
+	@endif
+
+	@if (Session::has('error'))
+		<div class="alert alert-danger" role="alert">{{ session('error') }}</div>
+	@endif
+
 	{{-- TITLE --}}
 	<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
 		{!! Form::label('title', 'Название:') !!}

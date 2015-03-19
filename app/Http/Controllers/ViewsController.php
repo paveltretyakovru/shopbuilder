@@ -13,6 +13,15 @@ class ViewsController extends Controller {
 
 	public function edit(Product $product){
 		$parameters = Parameter::where(['product' => $product->id])->get();
+
+		// Возвращаем пустую строку, если отсутствует, иначе удаляем каретки перевода строки
+		function processVar($var){
+			return (!empty($var)) ? str_replace(array("\r\n", "\r", "\n"), '', $var) : '""';
+		}
+
+		$product->view 		= processVar($product->view);
+		$product->editview 	= processVar($product->editview);
+		
 		return view('views.edit' , compact('product' , 'parameters'));
 	}
 

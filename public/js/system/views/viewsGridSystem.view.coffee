@@ -102,9 +102,26 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 		editview 	= @serializeLogGrid()
 		view 		= '<div class="gridster ready">' + $('.gridster.ready').html() + '</div>'
 
-		@model.set('view' , view)
-		@model.set('editview' , editview)
-		@model.save()
+		hideMessage = -> $('#viwes-messages .alert').fadeOut 1000
+		
+		@model.save
+			'view' 		: view
+			'editview' 	: editview
+		,
+			success : (model, response) ->
+				console.log 'Query result:' , model , response
+				if 'message' of response
+					$('#viwes-messages').html '<div class="alert alert-success" role="alert">'+response.message+'</div>'
+				else
+					$('#viwes-messages').html '<div class="alert alert-success" role="alert">Запрос успешно выполнен</div>'
+
+				setTimeout hideMessage , 1000
+
+			error	: (model , response) ->
+				$('#viwes-messages').html '<div class="alert alert-danger" role="alert">Произошла ошибка во время выполнения запроса. Попробуйте еще раз</div>'
+				
+				setTimeout hideMessage , 1000
+
 
 	# Преобразование gridster.js сетки в JSON обеъкта для вывода лога шаблона
 	serializeLogGrid : ->

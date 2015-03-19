@@ -12,6 +12,8 @@
 
 	<div id="gridster-system">
 	
+	<div id="viwes-messages"></div>
+
 		<div id="gridster-control-panel">
 
 			<div class="input-group">
