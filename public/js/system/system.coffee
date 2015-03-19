@@ -6,3 +6,4 @@ window.AdminApp =
 	initModels		: {}
 	initCollections : {}
 	globalObjects	: {}
+	helpers			: {}

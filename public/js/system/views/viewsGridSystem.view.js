@@ -33,6 +33,9 @@
         })(this)
       }).data('gridster');
       AdminApp.globalObjects.$gridster = this.$gridster;
+      if (this.model.has('editview')) {
+        this.initIssetView();
+      }
       this.$editModal.on('shown.bs.modal', (function(_this) {
         return function() {
           console.log('Открываем редактор для ' + _this.$selectedWiget.attr('data-widget-type'));
@@ -55,6 +58,11 @@
       'submit #widget-editor-body form': 'loadImage',
       'click #serialize-grid': 'serializeGrid',
       'click #serialize-log-grid': 'serializeLogGrid'
+    },
+    initIssetView: function() {
+      var editview;
+      editview = JSON.parse(this.model.get('editview'));
+      return console.log('Уже существует шаблон. Выводим его...', editview);
     },
     serializeParameters: function(widget, wgd) {
       var content, params, type;

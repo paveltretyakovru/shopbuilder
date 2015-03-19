@@ -7,7 +7,8 @@
     initViews: {},
     initModels: {},
     initCollections: {},
-    globalObjects: {}
+    globalObjects: {},
+    helpers: {}
   };
 
 }).call(this);

@@ -56,6 +56,7 @@
 	{!! HTML::script('js/libs/configs/quill.js') !!}	
 	
 	{!! HTML::script('js/system/system.js') !!}
+	{!! HTML::script('js/system/helpers.js') !!}
 	{!! HTML::script('js/system/models.js') !!}	
 
 	@yield('jsincludes')

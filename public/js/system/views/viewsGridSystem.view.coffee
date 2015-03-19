@@ -36,7 +36,10 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 		# Сохраняем сетку в глобавльные объекты
 		AdminApp.globalObjects.$gridster = @$gridster
 
-		# Слушаем отрктие редактора
+		# Если у товара уже оформлен внешний вид, рендерим его
+		@initIssetView() if @model.has 'editview'
+
+		# Слушаем открытие редактора
 		@$editModal.on 'shown.bs.modal' , =>
 			console.log 'Открываем редактор для ' +  @$selectedWiget.attr 'data-widget-type'
 			@initEditor  @$selectedWiget.attr 'data-widget-type'
@@ -54,6 +57,12 @@ AdminApp.Views.viewsGridSystem = Backbone.View.extend
 		'submit #widget-editor-body form' 	: 'loadImage'
 		'click #serialize-grid'				: 'serializeGrid'
 		'click #serialize-log-grid'			: 'serializeLogGrid'
+
+	initIssetView : ->
+		editview = JSON.parse @model.get 'editview'
+		console.log 'Уже существует шаблон. Выводим его...' , editview
+
+
 
 	# Параметры для преобр
 	serializeParameters : (widget , wgd) ->
