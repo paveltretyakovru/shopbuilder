@@ -2,9 +2,9 @@
 
 @section('breadcrumb')
 	<li>{!! link_to('admin' , "Административная панель") !!}</li>
-	<li>{!! link_to('products' , 'Продукция') !!}</li>
-	<li>{!! link_to_route('products.show' , $product->title , [$product->id]) !!}</li>
-	<li>{!! link_to_route('products.edit' , 'Редактор' , [$product->id]) !!}</li>
+	<li>{!! link_to('admin.products' , 'Продукция') !!}</li>
+	<li>{!! link_to_route('admin.products.show' , $product->title , [$product->id]) !!}</li>
+	<li>{!! link_to_route('admin.products.edit' , 'Редактор' , [$product->id]) !!}</li>
 	<li class="active">Параметры</li>
 @stop
 

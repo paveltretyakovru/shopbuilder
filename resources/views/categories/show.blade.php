@@ -2,7 +2,7 @@
 
 @section('breadcrumb')
 	<li>{!! link_to('admin' , "Административная панель") !!}</li>
-	<li>{!! link_to('categories' , 'Категории товаров') !!}</li>
+	<li>{!! link_to('admin.categories' , 'Категории товаров') !!}</li>
 	<li class="active">{{ $category->title }}</li>
 @stop
 
@@ -26,6 +26,6 @@
 
 	<hr>
 
-	{!! link_to_route('categories.edit' , 'Редактировать' , [$category->id] , array('class' => 'btn btn-primary btn-xs')) !!}
+	{!! link_to_route('admin.categories.edit' , 'Редактировать' , [$category->id] , array('class' => 'btn btn-primary btn-xs')) !!}
 
 @stop

@@ -18,13 +18,14 @@
 	    <div class="navbar-header">
 	    		<ul class="nav navbar-nav">
 			      	<li>
-			      		<a class="navbar-brand" href="admin">
+			      		<a class="navbar-brand" href="/admin">
 			        	{!! HTML::image('i/logo/s.jpg' , 'logo' , array('style' => 'height: 30px') ) !!}
 			      		</a>
 			      	</li>
 		        	<!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
-		        	<li>{!! link_to_route('categories.index' , 'Категории') !!}</li>
-		        	<li>{!! link_to_route('products.index' , 'Продукция') !!}</li>
+		        	<li>{!! link_to_route('admin.categories.index' , 'Категории') !!}</li>
+		        	<li>{!! link_to_route('admin.products.index' , 'Продукция') !!}</li>
+		        	<li><a href="#">Страницы</a></li>
         		</ul>
 	    </div>
 	  </div>

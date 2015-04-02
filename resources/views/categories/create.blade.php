@@ -2,12 +2,12 @@
 
 @section('breadcrumb')
 	<li>{!! link_to('admin' , "Административная панель") !!}</li>
-	<li>{!! link_to('categories' , 'Категории товаров') !!}</li>
+	<li>{!! link_to('admin.categories' , 'Категории товаров') !!}</li>
 	<li class="active">Создание категории</li>
 @stop
 
 @section('content')
-	{!! Form::open(['route' => 'categories.store', 'method' => 'post']) !!}
+	{!! Form::open(['route' => 'admin.categories.store', 'method' => 'post']) !!}
 		@include('categories.form')
 	{!! Form::close() !!}
 @stop

@@ -22,23 +22,6 @@ $router->get('admin', function()
 	return view('admin.index');
 });
 
-// ТОВАРЫ
-$router->resource('products', 'ProductsController');
-
-// КАТЕГОРИИ
-$router->resource('categories', 'CategoriesController');
-
-// ПРОДУКЦИЯ
-$router->resource('parameters', 'ParametersController' , [
-		'only' => ['edit' , 'update']
-	]);
-$router->post('parameters/{products}' , 'ParametersController@update');
-
-// Внешний вид продукта
-$router->resource('views', 'ViewsController' , [
-		'only' => ['edit' , 'update']
-	]);
-
 // Главная страница
 $router->get('/', function(){
 	return view('index');
@@ -48,3 +31,31 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+// Формируем контроллера административной панели
+Route::group(array('namespace' => 'Admin'), function(){
+	Route::resource('admin/products', 'ProductsController');
+
+	// ТОВАРЫ
+	Route::resource('admin/products', 'ProductsController');
+
+	// КАТЕГОРИИ
+	Route::resource('admin/categories', 'CategoriesController');
+
+	// ПРОДУКЦИЯ
+	Route::resource('admin/parameters', 'ParametersController' , [
+			'only' => ['edit' , 'update']
+		]);
+	Route::post('admin/parameters/{products}' , 'ParametersController@update');
+
+	// Внешний вид продукта
+	Route::resource('admin/views', 'ViewsController' , [
+			'only' => ['edit' , 'update']
+		]);
+});
+
+/*
+$router->group(array('prefix' => 'admin') , function(){
+	Route::resource('categories', 'CategoriesController');
+});
+*/

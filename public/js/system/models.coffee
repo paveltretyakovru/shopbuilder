@@ -1,7 +1,7 @@
 # Модели системы
 
 AdminApp.Models.Product = Backbone.Model.extend
-	urlRoot : '/products'
+	urlRoot : '/admin/products'
 
 	initialize	: ->
 		console.log "Initialize product model"

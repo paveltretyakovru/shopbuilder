@@ -10,12 +10,12 @@
 	<ul class='list-group'>
 	@foreach ($categories as $category)
 		<li class='list-group-item'>
-			{!! link_to_route('categories.show' , $category->title , [$category->id]) !!}
-			{!! link_to_route('categories.edit' , 'Редактировать' , [$category->id] , array('class' => 'btn btn-primary btn-xs edit-btn')) !!}
+			{!! link_to_route('admin.categories.show' , $category->title , [$category->id]) !!}
+			{!! link_to_route('admin.categories.edit' , 'Редактировать' , [$category->id] , array('class' => 'btn btn-primary btn-xs edit-btn')) !!}
 		</li>
 	@endforeach
 	</ul>
 
 	<hr>
-	{!! link_to_route('categories.create' , 'Новая категория' , array(), array('class' => 'btn btn-success btn-s')) !!}
+	{!! link_to_route('admin.categories.create' , 'Новая категория' , array(), array('class' => 'btn btn-success btn-s')) !!}
 @stop
