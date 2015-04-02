@@ -2,7 +2,7 @@
 
 @section('breadcrumb')
 	<li>{!! link_to('/admin' , "Административная панель") !!}</li>
-	<li>{!! link_to('admin.products' , 'Продукция') !!}</li>
+	<li>{!! link_to('admin/products' , 'Продукция') !!}</li>
 	<li>{!! link_to_route('admin.products.show' , $product->title , [$product->id]) !!}</li>
 	<li>{!! link_to_route('admin.products.edit' , 'Редактор' , [$product->id]) !!}</li>
 	<li class="active">Внешний вид</li>
@@ -113,6 +113,6 @@
 
 @section('jsincludes')
 	@include('products.initJSModel')
-	{!! HTML::script('js/system/views/viewsGridSystem.view.js') !!}
-	{!! HTML::script('js/system/views/viewsTemplates.view.js') !!}
+	{!! HTML::script('js/system/admin/views/viewsGridSystem.view.js') !!}
+	{!! HTML::script('js/system/admin/views/viewsTemplates.view.js') !!}
 @stop

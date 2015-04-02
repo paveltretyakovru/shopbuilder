@@ -2,7 +2,7 @@
 
 @section('breadcrumb')
 	<li>{!! link_to('admin' , "Административная панель") !!}</li>
-	<li>{!! link_to('admin.products' , 'Продукция') !!}</li>
+	<li>{!! link_to('admin/products' , 'Продукция') !!}</li>
 	<li class="active">Добавление товара</li>
 @stop
 
