@@ -1,26 +1,21 @@
 <?php
-Route::bind('categories' , function($category){
-	return App\Category::whereId($category)->first();
-});
+// Автоматически создаем объекты запросов --------------#
+Route::bind('categories' , function($category){			#
+	return App\Category::whereId($category)->first();	#
+});														#
+Route::bind('products' , function($product){			#
+	return App\Product::whereId($product)->first();		#
+});														#
+Route::bind('parameters' , function($product){			#
+	return App\Product::whereId($product)->first();		#
+});														#
+Route::bind('views' , function($product){				#
+	return App\Product::whereId($product)->first();		#
+});														#
+// -----------------------------------------------------#
 
-Route::bind('products' , function($product){
-	return App\Product::whereId($product)->first();
-});
-
-Route::bind('parameters' , function($product){
-	return App\Product::whereId($product)->first();
-});
-
-Route::bind('views' , function($product){
-	return App\Product::whereId($product)->first();
-});
-
+// Запрос с загрузкой изображения
 $router->post('getImageFile' , 'FilesController@getImageFile');
-
-$router->get('admin', function()
-{
-	return view('admin.index');
-});
 
 // Главная страница
 $router->get('/', function(){
@@ -31,6 +26,11 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+$router->get('admin', function(){
+	return "hello wolrd";
+	return view('admin.index');
+});
 
 // Формируем контроллера административной панели
 Route::group(array('namespace' => 'Admin'), function(){
@@ -53,9 +53,3 @@ Route::group(array('namespace' => 'Admin'), function(){
 			'only' => ['edit' , 'update']
 		]);
 });
-
-/*
-$router->group(array('prefix' => 'admin') , function(){
-	Route::resource('categories', 'CategoriesController');
-});
-*/

@@ -5,7 +5,7 @@
 	<title>Web-store</title>
 
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	{!! HTML::style('css/system.css') !!}
+	{!! HTML::style('admin/css/system.css') !!}
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 	    		<ul class="nav navbar-nav">
 			      	<li>
 			      		<a class="navbar-brand" href="#">
-			        	{!! HTML::image('i/logo/s.jpg' , 'logo' , array('style' => 'height: 30px') ) !!}
+			        	{!! HTML::image('admin/i/logo/s.jpg' , 'logo' , array('style' => 'height: 30px') ) !!}
 			      		</a>
 			      	</li>
 		        	<!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
