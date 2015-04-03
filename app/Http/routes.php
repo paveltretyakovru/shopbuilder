@@ -19,7 +19,7 @@ $router->post('getImageFile' , 'FilesController@getImageFile');
 
 // Главная страница
 $router->get('/', function(){
-	return view('index');
+	return view('phones.index');
 });
 
 Route::controllers([
