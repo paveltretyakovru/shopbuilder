@@ -18,11 +18,18 @@
 	{!! HTML::style('templates/phones/css/bootstrap-theme.css') !!}
 	{!! HTML::style('templates/phones/css/main.css') !!}
 
+	
+
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 		{!! HTML::style('templates/phones/js/html5shiv.js') !!}
 		{!! HTML::style('templates/phones/js/respond.min.js') !!}
 	<![endif]-->
+	{!! HTML::style('adminpanel/css/libs/jquery-ui.css') !!}
+	{!! HTML::style('adminpanel/css/libs/jquery.gridster.css') !!}	
+
+	{!! HTML::script('js/libs/jquery.min.js') !!}
+	{!! HTML::script('js/libs/jquery.gridster.min.js') !!}
 </head>
 
 <body class="home">
@@ -70,7 +77,7 @@
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
 	{!! HTML::script('js/libs/underscore-min.js') !!}
-	{!! HTML::script('js/libs/backbone-min.js') !!}
+	{!! HTML::script('js/libs/backbone-min.js') !!}	
 
 	{!! HTML::script('templates/phones/js/headroom.min.js') !!}
 	{!! HTML::script('templates/phones/js/jQuery.headroom.min.js') !!}

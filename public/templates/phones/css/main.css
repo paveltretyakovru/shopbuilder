@@ -83,4 +83,33 @@ img.pull-left { margin-right: 10px; }
 		.footer2 p { margin: 0; }
 
 	.widget-simplenav { margin-left:-5px; }		
-	.widget-simplenav a{ margin:0 5px; }		
+	.widget-simplenav a{ margin:0 5px; }
+
+
+.gridster ul {
+    list-style: none
+}
+.input-list input: ;
+{
+    float: right;
+}
+.gridster .gs-w {
+    background: #fff;    
+}
+.gridster .preview-holder {
+    border: none!important;
+    background: red!important;
+}
+
+.image-widget{}
+    .image-widget-backdiv{
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+    }
+
+.product-title{
+    font-size: 32px;
+    text-align: center;
+}

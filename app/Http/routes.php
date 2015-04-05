@@ -1,18 +1,30 @@
 <?php
-// Автоматически создаем объекты запросов --------------#
-Route::bind('categories' , function($category){			#
-	return App\Category::whereId($category)->first();	#
-});														#
-Route::bind('products' , function($product){			#
-	return App\Product::whereId($product)->first();		#
-});														#
-Route::bind('parameters' , function($product){			#
-	return App\Product::whereId($product)->first();		#
-});														#
-Route::bind('views' , function($product){				#
-	return App\Product::whereId($product)->first();		#
-});														#
+// Автоматически создаем объекты запросов ----------------------#
+Route::bind('categories' , function($category){					#
+	return App\Category::whereId($category)->first();			#
+});																#
+Route::bind('products' , function($product){					#
+	return App\Product::whereId($product)->first();				#
+});																#
+Route::bind('parameters' , function($product){					#
+	return App\Product::whereId($product)->first();				#
+});																#
+Route::bind('views' , function($product){						#
+	return App\Product::whereId($product)->first();				#
+});																#
+Route::bind('category' , function($category){					#
+	$model = App\Category::where('url' , $category)->first();	#
+	if ($model) {										
+		return $model;
+	}else{
+		return false;
+	}
+});
 // -----------------------------------------------------#
+
+$router->get('404' , function(){
+	return view('errors.404');
+});
 
 // Запрос с загрузкой изображения
 $router->post('getImageFile' , 'FilesController@getImageFile');
@@ -52,4 +64,5 @@ Route::group(array('namespace' => 'Admin'), function(){
 		]);
 });
 
-Route::get('{type}' , 'ProductsController@index');
+// Ображение к товарам из публичной части сайта
+Route::get('{category}' , 'ProductsController@index');
