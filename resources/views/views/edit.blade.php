@@ -113,6 +113,6 @@
 
 @section('jsincludes')
 	@include('products.initJSModel')
-	{!! HTML::script('admin/js/system/views/viewsGridSystem.view.js') !!}
-	{!! HTML::script('admin/js/system/views/viewsTemplates.view.js') !!}
+	{!! HTML::script('adminpanel/js/system/views/viewsGridSystem.view.js') !!}
+	{!! HTML::script('adminpanel/js/system/views/viewsTemplates.view.js') !!}
 @stop

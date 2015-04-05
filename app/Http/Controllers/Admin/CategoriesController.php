@@ -37,7 +37,7 @@ class CategoriesController extends Controller {
 	public function store(Requests\CategoryFormRequest $request , Category $category)
 	{
 		$category->create($request->all());
-		return redirect()->route('categories.index');
+		return redirect()->route('admin.categories.index');
 	}
 
 	/**
@@ -102,7 +102,7 @@ class CategoriesController extends Controller {
 	public function update($category , Request $req)
 	{
 		$category->fill($req->input())->save();
-		return redirect('categories');
+		return redirect('admin.categories');
 	}
 
 	/**
@@ -114,7 +114,7 @@ class CategoriesController extends Controller {
 	public function destroy(Category $category)
 	{
 		$category->delete();
-		return redirect('categories');
+		return redirect('admin.categories');
 	}
 
 }

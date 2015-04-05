@@ -16,6 +16,10 @@
 	#head .lead { font-size: 34px; }
 }
 
+.secondary { height:100px; min-height: 100px; padding-top:0px; }
+
+
+
 
 /* Autohide navbar */
 .slideUp { top:-100px; }

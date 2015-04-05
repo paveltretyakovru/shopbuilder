@@ -168,18 +168,26 @@
 	"buffers":
 	[
 		{
+			"file": "app/Http/Controllers/ProductsController.php",
+			"settings":
+			{
+				"buffer_size": 268,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "app/Http/routes.php",
 			"settings":
 			{
-				"buffer_size": 1581,
+				"buffer_size": 1582,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/Http/Controllers/Auth/PasswordController.php",
+			"file": "resources/views/admin/master.blade.php",
 			"settings":
 			{
-				"buffer_size": 1047,
+				"buffer_size": 2163,
 				"line_ending": "Windows"
 			}
 		}
@@ -187,9 +195,17 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 400.0,
+		"height": 104.0,
 		"selected_items":
 		[
+			[
+				"yield",
+				"Snippet: blade-yield"
+			],
+			[
+				"yiel",
+				"Snippet: blade-yield"
+			],
 			[
 				"if",
 				"Snippet: blade-if"
@@ -243,7 +259,7 @@
 				"View: Toggle Menu"
 			]
 		],
-		"width": 769.0
+		"width": 520.0
 	},
 	"console":
 	{
@@ -268,31 +284,33 @@
 		"/D/server/htdocs/shopbuilder/app",
 		"/D/server/htdocs/shopbuilder/app/Http",
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Auth",
-		"/D/server/htdocs/shopbuilder/database/migrations",
 		"/D/server/htdocs/shopbuilder/public/js",
-		"/D/server/htdocs/shopbuilder/public/js/system",
+		"/D/server/htdocs/shopbuilder/public/js/libs",
+		"/D/server/htdocs/shopbuilder/resources",
 		"/D/server/htdocs/shopbuilder/resources/views",
 		"/D/server/htdocs/shopbuilder/resources/views/admin",
-		"/D/server/htdocs/shopbuilder/resources/views/categories",
-		"/D/server/htdocs/shopbuilder/resources/views/parameters",
-		"/D/server/htdocs/shopbuilder/resources/views/products",
-		"/D/server/htdocs/shopbuilder/resources/views/templates",
-		"/D/server/htdocs/shopbuilder/resources/views/views"
+		"/D/server/htdocs/shopbuilder/resources/views/parameters"
 	],
 	"file_history":
 	[
-		"/D/server/htdocs/shopbuilder/resources/views/categories/edit.blade.php",
-		"/D/server/htdocs/shopbuilder/resources/views/categories/show.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/admin/master.blade.php",
+		"/D/server/htdocs/shopbuilder/app/Http/routes.php",
+		"/D/server/htdocs/shopbuilder/resources/views/phones/index.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/phones/master.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/parameters/edit.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/phones/footer.blade.php",
+		"/D/server/htdocs/shopbuilder/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Yield_.php",
+		"/D/server/htdocs/shopbuilder/vendor/mtdowling/cron-expression/src/Cron/YearField.php",
+		"/D/server/htdocs/shopbuilder/resources/views/master.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/views/edit.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/categories/edit.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/categories/create.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/categories/show.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/products/create.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/products/show.blade.php",
-		"/D/server/htdocs/shopbuilder/resources/views/views/edit.blade.php",
-		"/D/server/htdocs/shopbuilder/resources/views/categories/create.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/products/edit.blade.php",
 		"/D/server/htdocs/shopbuilder/public/js/system/models.coffee",
 		"/D/server/htdocs/shopbuilder/public/js/system/views/viewsGridSystem.view.coffee",
-		"/D/server/htdocs/shopbuilder/resources/views/admin/master.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/products/form.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/products/index.blade.php",
 		"/D/server/htdocs/shopbuilder/public/js/system/models.js",
@@ -302,7 +320,6 @@
 		"/D/server/htdocs/shopbuilder/resources/views/parameters/list.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/products/title.blade.php",
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers/FilesController.php",
-		"/D/server/htdocs/shopbuilder/app/Http/routes.php",
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/CategoriesController.php",
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/ParametersController.php",
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/ProductsController.php",
@@ -322,7 +339,6 @@
 		"/D/server/htdocs/shopbuilder/vendor/illuminate/html/FormBuilder.php",
 		"/D/server/htdocs/shopbuilder/app/Category.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/last/2015_02_23_190310_CreateProductsTable.php",
-		"/D/server/htdocs/shopbuilder/resources/views/master.blade.php",
 		"/D/server/htdocs/shopbuilder/public/css/system.css",
 		"/D/server/htdocs/shopbuilder/database/migrations/2015_03_19_070901_edit_view_column.php",
 		"/D/server/htdocs/shopbuilder/resources/views/products/jsobject.blade.php",
@@ -404,12 +420,7 @@
 		"/E/server/htdocs/shopbuilder/app/Http/helpers.php",
 		"/E/server/htdocs/shopbuilder/public/css/libs/jquery.gridster.css",
 		"/E/server/htdocs/shopbuilder/resources/views/categories/show.blade.php",
-		"/E/server/htdocs/shopbuilder/resources/views/products/show.blade.php",
-		"/E/server/htdocs/shopbuilder/resources/views/products/create.blade.php",
-		"/E/server/htdocs/shopbuilder/app/Http/Controllers/ParametersController.php",
-		"/E/server/htdocs/shopbuilder/app/Parameters.php",
-		"/E/server/htdocs/shopbuilder/database/migrations/categories/2015_02_24_150836_CreateCategoriesTable.php",
-		"/E/server/htdocs/shopbuilder/app/Parameter.php"
+		"/E/server/htdocs/shopbuilder/resources/views/products/show.blade.php"
 	],
 	"find":
 	{
@@ -429,6 +440,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"требованиям",
+			"assets/",
+			"follow",
 			"JSON",
 			"0",
 			"red",
@@ -474,6 +488,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"phones/",
 			"#0DCECB",
 			"visible",
 			"count",
@@ -490,65 +505,93 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Http/routes.php",
+					"file": "app/Http/Controllers/ProductsController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1581,
+						"buffer_size": 268,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								804,
-								804
+								261,
+								261
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/Http/Controllers/Auth/PasswordController.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1047,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Http/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1582,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								705,
+								705
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "resources/views/admin/master.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2163,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								791,
+								697
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -596,7 +639,7 @@
 	"project": "shopbuilder.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -604,6 +647,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"rou",
+				"app\\Http\\routes.php"
+			],
 			[
 				"routes",
 				"app\\Http\\routes.php"

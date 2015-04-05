@@ -4,7 +4,14 @@
 		{!! Form::text('title' , null , ['class' => 'form-control']) !!}
 		{!! $errors->first('title', '<span class="help-block">:message</span>') !!}
 	</div>
-		<div class="form-group">
+
+	<div class="form-group {{ $errors->has('url') ? 'has-error' : '' }}">
+		{!! Form::label('url', 'Url:') !!}
+		{!! Form::text('url' , null , ['class' => 'form-control']) !!}
+		{!! $errors->first('url', '<span class="help-block">:message</span>') !!}
+	</div>
+	
+	<div class="form-group">
 		{!! Form::label('parameters', 'Параметры:') !!}
 		{!! Form::textarea('parameters' , null , ['class' => 'form-control' , 'style' => 'height: 50px' , 'id' =>'category-edit-parameters']) !!}
 	</div>

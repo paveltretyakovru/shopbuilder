@@ -15,7 +15,7 @@
 	    		<ul class="nav navbar-nav">
 			      	<li>
 			      		<a class="navbar-brand" href="#">
-			        	{!! HTML::image('admin/i/logo/s.jpg' , 'logo' , array('style' => 'height: 30px') ) !!}
+			        	{!! HTML::image('adminpanel/i/logo/s.jpg' , 'logo' , array('style' => 'height: 30px') ) !!}
 			      		</a>
 			      	</li>
 		        	<!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->

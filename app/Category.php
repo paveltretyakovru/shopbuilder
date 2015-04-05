@@ -6,7 +6,6 @@ class Category extends Eloquent {
 	protected $table = 'categories';
 
 	protected $fillable = [
-		'title' , 'parameters' , 'searchparameters'
+		'title' , 'url' , 'parameters' , 'searchparameters'
 	];
-
 }

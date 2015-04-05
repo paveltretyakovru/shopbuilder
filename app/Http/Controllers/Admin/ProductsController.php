@@ -31,7 +31,7 @@ class ProductsController extends Controller {
 	public function store(Requests\ProductFormRequest $request , Product $product)
 	{
 		$product->create($request->all());
-		return redirect()->route('products.index');
+		return redirect()->route('admin.products.index');
 	}
 
 	public function show(Product $product)

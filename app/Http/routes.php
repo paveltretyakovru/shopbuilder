@@ -27,15 +27,12 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-$router->get('admin', function(){
-	return "hello wolrd";
+// Формируем контроллера административной панели
+Route::get('admin', function(){
 	return view('admin.index');
 });
 
-// Формируем контроллера административной панели
 Route::group(array('namespace' => 'Admin'), function(){
-	Route::resource('admin/products', 'ProductsController');
-
 	// ТОВАРЫ
 	Route::resource('admin/products', 'ProductsController');
 
@@ -53,3 +50,5 @@ Route::group(array('namespace' => 'Admin'), function(){
 			'only' => ['edit' , 'update']
 		]);
 });
+
+Route::get('{type}' , 'ProductsController@index');

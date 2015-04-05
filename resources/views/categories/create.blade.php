@@ -13,5 +13,5 @@
 @stop
 
 @section('jsincludes')	
-	{!! HTML::script('admin/js/system/views/categoryParameters.view.js') !!}
+	{!! HTML::script('adminpanel/js/system/views/categoryParameters.view.js') !!}
 @stop
