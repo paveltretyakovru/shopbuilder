@@ -64,5 +64,7 @@ Route::group(array('namespace' => 'Admin'), function(){
 		]);
 });
 
+$router->get('test', 'TestsController@test');
+
 // Ображение к товарам из публичной части сайта
 Route::get('{category}' , 'ProductsController@index');

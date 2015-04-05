@@ -32,7 +32,8 @@ class FilesController extends Controller {
 		$File->group 	= $group;
 		$File->groupid 	= $id;
 		$File->path 	= $imagespath.'/'.$fileName;
-		$File->publicurl= asset('upimages/'.$fileName);
+		//$File->publicurl= asset('upimages/'.$fileName);
+		$File->publicurl= 'upimages/'.$fileName;
 		
 		// Переданный файл является ли изображением
 		if(in_array($mime, $relmimes)){

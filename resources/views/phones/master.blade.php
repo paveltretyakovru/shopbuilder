@@ -17,7 +17,6 @@
 	<!-- Custom styles for our template -->
 	{!! HTML::style('templates/phones/css/bootstrap-theme.css') !!}
 	{!! HTML::style('templates/phones/css/main.css') !!}
-
 	
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -25,8 +24,9 @@
 		{!! HTML::style('templates/phones/js/html5shiv.js') !!}
 		{!! HTML::style('templates/phones/js/respond.min.js') !!}
 	<![endif]-->
-	{!! HTML::style('adminpanel/css/libs/jquery-ui.css') !!}
-	{!! HTML::style('adminpanel/css/libs/jquery.gridster.css') !!}	
+	
+	{!! HTML::style('css/libs/jquery.gridster.css') !!}
+	{!! HTML::style('css/system/required.css') !!}
 
 	{!! HTML::script('js/libs/jquery.min.js') !!}
 	{!! HTML::script('js/libs/jquery.gridster.min.js') !!}
@@ -40,11 +40,11 @@
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand" href="index.html"><img src="templates/phones/images/logo.png" alt="Progressus HTML5 template"></a>
+				<a class="navbar-brand" href="/"><img src="templates/phones/images/logo.png" alt="Progressus HTML5 template"></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="#">Телефоны</a></li>
+					<li>{!! link_to('phones' , "Телефоны") !!}</li>
 					<li><a href="#">О нас</a></li>
 					{{--
 					<li class="dropdown">
@@ -61,11 +61,14 @@
 			</div><!--/.nav-collapse -->
 		</div>
 	</div> 
-	<!-- /.navbar -->
+	<!-- /.navbar -->	
 
 	<div class="container">
-	
-		@yield('breadcrumb')
+
+		<ol class="breadcrumb">
+			@yield('breadcrumb')
+		</ol>
+
 		@yield('content')
 
 	</div>	
