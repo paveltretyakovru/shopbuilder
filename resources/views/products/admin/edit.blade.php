@@ -16,7 +16,7 @@
 	<hr>
 
 	{!! Form::model($product , ['route' => ['admin.products.update' , $product->id] , 'method' => 'PATCH']) !!}
-		@include('products.form')
+		@include('products.admin.form')
 	{!! Form::close() !!}
 
 	{!! delete_form(['admin.products.destroy' , $product->id]) !!}

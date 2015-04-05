@@ -26,6 +26,6 @@
 
 	<hr>
 
-	{!! link_to_route('admin.categories.edit' , 'Редактировать' , [$category->id] , array('class' => 'btn btn-primary btn-xs')) !!}
+	{!! link_to_route('admin.categories.edit' , 'Редактировать' , [$category->id] , array('class' => 'btn btn-primary')) !!}
 
 @stop

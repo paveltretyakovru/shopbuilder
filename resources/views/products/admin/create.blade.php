@@ -8,6 +8,6 @@
 
 @section('content')
 	{!! Form::open(['route' => 'admin.products.store', 'method' => 'post']) !!}
-		@include('products.form')
+		@include('products.admin.form')
 	{!! Form::close() !!}
 @stop

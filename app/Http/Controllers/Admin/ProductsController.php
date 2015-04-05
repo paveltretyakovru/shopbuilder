@@ -13,7 +13,7 @@ class ProductsController extends Controller {
 	public function index(Product $product)
 	{
 		$products = $product->get();
-		return view('products.index' , compact('products'));
+		return view('products.admin.index' , compact('products'));
 	}
 
 	public function create()
@@ -25,7 +25,7 @@ class ProductsController extends Controller {
 			$categorieslist[$categories[$i]['id']] = $categories[$i]['title'];
 		}
 
-		return view('products.create' , compact('categorieslist'));
+		return view('products.admin.create' , compact('categorieslist'));
 	}
 
 	public function store(Requests\ProductFormRequest $request , Product $product)
@@ -36,7 +36,7 @@ class ProductsController extends Controller {
 
 	public function show(Product $product)
 	{
-		return view('products.show' , compact('product'));
+		return view('products.admin.show' , compact('product'));
 	}
 
 	public function edit(Product $product)
@@ -48,7 +48,7 @@ class ProductsController extends Controller {
 			$categorieslist[$categories[$i]['id']] = $categories[$i]['title'];
 		}
 
-		return view('products.edit' , compact('categorieslist' , 'product'));
+		return view('products.admin.edit' , compact('categorieslist' , 'product'));
 	}
 	
 	public function update($product , Request $request){

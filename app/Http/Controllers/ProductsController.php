@@ -26,12 +26,12 @@ class ProductsController extends Controller {
 	/* Проверям идет ли обращение к существующей категории товаров */
 	private function checkCategory($category){
 		
+		// Валидация категории по полю url, таблицы categories
 		$validator = Validator::make(
 			['url' => $category] ,
 			['url' => 'required|exists:categories,url']
 		);
-
-
+		
 		if ($validator->fails()) {
 			return false;
 		}else{
