@@ -38,6 +38,7 @@ Route::group(array('namespace' => 'Admin'), function(){
 
 	// КАТЕГОРИИ
 	Route::resource('admin/categories', 'CategoriesController');
+	//Route::post('admin/categories/{products}' , 'CategoriesController@update');
 
 	// ПРОДУКЦИЯ
 	Route::resource('admin/parameters', 'ParametersController' , [

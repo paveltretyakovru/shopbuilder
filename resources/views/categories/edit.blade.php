@@ -6,8 +6,16 @@
 	<li class="active">Редактирование категории {{ $category->title }}</li>
 @stop
 
-@section('content')
-	{!! Form::model($category , ['route' => 'admin.categories.update' , 'method' => 'POST']) !!}
+@section('content')	
+	@if (Session::has('success'))
+		<div class="alert alert-success" role="alert">{{ session('success') }}</div>
+	@endif
+
+	@if (Session::has('error'))
+		<div class="alert alert-danger" role="alert">{{ session('error') }}</div>
+	@endif
+
+	{!! Form::model($category , ['route' => ['admin.categories.update' , $category->id] , 'method' => 'PATCH']) !!}
 
 		@include('categories.form' , ['parameters' => $parameters])
 

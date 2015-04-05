@@ -102,7 +102,7 @@ class CategoriesController extends Controller {
 	public function update($category , Request $req)
 	{
 		$category->fill($req->input())->save();
-		return redirect('admin.categories');
+		return redirect()->back()->with('success' , 'Изменения сохранены!');
 	}
 
 	/**
@@ -114,7 +114,7 @@ class CategoriesController extends Controller {
 	public function destroy(Category $category)
 	{
 		$category->delete();
-		return redirect('admin.categories');
+		return redirect()->route('admin.categories.index');
 	}
 
 }
