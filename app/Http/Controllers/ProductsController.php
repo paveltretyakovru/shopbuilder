@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
 use DB;
+use StringView;
 
 use App\Category;
 use App\Product;
+use App\Parameter;
 
 class ProductsController extends Controller {
 
@@ -44,6 +46,27 @@ class ProductsController extends Controller {
 			// если категория товаров не найдена возвращаем 404
 			return redirect('404');
 		}
+	}
+
+	public function show($product){		
+		$product 	= Product::whereId($product)->first();
+		$parameters = Parameter::where('product' , $product->id)->get();
+
+		$view 		= StringView::make(
+			[
+				'template' 		=> $product->view ,
+				'cache_key' 	=> 'EQt5fc2CiZGz888J' ,
+				'updated_at'	=> 0
+			] ,
+			array(
+				'product' 		=> $product ,
+				'parameters' 	=> $parameters
+			)
+		);
+
+		//return $view;
+		return view('products.public.show' , compact('product' , 'parameters' , 'view'));
+
 	}
 
 	/* Проверям идет ли обращение к существующей категории товаров */

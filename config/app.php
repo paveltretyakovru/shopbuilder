@@ -146,10 +146,12 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
+		// Forms and others
 		'Illuminate\Html\HtmlServiceProvider',
+		// Provider for working with images
+		'Intervention\Image\ImageServiceProvider',
 
-		'Intervention\Image\ImageServiceProvider'
-
+		'Wpb\StringBladeCompiler\StringBladeCompilerServiceProvider' ,
 	],
 
 	/*
@@ -201,7 +203,6 @@ return [
 		'Form'		=> 'Illuminate\Html\FormFacade' ,
 		'HTML'		=> 'Illuminate\Html\HtmlFacade' ,
 		'Image' 	=> 'Intervention\Image\Facades\Image'
-
 	],
 
 ];

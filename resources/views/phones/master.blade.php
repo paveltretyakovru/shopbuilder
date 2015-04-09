@@ -40,7 +40,8 @@
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand" href="/"><img src="templates/phones/images/logo.png" alt="Progressus HTML5 template"></a>
+
+				<a class="navbar-brand" href="/">{!! HTML::image('templates/phones/images/logo.png') !!}</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">

@@ -8,14 +8,15 @@
 
 @section('content')
 	<br />
-	
+
 	<div class="row">
 		@foreach ($products as $product)
-			<div class="col-sm-6 col-md-4">
+			<div class="col-sm-6 col-md-3">
 				<div class="thumbnail">
-					<img src="{!! $images[$product->id]->publicurl  !!}" alt="{!! $product->title !!}" style="height:200px">
-					<div class="caption">
-						<h4>{!! $product->title !!}</h4>
+					<img src="{!! $images[$product->id]->publicurl  !!}" alt="{!! $product->title !!}" style="height:290px">
+					<div class="caption">						
+						<h5><a href="{{$category->url}}/{{$product->id}}">{{$product->title}}</a></h5>		
+						{{ $product->price }} руб.
 					</div>
 				</div>
 			</div>

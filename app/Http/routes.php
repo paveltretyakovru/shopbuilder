@@ -66,5 +66,8 @@ Route::group(array('namespace' => 'Admin'), function(){
 
 $router->get('test', 'TestsController@test');
 
+// ТОВАРЫ
 // Ображение к товарам из публичной части сайта
-Route::get('{category}' , 'ProductsController@index');
+Route::get('{products}/{id}', ['as' => 'products/{id}' , 'uses' => 'ProductsController@show'] )
+		->where('category', '[A-Za-z]+');
+Route::get('{category}' , 'ProductsController@index')->where('category', '[A-Za-z]+');
