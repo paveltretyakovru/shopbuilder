@@ -20,10 +20,10 @@ class DatabaseSeeder extends Seeder {
 		//$this->call('ProductsTableSeeder');
 
 		// Заполняем случайными изображениями таблицу с файлами для телефонов
-		//$this->call('FilesTableSeeder');
+		$this->call('FilesTableSeeder');
 
 		// Заполняем таблицу с параметрами
-		$this->call('ParametersTableSeeder');
+		//$this->call('ParametersTableSeeder');
 	}
 
 }
@@ -44,7 +44,7 @@ class ParametersTableSeeder extends Seeder{
 
 		$this->command->info('Inserting records using Faker ...');
 
-		for ($i=3; $i < 29; $i++) {
+		for ($i=1; $i <= 78; $i++) {
 
 			$params_value = [
 				$faker->randomNumber(3) 			,	// ves
@@ -117,10 +117,16 @@ class FilesTableSeeder extends Seeder{
 class ProductsTableSeeder extends Seeder{
 	
 	public function run(){
+		set_time_limit(15);
+
 		$count 		= 121;
 		$faker 		= Faker\Factory::create();
 		$companies 	= ['Samsung' , 'Apple' , 'Nokia' , 'Motorolla' , 'LG' , 'Fly' , 'Philips' , 'Panasonic'];
 		$parameters = ['вес' , 'ширина' , 'ос' , 'количество ядер' , 'частота процессора' , 'оперативная память' , 'диагональ экрана'];
+
+		// Список названий тлефонов 
+		$inserted 		= array();
+		$inserted_count = 0;
 
 		$this->command->info('Inserting '.$count.' sample records using Faker ...');
 
@@ -129,11 +135,21 @@ class ProductsTableSeeder extends Seeder{
 			$random_text1	= $faker->paragraph(4);
 			$random_title2 	= $faker->sentence(4);
 
-			$title 		= $companies[array_rand($companies , 1)]." ".$faker->bothify('?##');
+			// Генерируем уникальное название телефона
+			$title 		= "";
+			$control 	= true;
+			while ($control) {				
+				$title 	= $companies[array_rand($companies , 1)]." ".$faker->bothify('?##');
+				if(!in_array($title, $inserted)){
+					$control 	= false;
+					$inserted[] = $title;
+				}
+			}
+
 			$price 		= $faker->randomNumber(5);
 			$count 		= $faker->randomNumber(2);
 			$category 	= 1;	// на время запуска это категория телефонов, сверять с базой данных!!!
-			 $view 		= '<div class="gridster ready"><ul style="width: 725px; position: relative; height: 957px;"><li data-widget-type="title" class="title-widget gs-w" data-col="1" data-row="1" data-sizex="25" data-sizey="2" style="display: list-item;">@include("products.title")</li><li data-widget-type="parameters" class="parameters-widget gs-w" data-col="11" data-row="3" data-sizex="15" data-sizey="5" style="display: list-item;">@include("parameters.list")</li><li data-widget-type="text" class="text-widget gs-w" data-col="11" data-row="8" data-sizex="15" data-sizey="9" style="display: list-item;"><div><b><span style="font-size: 18px;">'.$random_title1.'</span></b></div><div style="text-align: justify;">'.$random_text1.'</div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div></li><li data-widget-type="image" class="image-widget gs-w" data-col="1" data-row="3" data-sizex="10" data-sizey="14" style="display: list-item;"><div class="image-widget-backdiv" style="background-image: url(http://lorempixel.com/290/400/technics/);"></div></li><li data-widget-type="text" class="text-widget gs-w" data-col="1" data-row="17" data-sizex="25" data-sizey="2" style="display: list-item;"><div style="text-align: center;"><span style="font-size: 32px;"><b>'.$random_title2.'</b></span></div></li><li data-widget-type="image" class="image-widget gs-w" data-col="1" data-row="19" data-sizex="25" data-sizey="15" style="display: list-item;"><div class="image-widget-backdiv" style="background-image: url(http://lorempixel.com/720/430/technics/);"></div></li></ul></div>';
+			$view 		= '<div class="gridster ready"><ul style="width: 725px; position: relative; height: 957px;"><li data-widget-type="title" class="title-widget gs-w" data-col="1" data-row="1" data-sizex="25" data-sizey="2" style="display: list-item;">@include("products.title")</li><li data-widget-type="parameters" class="parameters-widget gs-w" data-col="11" data-row="3" data-sizex="15" data-sizey="5" style="display: list-item;">@include("parameters.list")</li><li data-widget-type="text" class="text-widget gs-w" data-col="11" data-row="8" data-sizex="15" data-sizey="9" style="display: list-item;"><div><b><span style="font-size: 18px;">'.$random_title1.'</span></b></div><div style="text-align: justify;">'.$random_text1.'</div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div></li><li data-widget-type="image" class="image-widget gs-w" data-col="1" data-row="3" data-sizex="10" data-sizey="14" style="display: list-item;"><div class="image-widget-backdiv" style="background-image: url(http://lorempixel.com/290/400/technics/);"></div></li><li data-widget-type="text" class="text-widget gs-w" data-col="1" data-row="17" data-sizex="25" data-sizey="2" style="display: list-item;"><div style="text-align: center;"><span style="font-size: 32px;"><b>'.$random_title2.'</b></span></div></li><li data-widget-type="image" class="image-widget gs-w" data-col="1" data-row="19" data-sizex="25" data-sizey="15" style="display: list-item;"><div class="image-widget-backdiv" style="background-image: url(http://lorempixel.com/720/430/technics/);"></div></li></ul></div>';
 			$editview 	= '[{"id":"","col":1,"row":1,"size_x":25,"size_y":2,"type":"title","htmlContent":"<div class=\"product-title\"><%= title %></div>\n\t"},{"id":"","col":11,"row":3,"size_x":15,"size_y":5,"type":"parameters","htmlContent":"<%= parameters %>"},{"id":"","col":11,"row":8,"size_x":15,"size_y":9,"type":"text","htmlContent":"<div><b><span style=\"font-size: 18px;\">'.$random_title1.'</span></b></div><div style=\"text-align: justify;\">'.$random_text1.'</div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div>"},{"id":"","col":1,"row":3,"size_x":10,"size_y":14,"type":"image","htmlContent":"<div class=\"image-widget-backdiv\" style=\"background-image: url(http://lorempixel.com/290/400/technics/);\"></div>"},{"id":"","col":1,"row":17,"size_x":25,"size_y":2,"type":"text","htmlContent":"<div style=\"text-align: center;\"><span style=\"font-size: 32px;\"><b>'.$random_title2.'</b></span></div>"},{"id":"","col":1,"row":19,"size_x":25,"size_y":15,"type":"image","htmlContent":"<div class=\"image-widget-backdiv\" style=\"background-image: url(http://lorempixel.com/720/430/technics/);\"></div>"}]';
 			$visible 	= 1;
 			
@@ -146,9 +162,11 @@ class ProductsTableSeeder extends Seeder{
 				'editview'	=> $editview ,
 				'visible'	=> $visible
 			]);
+
+			$inserted_count++;
 		}
 
-		$this->command->info('Products table seeded using Faker ...');
+		$this->command->info('Products table seeded using Faker ... Inserted count: '.$inserted_count);
 		
 	}
 
