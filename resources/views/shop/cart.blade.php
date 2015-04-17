@@ -26,6 +26,14 @@
 
 	</div>
 
+	<div>
+		<h2>Итого: {{ $sum }} реблей</h2>
+	</div>
+
+	<div>
+		<a href="{{ url('/addProduct/'.$product->id) }}" class="btn btn-primary btn-xs edit-btn">Оформить заказ</a>
+	</div>
+
 @stop
 
 @section('jsincludes')

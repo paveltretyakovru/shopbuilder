@@ -56,15 +56,20 @@ class CartsController extends Controller {
 		$products 	= array();
 		$ids 		= array();
 		$images 	= array();
+		$prices		= array();
 		$carts 		= $this->getUserCarts();
+		$sum 		= 0;
 
 		if (count($carts)) {
 			foreach ($carts as $cart) {
 				$product = Cart::find($cart->id)->product;				
 				array_push($products, $product);
 				array_push($ids, $product->id);
+				array_push($prices, $product->price);
 			}
 		}
+
+		$sum = array_sum($prices);
 
 		// собираем первые изображения товаров
 		$files = DB::table('files')->where([
@@ -78,7 +83,7 @@ class CartsController extends Controller {
 			}
 		}
 
-		return view('shop.cart' , compact('carts' , 'products' , 'images'));
+		return view('shop.cart' , compact('carts' , 'products' , 'images' , 'sum'));
 	}
 
 
