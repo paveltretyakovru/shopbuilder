@@ -22,6 +22,19 @@ Route::bind('category' , function($category){					#
 });
 // -----------------------------------------------------#
 
+
+// Регистрация композеров  ==================================================#
+
+// * Композер для корзин
+	/*
+		# CartComposer возвращает возвращает переменные:
+			* carts_count - количество товаров в корзине
+	*/
+View::composer('*' , 'App\Http\Composers\CartComposer');
+
+
+// ==========================================================================#
+
 $router->get('404' , function(){
 	return view('errors.404');
 });
@@ -64,10 +77,19 @@ Route::group(array('namespace' => 'Admin'), function(){
 		]);
 });
 
+// Тестовые маршруты
+$router->controllers(['test' => 'TestsController']);
 $router->get('test', 'TestsController@test');
+$router->get('authtest' , 'TestsController@AuthTest');
+
 
 // ТОВАРЫ
 // Ображение к товарам из публичной части сайта
+
+// Манипулиция направленные на работу с корзиной
+$router->get('addProduct/{id}' , 'CartsController@addProduct');
+$router->get('carts' , 'CartsController@index');
+
 Route::get('{products}/{id}', ['as' => 'products/{id}' , 'uses' => 'ProductsController@show'] )
 		->where('category', '[A-Za-z]+');
 Route::get('{category}' , 'ProductsController@index')->where('category', '[A-Za-z]+');

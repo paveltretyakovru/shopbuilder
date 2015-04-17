@@ -8,7 +8,7 @@
 @stop
 
 @section('content')
-	<br />
+	@include('shop.tradepanel')
 
 	{!! $view !!}
 

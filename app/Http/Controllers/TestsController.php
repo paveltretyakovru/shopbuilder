@@ -3,13 +3,18 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use Auth;
+use Faker;
+use Session;
+use App\Product;
+use App\Cart;
+
 use Illuminate\Http\Request;
 
-use Faker;
 
 class TestsController extends Controller {
 
-	public function test(){
+	public function getGoga(){
 		$faker 		= Faker\Factory::create();
 		$companies 	= ['Samsung' , 'Apple' , 'Nokia' , 'Motorolla' , 'LG' , 'Fly' , 'Philips' , 'Panasonic'];
 		$parameters = ['вес' , 'ширина' , 'ос' , 'количество ядер' , 'частота процессора' , 'оперативная память' , 'диагональ экрана'];
@@ -27,6 +32,54 @@ class TestsController extends Controller {
 
 		echo str_replace(' ' , '_' , $title);
 
+	}
+
+	public function getAuthtest(){
+		if(Auth::check()){
+			echo "<p>User login</p>";
+		}else{
+			echo "<p>User don't login</p>";
+		}
+
+		$user = Auth::user();
+
+		echo $user->id;
+
+	}
+
+	public function getCarts(){
+		$cart = Cart::findOrFail(1)->get();
+
+		echo $cart;
+	}
+
+	public function getProduct(){
+		$product = Product::find(78);
+
+		if ($product) {
+			echo "Product isset";
+		} else {
+			echo "Product don't isset!";
+		}
+		
+	}
+
+	public function getZero(){
+		$test = 0;
+		if ($test) {
+			echo "True";
+		} else {
+			echo "False";
+		}
+		
+	}
+
+	public function getSession(){
+		Session::regenerate();
+		Session::push('cart', 'test');
+		Session::push('cart', 'test1');
+
+		dd(Session::get('cart'));
 	}
 
 }

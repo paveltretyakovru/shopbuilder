@@ -20,7 +20,7 @@ class ProductsController extends Controller {
 			$images = array();
 
 			// получаем товары по необходимой категории
-			$products = Product::where('category' , $category->id)->get();
+			$products = Product::where('category' , $category->id)->paginate(15);
 			
 			// собираем идентификаторы товаров
 			foreach ($products as $product) {
@@ -48,7 +48,10 @@ class ProductsController extends Controller {
 		}
 	}
 
-	public function show($product){		
+	public function show($product){
+		// Добавлен ли товар в корзину
+		$product_in_cart = false;
+
 		$product 	= Product::whereId($product)->first();
 		$parameters = Parameter::where('product' , $product->id)->get();
 
@@ -65,7 +68,7 @@ class ProductsController extends Controller {
 		);
 
 		//return $view;
-		return view('products.public.show' , compact('product' , 'parameters' , 'view'));
+		return view('products.public.show' , compact('product' , 'parameters' , 'view' , 'product_in_cart'));
 
 	}
 

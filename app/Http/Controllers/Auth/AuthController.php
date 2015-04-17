@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller {
+	// Если что, после авторизации перенаправляем пользователя на главную страницу
+	protected $redirectPath = "/";
 
 	/*
 	|--------------------------------------------------------------------------

@@ -147,11 +147,11 @@ return [
 		'App\Providers\RouteServiceProvider',
 
 		// Forms and others
-		'Illuminate\Html\HtmlServiceProvider',
+		'Illuminate\Html\HtmlServiceProvider', 
 		// Provider for working with images
 		'Intervention\Image\ImageServiceProvider',
 
-		'Wpb\StringBladeCompiler\StringBladeCompilerServiceProvider' ,
+		'Wpb\StringBladeCompiler\StringBladeCompilerServiceProvider' ,		
 	],
 
 	/*
