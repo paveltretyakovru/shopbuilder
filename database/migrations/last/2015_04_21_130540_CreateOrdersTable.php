@@ -18,6 +18,8 @@ class CreateOrdersTable extends Migration {
 				$table->integer('user_id')->unsigned();							// id пользователя
 				$table->foreign('user_id')->references('id')->on('users');
 
+				$table->text('user_data');
+
 				$table->integer('product_id')->unsigned();						// id товара
 				$table->foreign('product_id')->references('id')->on('products');
 				

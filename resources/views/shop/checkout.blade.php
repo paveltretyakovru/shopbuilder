@@ -6,11 +6,7 @@
 @stop
 
 @section('content')
-	<h4>Количество товароа в корзине: <strong>{{ $carts_items }}</strong> </h4>	
-
-	<div>
-		<h2>Итого: <strong>{{ $sum }}</strong> реблей</h2>
-	</div>
+	Оформление товара закончено
 
 	<!--
 	<div>

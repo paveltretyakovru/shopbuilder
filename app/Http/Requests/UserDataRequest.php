@@ -22,9 +22,9 @@ class UserDataRequest extends Request {
 	public function rules()
 	{
 		return [
-			'fullname' 	=> 'required|min:5' ,
-			'country'	=> 'required|min:3' ,
-			'city'		=> 'required|min:5' ,
+			'fullname' 	=> 'required|min:5|max:70' ,
+			'country'	=> 'required|min:3|max:40' ,
+			'city'		=> 'required|min:5|max:40' ,
 			'address'	=> 'required|min:5' ,
 			'postcode'	=> 'required|min:5' ,
 			'phone'		=> 'required|min:3'
