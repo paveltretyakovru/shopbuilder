@@ -25,7 +25,7 @@
 		        	<!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
 		        	<li>{!! link_to_route('admin.categories.index' , 'Категории') !!}</li>
 		        	<li>{!! link_to_route('admin.products.index' , 'Продукция') !!}</li>
-		        	<li><a href="#">Страницы</a></li>
+		        	<li><a href="{{ url('/admin/orders') }}">Заказы</a></li>		        	
         		</ul>
 	    </div>
 	  </div>

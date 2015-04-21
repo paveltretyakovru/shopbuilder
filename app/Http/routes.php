@@ -75,6 +75,10 @@ Route::group(array('namespace' => 'Admin'), function(){
 	Route::resource('admin/views', 'ViewsController' , [
 			'only' => ['edit' , 'update']
 		]);
+
+	// ЗАКАЗЫ
+	Route::get('admin/orders' , 'OrdersController@index');
+	Route::controller('admin/orders' , 'OrdersController');
 });
 
 // Тестовые маршруты
