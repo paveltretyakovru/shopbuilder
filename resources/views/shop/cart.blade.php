@@ -1,7 +1,6 @@
 @extends('phones.master')
 
-@section('breadcrumb')
-	<div class="secondary"></div>	
+@section('breadcrumb')		
 	<li class="active">Корзина</li>
 @stop
 
@@ -17,7 +16,8 @@
 						<img src="{!! $images[$product->id]->publicurl  !!}" alt="{!! $product->title !!}" style="height:290px">
 						<div class="caption">						
 							<h5><a href="#{{-- url( $category->url.'/'.$product->id )--}}">{{$product->title}}</a></h5>		
-							{{ $product->price }} руб.
+							<strong>{{ $product->price }}</strong> руб.
+							<p><a href="{{ url('deleteCart/'.$product->id) }}">Удалить</a></p>
 						</div>
 					</div>
 				</div>
@@ -27,11 +27,11 @@
 	</div>
 
 	<div>
-		<h2>Итого: {{ $sum }} реблей</h2>
+		<h2>Итого: <strong>{{ $sum }}</strong> реблей</h2>
 	</div>
 
 	<div>
-		<a href="{{ url('/addProduct/'.$product->id) }}" class="btn btn-primary btn-xs edit-btn">Оформить заказ</a>
+		<a href="{{ url('order/checkdata') }}" class="btn btn-primary btn-xs edit-btn">Оформить заказ</a>
 	</div>
 
 @stop

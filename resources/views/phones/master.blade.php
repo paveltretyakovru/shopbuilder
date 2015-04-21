@@ -62,7 +62,7 @@
 					</li>
 
 					@if (Auth::check())
-						<li><a href="#">Личный кабинет</a></li>
+						<li><a href="{{ url('/user/contactinfo') }}">Личный кабинет</a></li>
 						<li><a href="{{ url('/auth/logout') }}">Выход</a></li>
 					@else
 						<li><a class="btn" href="{{ url('/auth/login') }}">Вход / Регистрация</a></li>
@@ -73,6 +73,8 @@
 		</div>
 	</div> 
 	<!-- /.navbar -->	
+
+	<div class="secondary"></div>
 
 	<div class="container">
 

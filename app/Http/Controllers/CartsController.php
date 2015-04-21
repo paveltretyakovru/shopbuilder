@@ -14,6 +14,26 @@ use DB;
 
 class CartsController extends Controller {
 
+	public function deleteCart($cart_id){
+		$cart_id 	= (integer) $cart_id;
+		$dbcart 	= $this->dbCart($cart_id);
+
+		if($dbcart){
+			if (!empty($dbcart['cart'])) {
+				if($dbcart['cart']->delete()){
+					return redirect()->back();
+				}else{
+					return redirect()->back()->with('error' , "Произошла ошибка во время удаления записи");
+				}
+			}
+		}else{
+			if($this->sessionCart($cart_id) !== false){
+
+			}
+		}
+		
+	}
+
 	public function addProduct($product_id){
 		
 		$user_id 	= (Auth::check()) 		? 	Auth::user()->id 					: 0;
@@ -52,38 +72,13 @@ class CartsController extends Controller {
 	}
 
 
-	public function index(){
-		$products 	= array();
-		$ids 		= array();
-		$images 	= array();
-		$prices		= array();
-		$carts 		= $this->getUserCarts();
-		$sum 		= 0;
+	public function index(){		
+		$cart_data	= $this->getCartData();
+		$products	= $cart_data['products'];
+		$images 	= $cart_data['images'];
+		$sum 		= $cart_data['sum'];
 
-		if (count($carts)) {
-			foreach ($carts as $cart) {
-				$product = Cart::find($cart->id)->product;				
-				array_push($products, $product);
-				array_push($ids, $product->id);
-				array_push($prices, $product->price);
-			}
-		}
-
-		$sum = array_sum($prices);
-
-		// собираем первые изображения товаров
-		$files = DB::table('files')->where([
-			'type' 		=> 'image' ,
-			'group'		=> 'products'
-		])->whereIn('groupid' , $ids)->get();
-
-		foreach ($files as $file) {
-			if (!array_key_exists($file->groupid, $images)) {
-				$images[$file->groupid] = $file;
-			}
-		}
-
-		return view('shop.cart' , compact('carts' , 'products' , 'images' , 'sum'));
+		return view('shop.cart' , compact('products' , 'images' , 'sum'));
 	}
 
 
@@ -118,31 +113,97 @@ class CartsController extends Controller {
 		}
 	}
 
-	protected function getUserCarts(){
+	protected function getCartData(){
+		$result['products']	= array();
+		$result['images'] 	= array();
+		$prices				= array();		
+		$ids		 		= array();		
+
 		if(Auth::check()){
 			$user 	= Auth::user();
 			$carts 	= Cart::where(['user_id' => $user->id]);
 
 			if($carts){
-				return $carts->get();
+				$result['header'] 	= 'db';
+				$carts = $carts->get();
+
+				if (count($carts)) {					
+					foreach ($carts as $cart) {
+						$product = Cart::find($cart->id)->product;				
+						array_push($result['products'], $product);
+						array_push($prices, $product->price);
+						array_push($ids, $product->id);
+					}
+				}
+
 			}else{
 				return false;
 			}
 
 		}else{
 			if(Session::has('cart')){
-				$carts = array();
+				$carts 				= array();
+				$result['header'] 	= 'session';
 
 				foreach (Session::get('cart') as $product_id) {
-					$cart = Cart::find($product_id);
 
-					if ($cart) {
-						array_push($carts, $cart);
+					$product = Product::find($product_id);					
+
+					if ($product) {						
+						//$product = $product->get();
+						array_push($result['products'], $product);
+						array_push($prices, $product->price);
+						array_push($ids, $product->id);
 					}
-				}
-
-				return $carts;
+				}				
 			}
+		}
+
+		$result['sum'] = array_sum($prices);
+
+		// собираем первые изображения товаров
+		$files = DB::table('files')->where([
+			'type' 		=> 'image' ,
+			'group'		=> 'products'
+		])->whereIn('groupid' , $ids)->get();
+
+		foreach ($files as $file) {
+			if (!array_key_exists($file->groupid, $result['images'])) {
+				$result['images'][$file->groupid] = $file;
+			}
+		}
+
+		return $result;
+	}
+
+	// Есть ли корзина в сессии
+	protected function sessionCart($cart_id){
+		if(Session::has('cart')){
+			return array_search($cart_id, Session::get('cart'));
+		}else{
+			return false;
+		}
+	}
+
+	// Есть ли корзина в сессии
+	protected function dbCart($cart_id){
+		if(Auth::check()){
+			$user 	= Auth::user();
+			$cart 	= Cart::where(['id' => $cart_id , 'user_id' => $user->id]);
+			$dbcart = array();
+
+			if($cart){
+				if ($cart->count()) {
+					$dbcart['user'] = $user;
+					$dbcart['cart'] = $cart;
+				}else{
+					return false;
+				}
+			}else{
+				return false;
+			}
+		}else{
+			return false;
 		}
 	}
 

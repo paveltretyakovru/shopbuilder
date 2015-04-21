@@ -1,7 +1,6 @@
 @extends('phones.master')
 
 @section('breadcrumb')
-	<div class="secondary"></div>
 	
 	<li>{!! link_to('phones' , 'Телефоны') !!}</li>
 	<li class="active">{{ $product->title }}</li>

@@ -1,7 +1,6 @@
 @extends('phones.master')
 
 @section('breadcrumb')
-	<div class="secondary"></div>
 
 	<li class="active">Телефоны</li>
 @stop

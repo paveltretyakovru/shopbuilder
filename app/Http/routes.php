@@ -79,17 +79,19 @@ Route::group(array('namespace' => 'Admin'), function(){
 
 // Тестовые маршруты
 $router->controllers(['test' => 'TestsController']);
-$router->get('test', 'TestsController@test');
-$router->get('authtest' , 'TestsController@AuthTest');
 
-
-// ТОВАРЫ
-// Ображение к товарам из публичной части сайта
-
-// Манипулиция направленные на работу с корзиной
+// КОРЗИНА
 $router->get('addProduct/{id}' , 'CartsController@addProduct');
 $router->get('carts' , 'CartsController@index');
+$router->get('deleteCart/{id}' , 'CartsController@deleteCart');
 
+// ЗАКАЗЫ
+$router->controller('order' , 'OrdersController');
+
+// ПОЛЬЗОВАТЕЛИ
+$router->controller('user' , 'UsersController');
+
+// ТОВАРЫ
 Route::get('{products}/{id}', ['as' => 'products/{id}' , 'uses' => 'ProductsController@show'] )
 		->where('category', '[A-Za-z]+');
 Route::get('{category}' , 'ProductsController@index')->where('category', '[A-Za-z]+');

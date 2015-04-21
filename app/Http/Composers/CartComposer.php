@@ -24,16 +24,10 @@ class CartComposer {
     protected function getCartCount(){
         $sessionCount  = $this->getSessionCartCount();
 
-        if ($this->checkAuth()) {            
-            $user = $this->getUserData();
-
-            if($sessionCount){                
-                return $sessionCount;
-            }else{                
+        if ($this->checkAuth()) {
+            $user = $this->getUserData();            
                 // Пытаемся получить количество не оформленных покупок из базы данных
                 return $this->getDBCartCount($user);
-            }
-
         } else {
             return $sessionCount;
         }        

@@ -1,8 +1,6 @@
 @extends('phones.master')
 
-@section('content')
-
-	<div class="secondary"></div>
+@section('content')	
 
 	<!-- Intro -->
 	<div class="container text-center">
