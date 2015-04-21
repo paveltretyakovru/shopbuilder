@@ -24,11 +24,7 @@ class CreateCartsTable extends Migration {
 			$table->integer('user_id')->unsigned();
 
 			// Оформлен ли товар
-			$table->boolean('checkout')->default(false);
-			// Подтвержден ли товар
-			$table->boolean('confirmed')->default(false);
-			// Оплачен ли товар
-			$table->boolean('paid')->default(false);
+			$table->boolean('checkout')->default(false);			
 
 			$table->timestamps();
 		});

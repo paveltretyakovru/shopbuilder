@@ -6,10 +6,16 @@
 
 @section('content')
 	<h4>Подтверждение контактной информации</h4>
-	
-	{!! Form::model($user['object'] , ['url' => '/order/confirmdata' , 'method' => 'PATCH']) !!}
-		@include('shop.user.contactform');
-	{!! Form::close() !!}		
+
+	@if ($product_id)
+		{!! Form::model($user['object'] , ['url' => '/order/confirmdata/'.$product_id , 'method' => 'PATCH']) !!}
+			@include('shop.user.contactform');
+		{!! Form::close() !!}		
+	@else
+		{!! Form::model($user['object'] , ['url' => '/order/confirmdata' , 'method' => 'PATCH']) !!}
+			@include('shop.user.contactform');
+		{!! Form::close() !!}	
+	@endif
 
 
 	<!--

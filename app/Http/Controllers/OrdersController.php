@@ -19,44 +19,65 @@ use \App\Product;
 class OrdersController extends Controller {
 
 	public function getCheckout($product_id = 0){
-		$product 	= $this->getProduct($product_id);
-		$user 		= $this->getUserData();
 
-		// если идет сразу оформление товара
-		if ($product){
+		// Проверяем прошёл ли пользователь стадию проверки контакнтых данных
+		if(Session::has('check_data') && Session::get('check_data')){
 			
-		// если идет оформление покупки из корзины
+			$product 	= $this->getProduct($product_id);
+			$user 		= $this->getUserData();
+
+			// если идет сразу оформление товара
+			if ($product){
+				
+			// если идет оформление покупки из корзины
+			}else{
+				
+			}
+
 		}else{
-			
-		}
+			return redirect('/order/checkdata');
+		}	
 	}
 
+	protected function createOrder(){
+
+	}
 
 	/*	
 		# Страница для подтверждения контактных данных пользователя
 		# Если данные не введены, добавляет в шаблон форму для их ввода
 	*/
-	public function getCheckdata(){
+	public function getCheckdata($product_id = 0){
 		// Ищем информацию о пользователе в БД и Сессии
 		$user	= $this->getUserData();
 		// Выводим форму 
-		return view('shop.checkuserdata' , compact('user'));
+		return view('shop.checkuserdata' , compact('user' , 'product_id'));
 	}
 
 	/*
 		# Отправка формы с подтверждением контактных данных пользователя
 	*/
-	public function patchConfirmdata(Requests\UserDataRequest $req){
+	public function patchConfirmdata(Requests\UserDataRequest $req , $product_id = 0){
 		if(Auth::check()){
 			$user = Auth::user();
-			$user->fill($req->input())->save();			
+			$user->fill($req->input())->save();
 		}else{
 			$user = new User();
 			$user->fill($req->input());
 			Session::put('user_data', $user->toArray());
 		}
 
-		return redirect('order/checkout');
+		// Одноразовя переменная, обозначает, что пользователь и сервер проверили
+		// контактные данные. Предотвращает поступление пустых заказов
+		Session::flash('check_data', true);
+
+		// перенаправляем на страницу с результатом оформленых товаров
+		if ($product_id) {
+			return redirect('order/checkout/'.$product_id);
+		} else {
+			return redirect('order/checkout');
+		}
+		
 	}
 
 	/*
