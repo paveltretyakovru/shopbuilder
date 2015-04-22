@@ -10,6 +10,8 @@
 	{!! HTML::style('adminpanel/css/libs/jquery.tagsinput.css') !!}
 	{!! HTML::style('adminpanel/css/libs/jquery.gridster.css') !!}
 	{!! HTML::style('adminpanel/css/libs/quill.snow.css') !!}
+
+	@yield('cssincludes')
 </head>
 <body>
 

@@ -121,7 +121,7 @@ class CartsController extends Controller {
 
 		if(Auth::check()){
 			$user 	= Auth::user();
-			$carts 	= Cart::where(['user_id' => $user->id]);
+			$carts 	= Cart::where(['user_id' => $user->id , 'checkout' => 0]);
 
 			if($carts){
 				$result['header'] 	= 'db';

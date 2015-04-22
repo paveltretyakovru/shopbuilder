@@ -26,8 +26,7 @@ class CreateOrdersTable extends Migration {
 				$table->integer('cart_id')->unsigned();							// id корзины
 				$table->foreign('cart_id')->references('id')->on('carts');
 				
-				$table->boolean('confirmed')->default(false);					// подтвержден
-				$table->boolean('paid')->default(false);						// оплачен
+				$table->string('status')->default('checkout');
 				$table->timestamps();
 			});
 	}

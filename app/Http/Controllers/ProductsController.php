@@ -52,23 +52,29 @@ class ProductsController extends Controller {
 		// Добавлен ли товар в корзину
 		$product_in_cart = false;
 
-		$product 	= Product::whereId($product)->first();
-		$parameters = Parameter::where('product' , $product->id)->get();
+		$product 	= Product::whereId($product)->first();	
 
-		$view 		= StringView::make(
-			[
-				'template' 		=> $product->view ,
-				'cache_key' 	=> 'EQt5fc2CiZGz888J' ,
-				'updated_at'	=> 0
-			] ,
-			array(
-				'product' 		=> $product ,
-				'parameters' 	=> $parameters
-			)
-		);
+		if($product){
+			$parameters = Parameter::where('product' , $product->id)->get();		
 
-		//return $view;
-		return view('products.public.show' , compact('product' , 'parameters' , 'view' , 'product_in_cart'));
+			$view 		= StringView::make(
+				[
+					'template' 		=> $product->view ,
+					'cache_key' 	=> 'EQt5fc2CiZGz888J' ,
+					'updated_at'	=> 0
+				] ,
+				array(
+					'product' 		=> $product ,
+					'parameters' 	=> $parameters
+				)
+			);
+
+			//return $view;
+			return view('products.public.show' , compact('product' , 'parameters' , 'view' , 'product_in_cart'));			
+		}else{
+			return redirect('404');
+		}
+
 
 	}
 
