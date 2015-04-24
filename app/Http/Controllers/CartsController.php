@@ -27,8 +27,17 @@ class CartsController extends Controller {
 				}
 			}
 		}else{
-			if($this->sessionCart($cart_id) !== false){
-
+			$session_num = $this->sessionCart($cart_id);
+			if($session_num !== false){
+				$tmp = Session::get('cart');
+				// удаляем значение
+				unset($tmp[$session_num]);
+				// переиндексация
+				$tmp = array_values($tmp);
+				// сохраняем новый массив карзины
+				Session::put('cart', $tmp);
+				// возвращаемся назад
+				return redirect()->back();
 			}
 		}
 		
