@@ -4,28 +4,92 @@
 		"selected_items":
 		[
 			[
-				"View",
-				"View::composer	Define a View Composer"
-			],
-			[
-				"product",
-				"product_id"
+				"json",
+				"json_encode"
 			],
 			[
 				"Session",
-				"Session::push	Push a Value onto an Array Session Value"
+				"Session::forget	Remove an Item from the Session"
+			],
+			[
+				"produc",
+				"products"
+			],
+			[
+				"for",
+				"for	for …"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"error",
+				"errors"
+			],
+			[
+				"user_da",
+				"user_data"
+			],
+			[
+				"user_data",
+				"user_data_control"
 			],
 			[
 				"Sess",
 				"Session::get	Retrieve an Item from the Session or Default Value"
 			],
 			[
-				"produc",
-				"product_id"
+				"Sessi",
+				"Session::has	Determin if an Item Exists in the Session"
 			],
 			[
 				"if",
 				"ifelse	if … else …"
+			],
+			[
+				"produ",
+				"product"
+			],
+			[
+				"cart",
+				"carts"
+			],
+			[
+				"dbcart",
+				"dbcart"
+			],
+			[
+				"proud",
+				"products"
+			],
+			[
+				"product",
+				"product"
+			],
+			[
+				"push",
+				"array_push"
+			],
+			[
+				"Cart",
+				"CartsController"
+			],
+			[
+				"getDBCa",
+				"getDBCartCount"
+			],
+			[
+				"getSession",
+				"getSessionCartCount"
+			],
+			[
+				"Ses",
+				"Session"
+			],
+			[
+				"View",
+				"View::composer	Define a View Composer"
 			],
 			[
 				"Files",
@@ -44,20 +108,12 @@
 				"random_text1"
 			],
 			[
-				"for",
-				"for	for …"
-			],
-			[
 				"public",
 				"publicurl"
 			],
 			[
 				"array_key",
 				"array_key_exists"
-			],
-			[
-				"produ",
-				"product"
 			],
 			[
 				"Rout",
@@ -216,85 +272,10 @@
 	"buffers":
 	[
 		{
-			"file": "app/Http/routes.php",
+			"file": "database/migrations/last/2015_06_04_034331_CreateParametersTable.php",
 			"settings":
 			{
-				"buffer_size": 2461,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "composer.json",
-			"settings":
-			{
-				"buffer_size": 1167,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "vendor/laravel/framework/src/Illuminate/Foundation/Providers/ComposerServiceProvider.php",
-			"settings":
-			{
-				"buffer_size": 891,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "<?php\n\nreturn [\n\n	/*\n	|--------------------------------------------------------------------------\n	| Application Debug Mode\n	|--------------------------------------------------------------------------\n	|\n	| When your application is in debug mode, detailed error messages with\n	| stack traces will be shown on every error that occurs within your\n	| application. If disabled, a simple generic error page is shown.\n	|\n	*/\n\n	// 'debug' => env('APP_DEBUG'),\n	'debug' => true,\n\n	/*\n	|--------------------------------------------------------------------------\n	| Application URL\n	|--------------------------------------------------------------------------\n	|\n	| This URL is used by the console to properly generate URLs when using\n	| the Artisan command line tool. You should set this to the root of\n	| your application so that it is used when running Artisan tasks.\n	|\n	*/\n\n	'url' => 'http://localhost',\n\n	/*\n	|--------------------------------------------------------------------------\n	| Application Timezone\n	|--------------------------------------------------------------------------\n	|\n	| Here you may specify the default timezone for your application, which\n	| will be used by the PHP date and date-time functions. We have gone\n	| ahead and set this to a sensible default for you out of the box.\n	|\n	*/\n\n	'timezone' => 'UTC',\n\n	/*\n	|--------------------------------------------------------------------------\n	| Application Locale Configuration\n	|--------------------------------------------------------------------------\n	|\n	| The application locale determines the default locale that will be used\n	| by the translation service provider. You are free to set this value\n	| to any of the locales which will be supported by the application.\n	|\n	*/\n\n	'locale' => 'ru',\n\n	/*\n	|--------------------------------------------------------------------------\n	| Application Fallback Locale\n	|--------------------------------------------------------------------------\n	|\n	| The fallback locale determines the locale to use when the current one\n	| is not available. You may change the value to correspond to any of\n	| the language folders that are provided through your application.\n	|\n	*/\n\n	'fallback_locale' => 'en',\n\n	/*\n	|--------------------------------------------------------------------------\n	| Encryption Key\n	|--------------------------------------------------------------------------\n	|\n	| This key is used by the Illuminate encrypter service and should be set\n	| to a random, 32 character string, otherwise these encrypted strings\n	| will not be safe. Please do this before deploying an application!\n	|\n	*/\n\n	'key' => env('APP_KEY', 'SomeRandomString'),\n\n	'cipher' => MCRYPT_RIJNDAEL_128,\n\n	/*\n	|--------------------------------------------------------------------------\n	| Logging Configuration\n	|--------------------------------------------------------------------------\n	|\n	| Here you may configure the log settings for your application. Out of\n	| the box, Laravel uses the Monolog PHP logging library. This gives\n	| you a variety of powerful log handlers / formatters to utilize.\n	|\n	| Available Settings: \"single\", \"daily\", \"syslog\", \"errorlog\"\n	|\n	*/\n\n	'log' => 'daily',\n\n	/*\n	|--------------------------------------------------------------------------\n	| Autoloaded Service Providers\n	|--------------------------------------------------------------------------\n	|\n	| The service providers listed here will be automatically loaded on the\n	| request to your application. Feel free to add your own services to\n	| this array to grant expanded functionality to your applications.\n	|\n	*/\n\n	'providers' => [\n\n		/*\n		 * Laravel Framework Service Providers...\n		 */\n		'Illuminate\\Foundation\\Providers\\ArtisanServiceProvider',\n		'Illuminate\\Auth\\AuthServiceProvider',\n		'Illuminate\\Bus\\BusServiceProvider',\n		'Illuminate\\Cache\\CacheServiceProvider',\n		'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',\n		'Illuminate\\Routing\\ControllerServiceProvider',\n		'Illuminate\\Cookie\\CookieServiceProvider',\n		'Illuminate\\Database\\DatabaseServiceProvider',\n		'Illuminate\\Encryption\\EncryptionServiceProvider',\n		'Illuminate\\Filesystem\\FilesystemServiceProvider',\n		'Illuminate\\Foundation\\Providers\\FoundationServiceProvider',\n		'Illuminate\\Hashing\\HashServiceProvider',\n		'Illuminate\\Mail\\MailServiceProvider',\n		'Illuminate\\Pagination\\PaginationServiceProvider',\n		'Illuminate\\Pipeline\\PipelineServiceProvider',\n		'Illuminate\\Queue\\QueueServiceProvider',\n		'Illuminate\\Redis\\RedisServiceProvider',\n		'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',\n		'Illuminate\\Session\\SessionServiceProvider',\n		'Illuminate\\Translation\\TranslationServiceProvider',\n		'Illuminate\\Validation\\ValidationServiceProvider',\n		'Illuminate\\View\\ViewServiceProvider',\n\n		/*\n		 * Application Service Providers...\n		 */\n		'App\\Providers\\AppServiceProvider',\n		'App\\Providers\\BusServiceProvider',\n		'App\\Providers\\ConfigServiceProvider',\n		'App\\Providers\\EventServiceProvider',\n		'App\\Providers\\RouteServiceProvider',\n\n		// Forms and others\n		'Illuminate\\Html\\HtmlServiceProvider', \n		// Provider for working with images\n		'Intervention\\Image\\ImageServiceProvider',\n\n		'Wpb\\StringBladeCompiler\\StringBladeCompilerServiceProvider' ,\n\n		'Illuminate\\Foundation\\Providers\\ComposerServiceProvider'\n	],\n\n	/*\n	|--------------------------------------------------------------------------\n	| Class Aliases\n	|--------------------------------------------------------------------------\n	|\n	| This array of class aliases will be registered when this application\n	| is started. However, feel free to register as many as you wish as\n	| the aliases are \"lazy\" loaded so they don't hinder performance.\n	|\n	*/\n\n	'aliases' => [\n\n		'App'       => 'Illuminate\\Support\\Facades\\App',\n		'Artisan'   => 'Illuminate\\Support\\Facades\\Artisan',\n		'Auth'      => 'Illuminate\\Support\\Facades\\Auth',\n		'Blade'     => 'Illuminate\\Support\\Facades\\Blade',\n		'Bus'       => 'Illuminate\\Support\\Facades\\Bus',\n		'Cache'     => 'Illuminate\\Support\\Facades\\Cache',\n		'Config'    => 'Illuminate\\Support\\Facades\\Config',\n		'Cookie'    => 'Illuminate\\Support\\Facades\\Cookie',\n		'Crypt'     => 'Illuminate\\Support\\Facades\\Crypt',\n		'DB'        => 'Illuminate\\Support\\Facades\\DB',\n		'Eloquent'  => 'Illuminate\\Database\\Eloquent\\Model',\n		'Event'     => 'Illuminate\\Support\\Facades\\Event',\n		'File'      => 'Illuminate\\Support\\Facades\\File',\n		'Hash'      => 'Illuminate\\Support\\Facades\\Hash',\n		'Input'     => 'Illuminate\\Support\\Facades\\Input',\n		'Inspiring' => 'Illuminate\\Foundation\\Inspiring',\n		'Lang'      => 'Illuminate\\Support\\Facades\\Lang',\n		'Log'       => 'Illuminate\\Support\\Facades\\Log',\n		'Mail'      => 'Illuminate\\Support\\Facades\\Mail',\n		'Password'  => 'Illuminate\\Support\\Facades\\Password',\n		'Queue'     => 'Illuminate\\Support\\Facades\\Queue',\n		'Redirect'  => 'Illuminate\\Support\\Facades\\Redirect',\n		'Redis'     => 'Illuminate\\Support\\Facades\\Redis',\n		'Request'   => 'Illuminate\\Support\\Facades\\Request',\n		'Response'  => 'Illuminate\\Support\\Facades\\Response',\n		'Route'     => 'Illuminate\\Support\\Facades\\Route',\n		'Schema'    => 'Illuminate\\Support\\Facades\\Schema',\n		'Session'   => 'Illuminate\\Support\\Facades\\Session',\n		'Storage'   => 'Illuminate\\Support\\Facades\\Storage',\n		'URL'       => 'Illuminate\\Support\\Facades\\URL',\n		'Validator' => 'Illuminate\\Support\\Facades\\Validator',\n		'View'      => 'Illuminate\\Support\\Facades\\View',\n\n		'Form'		=> 'Illuminate\\Html\\FormFacade' ,\n		'HTML'		=> 'Illuminate\\Html\\HtmlFacade' ,\n		'Image' 	=> 'Intervention\\Image\\Facades\\Image'\n	],\n\n];\n",
-			"file": "config/app.php",
-			"file_size": 7751,
-			"file_write_time": 130734026355961529,
-			"settings":
-			{
-				"buffer_size": 7542,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/index.php",
-			"settings":
-			{
-				"buffer_size": 1777,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "bootstrap/app.php",
-			"settings":
-			{
-				"buffer_size": 1551,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "vendor/illuminate/html/HtmlServiceProvider.php",
-			"settings":
-			{
-				"buffer_size": 1216,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Composers/TestComposer.php",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/CartsController.php",
-			"settings":
-			{
-				"buffer_size": 938,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/phones/master.blade.php",
-			"settings":
-			{
-				"buffer_size": 3501,
+				"buffer_size": 844,
 				"line_ending": "Windows"
 			}
 		}
@@ -401,13 +382,74 @@
 	"expanded_folders":
 	[
 		"/D/server/htdocs/shopbuilder",
-		"/D/server/htdocs/shopbuilder/public"
+		"/D/server/htdocs/shopbuilder/database",
+		"/D/server/htdocs/shopbuilder/database/migrations",
+		"/D/server/htdocs/shopbuilder/database/migrations/last"
 	],
 	"file_history":
 	[
+		"/D/server/htdocs/shopbuilder/database/migrations/last/2014_10_12_000000_create_users_table.php",
+		"/D/server/htdocs/shopbuilder/database/migrations/last/2015_02_24_150836_CreateCategoriesTable.php",
+		"/D/server/htdocs/shopbuilder/database/migrations/last/2015_02_23_190310_CreateProductsTable.php",
+		"/D/server/htdocs/shopbuilder/app/Http/routes.php",
+		"/D/server/htdocs/shopbuilder/public/adminpanel/js/system/models/order.model.coffee",
+		"/D/server/htdocs/shopbuilder/resources/views/admin/master.blade.php",
+		"/D/server/htdocs/shopbuilder/public/adminpanel/js/system/views/ordersTable.view.coffee",
+		"/D/server/htdocs/shopbuilder/resources/views/orders/admin/index.blade.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/ProductsController.php",
+		"/D/server/htdocs/shopbuilder/app/Order.php",
+		"/D/server/htdocs/shopbuilder/public/adminpanel/js/system/views/ordersTable.view.js",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/OrdersController.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/OrdersController.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/CartsController.php",
+		"/D/server/htdocs/shopbuilder/database/migrations/last/2015_04_21_130540_CreateOrdersTable.php",
+		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_22_110952_change_orders_table.php",
+		"/D/server/htdocs/shopbuilder/app/Cart.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/ProductsController.php",
+		"/D/server/htdocs/shopbuilder/public/adminpanel/js/system/models.js",
+		"/D/server/htdocs/shopbuilder/resources/views/shop/checkout.blade.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Requests/UserDataRequest.php",
+		"/D/server/htdocs/shopbuilder/resources/views/shop/checkuserdata.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/products/public/show.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/shop/tradepanel.blade.php",
+		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Http/Request.php",
+		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_21_155051_add_collumn_to_orders_table.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Requests/Request.php",
+		"/D/server/htdocs/shopbuilder/resources/views/shop/cart.blade.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/UsersController.php",
+		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_21_130540_CreateOrdersTable.php",
+		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_21_125537_CreateOrdersTable.php",
+		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_21_114756_CreateFieldsInOrdersTable.php",
+		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_11_082914_create_carts_table.php",
+		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_21_114454_DeleteFieldsFromCarts.php",
+		"/D/server/htdocs/shopbuilder/resources/views/auth/login.blade.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/CategoriesController.php",
+		"/D/server/htdocs/shopbuilder/resources/views/shop/user/contactform.blade.php",
+		"/D/server/htdocs/shopbuilder/app/User.php",
+		"/D/server/htdocs/shopbuilder/resources/views/products/admin/edit.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/shop/user/changecontact.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/phones/master.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/products/public/index.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/errors/404.blade.php",
+		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_18_183219_AddFieldsUsersTable.php",
+		"/D/server/htdocs/shopbuilder/resources/views/shop/user/changeinfo.blade.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Composers/CartComposer.php",
+		"/D/server/htdocs/shopbuilder/storage/framework/views/d3adf13d1b6c716674bfd85dd7915c23",
+		"/D/server/htdocs/shopbuilder/resources/views/products/admin/show.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/products/admin/form.blade.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/ParametersController.php",
+		"/D/server/htdocs/shopbuilder/resources/views/messages.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/products/admin/create.blade.php",
+		"/D/server/htdocs/shopbuilder/config/app.php",
+		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Foundation/Providers/ComposerServiceProvider.php",
+		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Foundation/Composer.php",
+		"/D/server/htdocs/shopbuilder/composer.json",
+		"/D/server/htdocs/shopbuilder/vendor/illuminate/html/HtmlServiceProvider.php",
+		"/D/server/htdocs/shopbuilder/bootstrap/app.php",
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php",
-		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Foundation/Composer.php",
 		"/D/server/htdocs/shopbuilder/vendor/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php",
 		"/D/server/htdocs/shopbuilder/app/Providers/AppServiceProvider.php",
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Auth/Guard.php",
@@ -415,28 +457,17 @@
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Auth/AuthController.php",
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Controller.php",
-		"/D/server/htdocs/shopbuilder/resources/views/shop/tradepanel.blade.php",
-		"/D/server/htdocs/shopbuilder/resources/views/products/public/show.blade.php",
 		"/D/server/htdocs/shopbuilder/public/templates/phones/css/main.css",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/ProductsController.php",
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers/TestsController.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/UsersController.php",
 		"/D/server/htdocs/shopbuilder/resources/views/user/login.blade.php",
 		"/D/server/htdocs/shopbuilder/app/Http/helpers.php",
-		"/D/server/htdocs/shopbuilder/app/Cart.php",
-		"/D/server/htdocs/shopbuilder/resources/views/auth/login.blade.php",
-		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_11_082914_create_carts_table.php",
 		"/D/server/htdocs/shopbuilder/public/phones/css/app.css",
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers/HomeController.php",
 		"/D/server/htdocs/shopbuilder/config/auth.php",
 		"/D/server/htdocs/paveltretyakov/app/Http/routes.php",
 		"/D/server/htdocs/shopbuilder/resources/views/phones/user/login.blade.php",
-		"/D/server/htdocs/shopbuilder/app/Http/routes.php",
 		"/D/server/htdocs/shopbuilder/database/seeds/DatabaseSeeder.php",
-		"/D/server/htdocs/shopbuilder/resources/views/products/public/index.blade.php",
 		"/D/server/htdocs/shopbuilder/app/Product.php",
-		"/D/server/htdocs/shopbuilder/config/app.php",
-		"/D/server/htdocs/shopbuilder/composer.json",
 		"/D/server/htdocs/shopbuilder/storage/framework/views/79438013849fb1283d302bba5e87dfd8",
 		"/D/server/htdocs/shopbuilder/storage/framework/views/6b6334725f693bfe1c00128f15b1dabc",
 		"/D/server/htdocs/shopbuilder/storage/framework/views/14f891237e4f0497daf0fabe09101536",
@@ -445,15 +476,11 @@
 		"/D/server/htdocs/shopbuilder/vendor/flynsarmy/db-blade-compiler/composer.json",
 		"/D/games/install/Halo2/halo2.exe.cfg",
 		"/D/games/install/Halo2/halo2.exe",
-		"/D/server/htdocs/shopbuilder/resources/views/phones/master.blade.php",
 		"/D/server/htdocs/shopbuilder/vendor/wpb/string-blade-compiler/src/Wpb/StringBladeCompiler/StringView.php",
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php",
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/View/FileViewFinder.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/ParametersController.php",
 		"/D/server/htdocs/shopbuilder/resources/views/phones/index.blade.php",
-		"/D/server/htdocs/shopbuilder/resources/views/admin/master.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/categories/index.blade.php",
-		"/D/server/htdocs/shopbuilder/resources/views/products/admin/edit.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/categories/show.blade.php",
 		"/D/server/htdocs/shopbuilder/public/templates/phones/css/system.css",
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers/FilesController.php",
@@ -461,13 +488,9 @@
 		"/D/server/htdocs/shopbuilder/public/adminpanel/css/system.css",
 		"/D/server/htdocs/shopbuilder/resources/views/master.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/views/edit.blade.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/ProductsController.php",
-		"/D/server/htdocs/shopbuilder/resources/views/products/admin/create.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/products/edit.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/categories/edit.blade.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/CategoriesController.php",
 		"/D/server/htdocs/shopbuilder/resources/views/parameters/edit.blade.php",
-		"/D/server/htdocs/shopbuilder/resources/views/errors/404.blade.php",
 		"/D/server/htdocs/shopbuilder/app/Http/Requests/CategoryFormRequest.php",
 		"/D/server/htdocs/shopbuilder/resources/views/categories/form.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/categories/create.blade.php",
@@ -492,47 +515,7 @@
 		"/D/server/htdocs/shopbuilder/public/js/system/views/viewsTemplates.view.js",
 		"/D/server/htdocs/shopbuilder/public/js/system/helpers.js",
 		"/D/server/htdocs/shopbuilder/public/js/system/helpers.coffee",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/ViewsController.php",
-		"/D/server/htdocs/shopbuilder/resources/views/products/initJSModel.blade.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/CategoriesController.php",
-		"/D/server/htdocs/shopbuilder/public/js/system/views/viewsTemplates.view.coffee",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/ParametersController.php",
-		"/D/server/htdocs/shopbuilder/app/Parameter.php",
-		"/D/server/htdocs/shopbuilder/vendor/illuminate/html/FormBuilder.php",
-		"/D/server/htdocs/shopbuilder/database/migrations/last/2015_02_23_190310_CreateProductsTable.php",
-		"/D/server/htdocs/shopbuilder/public/css/system.css",
-		"/D/server/htdocs/shopbuilder/database/migrations/2015_03_19_070901_edit_view_column.php",
-		"/D/server/htdocs/shopbuilder/resources/views/products/jsobject.blade.php",
-		"/D/server/htdocs/shopbuilder/public/js/system/system.js",
-		"/D/server/htdocs/shopbuilder/vendor/intervention/image/tests/LineShapeTest.php",
-		"/D/server/htdocs/shopbuilder/vendor/psr/log/Psr/Log/LoggerInterface.php",
-		"/D/server/htdocs/shopbuilder/vendor/classpreloader/classpreloader/LICENSE",
-		"/C/Users/Pavel/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/D/server/htdocs/shopbuilder/public/js/system/objects.js",
-		"/D/server/htdocs/shopbuilder/public/js/system/views/viewsTemplate.view.coffee",
-		"/D/server/htdocs/shopbuilder/public/js/system/views/test.coffee",
-		"/D/server/htdocs/shopbuilder/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Html/TemplateSpec.php",
-		"/D/server/htdocs/shopbuilder/vendor/phpunit/php-text-template/Text/Template.php",
-		"/D/server/htdocs/shopbuilder/resources/assets/less/bootstrap/mixins/text-emphasis.less",
-		"/D/server/htdocs/shopbuilder/tests/TestCase.php",
-		"/D/server/htdocs/shopbuilder/public/js/system/views/categoryParameters.view.coffee",
-		"/D/server/htdocs/shopbuilder/resources/views/templates/loadviewsimage.blade.php",
-		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Foundation/Console/stubs/fresh/view.stub",
-		"/D/server/htdocs/shopbuilder/config/view.php",
-		"/D/server/htdocs/shopbuilder/database/migrations/last/2015_02_24_150836_CreateCategoriesTable.php",
-		"/D/server/htdocs/shopbuilder/public/js/system/inities.coffee",
-		"/D/server/htdocs/shopbuilder/public/js/system/inities.js",
-		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Database/Eloquent/MassAssignmentException.php",
-		"/D/server/htdocs/shopbuilder/vendor/phpunit/phpunit/tests/_files/IniTest.php",
-		"/D/server/htdocs/shopbuilder/artisan",
-		"/D/server/htdocs/shopbuilder/resources/views/templates/texteditor.blade.php",
-		"/D/server/htdocs/shopbuilder/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/JUnitFormatterSpec.php",
-		"/D/server/htdocs/shopbuilder/public/css/libs/jquery-ui.css",
-		"/D/server/htdocs/shopbuilder/vendor/phpunit/phpunit-mock-objects/tests/MockObjectTest.php",
-		"/D/server/htdocs/shopbuilder/config/database.php",
-		"/D/server/htdocs/shopbuilder/public/js/libs/configs/quill.js",
-		"/D/server/htdocs/shopbuilder/vendor/composer/installed.json",
-		"/D/server/htdocs/shopbuilder/vendor/phpunit/phpunit/tests/_files/ExceptionInSetUpTest.php"
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/ViewsController.php"
 	],
 	"find":
 	{
@@ -543,6 +526,7 @@
 		"height": 92.0,
 		"where_history":
 		[
+			"D:\\server\\htdocs\\shopbuilder",
 			"D:\\server\\htdocs\\shopbuilder\\public\\js",
 			"E:\\server\\htdocs\\task"
 		]
@@ -552,6 +536,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"json",
+			"checkbox",
+			"region",
+			"decimalSeparator",
+			"png",
+			"for",
+			"cart_data",
+			"checkout",
+			"inpu",
+			"for",
+			"save()",
+			"return redirect",
+			"cart",
+			"where",
+			"redirect",
+			"CartsControllert",
+			"registr",
+			"where",
+			"();\n",
+			"Testio",
 			"composer",
 			"check(",
 			"check",
@@ -636,266 +640,28 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Http/routes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2461,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								823,
-								823
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "composer.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1167,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								493,
-								493
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "vendor/laravel/framework/src/Illuminate/Foundation/Providers/ComposerServiceProvider.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 891,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								246,
-								246
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "config/app.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7542,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5065,
-								5065
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2108.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "public/index.php",
+					"file": "database/migrations/last/2015_06_04_034331_CreateParametersTable.php",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1777,
+						"buffer_size": 844,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1635,
-								1635
+								844,
+								844
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": -0.0,
-						"translation.y": 450.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "bootstrap/app.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1551,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": -0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "vendor/illuminate/html/HtmlServiceProvider.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1216,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								855,
-								855
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 91.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/Http/Composers/TestComposer.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/Http/Controllers/CartsController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 938,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								36,
-								16
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -903,37 +669,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "resources/views/phones/master.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3501,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2234,
-								2234
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 450.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -992,12 +728,204 @@
 		"selected_items":
 		[
 			[
-				"application",
-				"vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php"
+				"cartscontroller",
+				"app\\Http\\Controllers\\CartsController.php"
+			],
+			[
+				"cart.php",
+				"app\\Cart.php"
+			],
+			[
+				"order.php",
+				"app\\Order.php"
+			],
+			[
+				"productscontroll",
+				"app\\Http\\Controllers\\ProductsController.php"
+			],
+			[
+				"productscontroller",
+				"app\\Http\\Controllers\\Admin\\ProductsController.php"
+			],
+			[
+				"master.blade",
+				"resources\\views\\admin\\master.blade.php"
+			],
+			[
+				"models.js",
+				"public\\adminpanel\\js\\system\\models.js"
+			],
+			[
+				"routes",
+				"app\\Http\\routes.php"
+			],
+			[
+				"userdatareq",
+				"app\\Http\\Requests\\UserDataRequest.php"
+			],
+			[
+				"request",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Http\\Request.php"
+			],
+			[
+				"model.php",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php"
+			],
+			[
+				"checkuser",
+				"resources\\views\\shop\\checkuserdata.blade.php"
+			],
+			[
+				"tradepanel",
+				"resources\\views\\shop\\tradepanel.blade.php"
+			],
+			[
+				"orderscontroller",
+				"app\\Http\\Controllers\\OrdersController.php"
+			],
+			[
+				"orderscont",
+				"app\\Http\\Controllers\\OrdersController.php"
+			],
+			[
+				"userscontroller.php",
+				"app\\Http\\Controllers\\UsersController.php"
+			],
+			[
+				"404",
+				"resources\\views\\errors\\404.blade.php"
+			],
+			[
+				"categoriescont",
+				"app\\Http\\Controllers\\Admin\\CategoriesController.php"
+			],
+			[
+				"user.php",
+				"app\\User.php"
+			],
+			[
+				"addfields",
+				"database\\migrations\\2015_04_18_183219_AddFieldsUsersTable.php"
+			],
+			[
+				"master.bl",
+				"resources\\views\\phones\\master.blade.php"
+			],
+			[
+				"d3",
+				"storage\\framework\\views\\d3adf13d1b6c716674bfd85dd7915c23"
+			],
+			[
+				"users",
+				"app\\Http\\Controllers\\UsersController.php"
+			],
+			[
+				"contactform",
+				"resources\\views\\shop\\user\\contactform.blade.php"
+			],
+			[
+				"changeinfo",
+				"resources\\views\\shop\\user\\changeinfo.blade.php"
+			],
+			[
+				"d3adf13",
+				"storage\\framework\\views\\d3adf13d1b6c716674bfd85dd7915c23"
+			],
+			[
+				"edit.blade.php",
+				"resources\\views\\products\\admin\\edit.blade.php"
+			],
+			[
+				"product.blade.php",
+				"resources\\views\\products\\admin\\show.blade.php"
+			],
+			[
+				"form.blade",
+				"resources\\views\\products\\admin\\form.blade.php"
+			],
+			[
+				"rou",
+				"app\\Http\\routes.php"
+			],
+			[
+				"userscontroller",
+				"app\\Http\\Controllers\\UsersController.php"
+			],
+			[
+				"cartcomposer",
+				"app\\Http\\Composers\\CartComposer.php"
+			],
+			[
+				"panel.blade",
+				"resources\\views\\shop\\tradepanel.blade.php"
+			],
+			[
+				"show.blade.php",
+				"resources\\views\\products\\public\\show.blade.php"
+			],
+			[
+				"parameterscontroller",
+				"app\\Http\\Controllers\\Admin\\ParametersController.php"
+			],
+			[
+				"mess",
+				"resources\\views\\messages.blade.php"
+			],
+			[
+				"master.blade.php",
+				"resources\\views\\phones\\master.blade.php"
+			],
+			[
+				"cartscont",
+				"app\\Http\\Controllers\\CartsController.php"
+			],
+			[
+				"messages",
+				"resources\\views\\messages.blade.php"
+			],
+			[
+				"messages.bl",
+				"resources\\views\\messages.blade.php"
+			],
+			[
+				"form.blade.php",
+				"resources\\views\\products\\admin\\form.blade.php"
+			],
+			[
+				"update.blade",
+				"resources\\views\\products\\admin\\create.blade.php"
+			],
+			[
+				"master.blade.",
+				"resources\\views\\admin\\master.blade.php"
+			],
+			[
+				"cartcomp",
+				"app\\Http\\Composers\\CartComposer.php"
+			],
+			[
+				"productscont",
+				"app\\Http\\Controllers\\Admin\\ProductsController.php"
+			],
+			[
+				"container",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php"
 			],
 			[
 				"app",
-				"bootstrap\\app.php"
+				"config\\app.php"
+			],
+			[
+				"composer.php",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Composer.php"
+			],
+			[
+				"routes.",
+				"app\\Http\\routes.php"
+			],
+			[
+				"application",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php"
 			],
 			[
 				"viewserviceprovider",
@@ -1014,10 +942,6 @@
 			[
 				"app.php",
 				"config\\app.php"
-			],
-			[
-				"composer.php",
-				"vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Composer.php"
 			],
 			[
 				"wildcard",
@@ -1064,24 +988,12 @@
 				"app\\Http\\routes.php"
 			],
 			[
-				"master.blade",
-				"resources\\views\\phones\\master.blade.php"
-			],
-			[
-				"routes",
-				"app\\Http\\routes.php"
-			],
-			[
 				"master",
 				"resources\\views\\phones\\master.blade.php"
 			],
 			[
 				"cartscon",
 				"app\\Http\\Controllers\\CartsController.php"
-			],
-			[
-				"master.blade.php",
-				"resources\\views\\phones\\master.blade.php"
 			],
 			[
 				"testcontr",
@@ -1102,10 +1014,6 @@
 			[
 				"authenticatesandregistersusers",
 				"vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Auth\\AuthenticatesAndRegistersUsers.php"
-			],
-			[
-				"productscontroller",
-				"app\\Http\\Controllers\\ProductsController.php"
 			],
 			[
 				"home",
@@ -1212,18 +1120,6 @@
 				"public\\templates\\phones\\css\\main.css"
 			],
 			[
-				"edit.blade.php",
-				"resources\\views\\products\\admin\\edit.blade.php"
-			],
-			[
-				"master.blade.",
-				"resources\\views\\admin\\master.blade.php"
-			],
-			[
-				"show.blade.php",
-				"resources\\views\\categories\\show.blade.php"
-			],
-			[
 				"productscon",
 				"app\\Http\\Controllers\\Admin\\ProductsController.php"
 			],
@@ -1248,14 +1144,6 @@
 				"resources\\views\\categories\\create.blade.php"
 			],
 			[
-				"form.blade",
-				"resources\\views\\categories\\form.blade.php"
-			],
-			[
-				"categoriescont",
-				"app\\Http\\Controllers\\Admin\\CategoriesController.php"
-			],
-			[
 				"category",
 				"app\\Category.php"
 			],
@@ -1274,18 +1162,6 @@
 			[
 				"filescon",
 				"app\\Http\\Controllers\\FilesController.php"
-			],
-			[
-				"rou",
-				"app\\Http\\routes.php"
-			],
-			[
-				"routes.",
-				"app\\Http\\routes.php"
-			],
-			[
-				"productscont",
-				"app\\Http\\Controllers\\ProductsController.php"
 			],
 			[
 				"viewscon",
@@ -1362,146 +1238,6 @@
 			[
 				"data",
 				"config\\database.php"
-			],
-			[
-				"index.html",
-				"C:\\Users\\Павел\\OneDrive\\Repositories\\css\\css-loaders\\index.html"
-			],
-			[
-				"sysstem",
-				"public\\css\\system.css"
-			],
-			[
-				"quill",
-				"public\\js\\libs\\configs\\quill.js"
-			],
-			[
-				"viewscont",
-				"app\\Http\\Controllers\\ViewsController.php"
-			],
-			[
-				"coffee",
-				"public\\js\\system\\system.coffee"
-			],
-			[
-				"edit.bl",
-				"resources\\views\\views\\edit.blade.php"
-			],
-			[
-				"syscss",
-				"public\\css\\system.css"
-			],
-			[
-				"syst",
-				"public\\css\\system.css"
-			],
-			[
-				"edit",
-				"resources\\views\\views\\edit.blade.php"
-			],
-			[
-				"master.",
-				"resources\\views\\admin\\master.blade.php"
-			],
-			[
-				"gridster",
-				"public\\css\\libs\\jquery.gridster.css"
-			],
-			[
-				"eidt.blad",
-				"resources\\views\\views\\edit.blade.php"
-			],
-			[
-				"edit.bldae",
-				"resources\\views\\views\\edit.blade.php"
-			],
-			[
-				"viewsco",
-				"app\\Http\\Controllers\\ViewsController.php"
-			],
-			[
-				"edit.blde",
-				"resources\\views\\products\\edit.blade.php"
-			],
-			[
-				"edit.balde",
-				"resources\\views\\parameters\\edit.blade.php"
-			],
-			[
-				"parametersc",
-				"app\\Http\\Controllers\\ParametersController.php"
-			],
-			[
-				"createparam",
-				"database\\migrations\\2015_03_03_034331_CreateParametersTable.php"
-			],
-			[
-				"parameter",
-				"app\\Parameter.php"
-			],
-			[
-				"categor1",
-				"database\\migrations\\categories\\2015_02_24_150836_CreateCategoriesTable.php"
-			],
-			[
-				"helpers",
-				"app\\Http\\helpers.php"
-			],
-			[
-				"edit.bld",
-				"resources\\views\\products\\edit.blade.php"
-			],
-			[
-				"edit.b",
-				"resources\\views\\categories\\edit.blade.php"
-			],
-			[
-				"edit.blde.",
-				"resources\\views\\parameters\\edit.blade.php"
-			],
-			[
-				"parameterscontr",
-				"app\\Http\\Controllers\\ParametersController.php"
-			],
-			[
-				"index.blde",
-				"resources\\views\\products\\index.blade.php"
-			],
-			[
-				"form.bl",
-				"resources\\views\\products\\form.blade.php"
-			],
-			[
-				"helpers.php",
-				"app\\Http\\helpers.php"
-			],
-			[
-				"createparama",
-				"database\\migrations\\2015_03_03_034331_CreateParametersTable.php"
-			],
-			[
-				"edit.",
-				"resources\\views\\products\\edit.blade.php"
-			],
-			[
-				"show.blade",
-				"resources\\views\\products\\show.blade.php"
-			],
-			[
-				"product",
-				"app\\Http\\Controllers\\ProductsController.php"
-			],
-			[
-				"controllerproducts",
-				"app\\Http\\Controllers\\ProductsController.php"
-			],
-			[
-				"prod",
-				"app\\Http\\Controllers\\ProductsController.php"
-			],
-			[
-				"create.",
-				"resources\\views\\products\\create.blade.php"
 			]
 		],
 		"width": 0.0
@@ -1532,7 +1268,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 318.0,
+	"side_bar_width": 473.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
