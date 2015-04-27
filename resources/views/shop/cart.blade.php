@@ -4,7 +4,8 @@
 	<li class="active">Корзина</li>
 @stop
 
-@section('content')
+@section('content')	
+
 	<h4>Количество товароа в корзине: <strong>{{ $carts_items }}</strong> </h4>
 
 	<div class="row">
@@ -27,7 +28,7 @@
 	</div>
 
 	<div>
-		<h2>Итого: <strong>{{ $sum }}</strong> реблей</h2>
+		<h2>Итого: <strong>{{ $sum }}</strong> рублей</h2>
 	</div>
 
 	<div>

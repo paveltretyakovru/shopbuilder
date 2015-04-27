@@ -4,12 +4,20 @@
 		"selected_items":
 		[
 			[
-				"json",
-				"json_encode"
+				"Session",
+				"Session::get	Retrieve an Item from the Session or Default Value"
 			],
 			[
-				"Session",
-				"Session::forget	Remove an Item from the Session"
+				"print",
+				"print_r"
+			],
+			[
+				"SEssion",
+				"Session::get	Retrieve an Item from the Session or Default Value"
+			],
+			[
+				"json",
+				"json_encode"
 			],
 			[
 				"produc",
@@ -272,10 +280,26 @@
 	"buffers":
 	[
 		{
-			"file": "database/migrations/last/2015_06_04_034331_CreateParametersTable.php",
+			"file": "app/Http/Controllers/CartsController.php",
 			"settings":
 			{
-				"buffer_size": 844,
+				"buffer_size": 4817,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/shop/cart.blade.php",
+			"settings":
+			{
+				"buffer_size": 1001,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/Http/routes.php",
+			"settings":
+			{
+				"buffer_size": 2989,
 				"line_ending": "Windows"
 			}
 		}
@@ -287,10 +311,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 400.0,
-		"last_filter": "",
+		"height": 104.0,
+		"last_filter": "install",
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"if",
 				"Snippet: blade-if_else"
@@ -310,10 +338,6 @@
 			[
 				"yiel",
 				"Snippet: blade-yield"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"prettify",
@@ -360,7 +384,7 @@
 				"View: Toggle Menu"
 			]
 		],
-		"width": 838.0
+		"width": 408.0
 	},
 	"console":
 	{
@@ -384,10 +408,19 @@
 		"/D/server/htdocs/shopbuilder",
 		"/D/server/htdocs/shopbuilder/database",
 		"/D/server/htdocs/shopbuilder/database/migrations",
-		"/D/server/htdocs/shopbuilder/database/migrations/last"
+		"/D/server/htdocs/shopbuilder/database/migrations/last",
+		"/D/server/htdocs/shopbuilder/resources",
+		"/D/server/htdocs/shopbuilder/resources/views",
+		"/D/server/htdocs/shopbuilder/resources/views/shop"
 	],
 	"file_history":
 	[
+		"/c/users/pavel/appdata/local/temp/rsub-s5ode5/truckus.ru",
+		"/c/users/pavel/appdata/local/temp/rsub-i6dbn6/hosts",
+		"/c/users/pavel/appdata/local/temp/rsub-uibz6b/truckus.ru",
+		"/c/users/pavel/appdata/local/temp/rsub-5y2zha/truckus.ru",
+		"/c/users/pavel/appdata/local/temp/rsub-xr0i_u/truckus.ru",
+		"/c/users/pavel/appdata/local/temp/rsub-9mj8vp/hosts",
 		"/D/server/htdocs/shopbuilder/database/migrations/last/2014_10_12_000000_create_users_table.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/last/2015_02_24_150836_CreateCategoriesTable.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/last/2015_02_23_190310_CreateProductsTable.php",
@@ -509,13 +542,7 @@
 		"/D/server/htdocs/shopbuilder/public/js/system/views/viewsGridSystem.view.js",
 		"/D/server/htdocs/shopbuilder/resources/views/parameters/list.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/products/title.blade.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/ViewsController.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/admin/ProductsController.php",
-		"/D/server/htdocs/shopbuilder/public/js/system/system.coffee",
-		"/D/server/htdocs/shopbuilder/public/js/system/views/viewsTemplates.view.js",
-		"/D/server/htdocs/shopbuilder/public/js/system/helpers.js",
-		"/D/server/htdocs/shopbuilder/public/js/system/helpers.coffee",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/ViewsController.php"
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/ViewsController.php"
 	],
 	"find":
 	{
@@ -536,6 +563,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sessionCart",
 			"json",
 			"checkbox",
 			"region",
@@ -640,24 +668,141 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "database/migrations/last/2015_06_04_034331_CreateParametersTable.php",
-					"semi_transient": true,
+					"file": "app/Http/Controllers/CartsController.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 844,
+						"buffer_size": 4817,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								844,
-								844
+								756,
+								756
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/views/shop/cart.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1001,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								759,
+								759
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Http/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2989,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1642,
+								1642
 							]
 						],
 						"settings":
@@ -669,7 +814,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -727,6 +872,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"routes.php",
+				"app\\Http\\routes.php"
+			],
 			[
 				"cartscontroller",
 				"app\\Http\\Controllers\\CartsController.php"
@@ -1018,10 +1167,6 @@
 			[
 				"home",
 				"app\\Http\\Controllers\\HomeController.php"
-			],
-			[
-				"routes.php",
-				"app\\Http\\routes.php"
 			],
 			[
 				"auth.php",
