@@ -42,7 +42,7 @@
 					@endif					
 
 					<tr>
-						<td width="100"><img src="{{ $images[$order->product_id]->publicurl }}"/></td>
+						<td width="50"><img src="{{ $images[$order->product_id]->publicurl }}"/></td>
 						<td>{{ $order->product->title }}</td>
 						<td>{{ $order->product->price }} рублей</td>
 						<td>{{ $status }}</td>

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"pr",
+				"product_id"
+			],
+			[
 				"Session",
 				"Session::get	Retrieve an Item from the Session or Default Value"
 			],
@@ -280,27 +284,19 @@
 	"buffers":
 	[
 		{
-			"file": "app/Http/Controllers/CartsController.php",
+			"file": ".gitignore",
 			"settings":
 			{
-				"buffer_size": 4817,
+				"buffer_size": 27,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Pavel/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 270,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/shop/cart.blade.php",
-			"settings":
-			{
-				"buffer_size": 1001,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/Http/routes.php",
-			"settings":
-			{
-				"buffer_size": 2989,
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -384,7 +380,7 @@
 				"View: Toggle Menu"
 			]
 		],
-		"width": 408.0
+		"width": 520.0
 	},
 	"console":
 	{
@@ -406,15 +402,45 @@
 	"expanded_folders":
 	[
 		"/D/server/htdocs/shopbuilder",
-		"/D/server/htdocs/shopbuilder/database",
-		"/D/server/htdocs/shopbuilder/database/migrations",
-		"/D/server/htdocs/shopbuilder/database/migrations/last",
-		"/D/server/htdocs/shopbuilder/resources",
-		"/D/server/htdocs/shopbuilder/resources/views",
-		"/D/server/htdocs/shopbuilder/resources/views/shop"
+		"/D/server/htdocs/shopbuilder/app",
+		"/D/server/htdocs/shopbuilder/vendor",
+		"/D/server/htdocs/shopbuilder/vendor/symfony",
+		"/D/server/htdocs/shopbuilder/vendor/symfony/http-foundation",
+		"/D/server/htdocs/shopbuilder/vendor/symfony/http-foundation/Symfony",
+		"/D/server/htdocs/shopbuilder/vendor/symfony/http-foundation/Symfony/Component",
+		"/D/server/htdocs/shopbuilder/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation"
 	],
 	"file_history":
 	[
+		"/D/server/htdocs/shopbuilder/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/composer.json",
+		"/D/server/htdocs/shopbuilder/composer.json",
+		"/D/server/htdocs/shopbuilder/vendor/composer/autoload_classmap.php",
+		"/D/server/htdocs/shopbuilder/app/Http/routes.php",
+		"/D/server/htdocs/shopbuilder/vendor/composer/autoload_files.php",
+		"/D/server/htdocs/shopbuilder/vendor/composer/autoload_namespaces.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/ParametersController.php",
+		"/D/server/htdocs/shopbuilder/resources/views/products/admin/edit.blade.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/ProductsController.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/OrdersController.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/OrdersController.php",
+		"/D/server/htdocs/shopbuilder/resources/views/phones/master.blade.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Requests/CategoryFormRequest.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/CategoriesController.php",
+		"/D/server/htdocs/shopbuilder/app/Http/helpers.php",
+		"/D/server/htdocs/shopbuilder/app/Providers/AppServiceProvider.php",
+		"/D/server/htdocs/shopbuilder/config/queue.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/ViewsController.php",
+		"/D/server/htdocs/shopbuilder/resources/views/messages.blade.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/UsersController.php",
+		"/D/server/htdocs/shopbuilder/app/Http/Controllers/CartsController.php",
+		"/D/server/htdocs/shopbuilder/app/User.php",
+		"/D/server/htdocs/shopbuilder/app/Cart.php",
+		"/D/server/htdocs/shopbuilder/resources/views/shop/user/changecontact.blade.php",
+		"/D/server/htdocs/shopbuilder/resources/views/shop/user/getorders.blade.php",
+		"/D/server/htdocs/shopbuilder/public/adminpanel/js/system/views/ordersTable.view.js",
+		"/D/games/install/WotLK 3.3.5/Data/ruRU/realmlist.wtf",
+		"/D/server/htdocs/shopbuilder/resources/views/shop/cart.blade.php",
+		"/C/Users/Pavel/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/c/users/pavel/appdata/local/temp/rsub-s5ode5/truckus.ru",
 		"/c/users/pavel/appdata/local/temp/rsub-i6dbn6/hosts",
 		"/c/users/pavel/appdata/local/temp/rsub-uibz6b/truckus.ru",
@@ -424,20 +450,13 @@
 		"/D/server/htdocs/shopbuilder/database/migrations/last/2014_10_12_000000_create_users_table.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/last/2015_02_24_150836_CreateCategoriesTable.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/last/2015_02_23_190310_CreateProductsTable.php",
-		"/D/server/htdocs/shopbuilder/app/Http/routes.php",
 		"/D/server/htdocs/shopbuilder/public/adminpanel/js/system/models/order.model.coffee",
 		"/D/server/htdocs/shopbuilder/resources/views/admin/master.blade.php",
 		"/D/server/htdocs/shopbuilder/public/adminpanel/js/system/views/ordersTable.view.coffee",
 		"/D/server/htdocs/shopbuilder/resources/views/orders/admin/index.blade.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/ProductsController.php",
 		"/D/server/htdocs/shopbuilder/app/Order.php",
-		"/D/server/htdocs/shopbuilder/public/adminpanel/js/system/views/ordersTable.view.js",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/OrdersController.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/OrdersController.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/CartsController.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/last/2015_04_21_130540_CreateOrdersTable.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_22_110952_change_orders_table.php",
-		"/D/server/htdocs/shopbuilder/app/Cart.php",
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/ProductsController.php",
 		"/D/server/htdocs/shopbuilder/public/adminpanel/js/system/models.js",
 		"/D/server/htdocs/shopbuilder/resources/views/shop/checkout.blade.php",
@@ -449,20 +468,13 @@
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Http/Request.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_21_155051_add_collumn_to_orders_table.php",
 		"/D/server/htdocs/shopbuilder/app/Http/Requests/Request.php",
-		"/D/server/htdocs/shopbuilder/resources/views/shop/cart.blade.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/UsersController.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_21_130540_CreateOrdersTable.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_21_125537_CreateOrdersTable.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_21_114756_CreateFieldsInOrdersTable.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_11_082914_create_carts_table.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_21_114454_DeleteFieldsFromCarts.php",
 		"/D/server/htdocs/shopbuilder/resources/views/auth/login.blade.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/CategoriesController.php",
 		"/D/server/htdocs/shopbuilder/resources/views/shop/user/contactform.blade.php",
-		"/D/server/htdocs/shopbuilder/app/User.php",
-		"/D/server/htdocs/shopbuilder/resources/views/products/admin/edit.blade.php",
-		"/D/server/htdocs/shopbuilder/resources/views/shop/user/changecontact.blade.php",
-		"/D/server/htdocs/shopbuilder/resources/views/phones/master.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/products/public/index.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/errors/404.blade.php",
 		"/D/server/htdocs/shopbuilder/database/migrations/2015_04_18_183219_AddFieldsUsersTable.php",
@@ -471,20 +483,16 @@
 		"/D/server/htdocs/shopbuilder/storage/framework/views/d3adf13d1b6c716674bfd85dd7915c23",
 		"/D/server/htdocs/shopbuilder/resources/views/products/admin/show.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/products/admin/form.blade.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/ParametersController.php",
-		"/D/server/htdocs/shopbuilder/resources/views/messages.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/products/admin/create.blade.php",
 		"/D/server/htdocs/shopbuilder/config/app.php",
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Foundation/Providers/ComposerServiceProvider.php",
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Container/Container.php",
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Foundation/Composer.php",
-		"/D/server/htdocs/shopbuilder/composer.json",
 		"/D/server/htdocs/shopbuilder/vendor/illuminate/html/HtmlServiceProvider.php",
 		"/D/server/htdocs/shopbuilder/bootstrap/app.php",
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php",
 		"/D/server/htdocs/shopbuilder/vendor/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php",
-		"/D/server/htdocs/shopbuilder/app/Providers/AppServiceProvider.php",
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Auth/Guard.php",
 		"/D/server/htdocs/shopbuilder/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php",
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Auth/AuthController.php",
@@ -493,7 +501,6 @@
 		"/D/server/htdocs/shopbuilder/public/templates/phones/css/main.css",
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers/TestsController.php",
 		"/D/server/htdocs/shopbuilder/resources/views/user/login.blade.php",
-		"/D/server/htdocs/shopbuilder/app/Http/helpers.php",
 		"/D/server/htdocs/shopbuilder/public/phones/css/app.css",
 		"/D/server/htdocs/shopbuilder/app/Http/Controllers/HomeController.php",
 		"/D/server/htdocs/shopbuilder/config/auth.php",
@@ -524,7 +531,6 @@
 		"/D/server/htdocs/shopbuilder/resources/views/products/edit.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/categories/edit.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/parameters/edit.blade.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Requests/CategoryFormRequest.php",
 		"/D/server/htdocs/shopbuilder/resources/views/categories/form.blade.php",
 		"/D/server/htdocs/shopbuilder/resources/views/categories/create.blade.php",
 		"/D/server/htdocs/shopbuilder/app/Category.php",
@@ -533,16 +539,7 @@
 		"/D/server/htdocs/shopbuilder/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Yield_.php",
 		"/D/server/htdocs/shopbuilder/vendor/mtdowling/cron-expression/src/Cron/YearField.php",
 		"/D/server/htdocs/shopbuilder/resources/views/products/create.blade.php",
-		"/D/server/htdocs/shopbuilder/resources/views/products/show.blade.php",
-		"/D/server/htdocs/shopbuilder/public/js/system/models.coffee",
-		"/D/server/htdocs/shopbuilder/public/js/system/views/viewsGridSystem.view.coffee",
-		"/D/server/htdocs/shopbuilder/resources/views/products/form.blade.php",
-		"/D/server/htdocs/shopbuilder/resources/views/products/index.blade.php",
-		"/D/server/htdocs/shopbuilder/public/js/system/models.js",
-		"/D/server/htdocs/shopbuilder/public/js/system/views/viewsGridSystem.view.js",
-		"/D/server/htdocs/shopbuilder/resources/views/parameters/list.blade.php",
-		"/D/server/htdocs/shopbuilder/resources/views/products/title.blade.php",
-		"/D/server/htdocs/shopbuilder/app/Http/Controllers/Admin/ViewsController.php"
+		"/D/server/htdocs/shopbuilder/resources/views/products/show.blade.php"
 	],
 	"find":
 	{
@@ -553,6 +550,7 @@
 		"height": 92.0,
 		"where_history":
 		[
+			"D:\\server\\htdocs\\shopbuilder\\app",
 			"D:\\server\\htdocs\\shopbuilder",
 			"D:\\server\\htdocs\\shopbuilder\\public\\js",
 			"E:\\server\\htdocs\\task"
@@ -563,6 +561,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"json_en",
+			"json_encode",
 			"sessionCart",
 			"json",
 			"checkbox",
@@ -673,48 +673,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "app/Http/Controllers/CartsController.php",
-					"semi_transient": false,
+					"file": ".gitignore",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 4817,
+						"buffer_size": 27,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								756,
-								756
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 45.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "resources/views/shop/cart.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1001,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								759,
-								759
+								26,
+								26
 							]
 						],
 						"settings":
@@ -722,51 +693,11 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
@@ -776,9 +707,136 @@
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
-								"bh_c_define_content"
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
 							],
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Pavel/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								212,
+								212
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -786,35 +844,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/Http/routes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2989,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1642,
-								1642
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -873,6 +902,86 @@
 		"selected_items":
 		[
 			[
+				"classmap",
+				"vendor\\composer\\autoload_classmap.php"
+			],
+			[
+				"autoload",
+				"vendor\\composer\\autoload_namespaces.php"
+			],
+			[
+				"route",
+				"app\\Http\\routes.php"
+			],
+			[
+				"queue",
+				"config\\queue.php"
+			],
+			[
+				"appseri",
+				"app\\Providers\\AppServiceProvider.php"
+			],
+			[
+				"compos",
+				"composer.json"
+			],
+			[
+				"routes",
+				"app\\Http\\routes.php"
+			],
+			[
+				"orderscontroller",
+				"app\\Http\\Controllers\\Admin\\OrdersController.php"
+			],
+			[
+				"productscontroller",
+				"app\\Http\\Controllers\\ProductsController.php"
+			],
+			[
+				"viewscontroller",
+				"app\\Http\\Controllers\\Admin\\ViewsController.php"
+			],
+			[
+				"parameterscontroller",
+				"app\\Http\\Controllers\\Admin\\ParametersController.php"
+			],
+			[
+				"categoriescont",
+				"app\\Http\\Controllers\\Admin\\CategoriesController.php"
+			],
+			[
+				"parameterscontro",
+				"app\\Http\\Controllers\\Admin\\ParametersController.php"
+			],
+			[
+				"categoriescontroller",
+				"app\\Http\\Controllers\\Admin\\CategoriesController.php"
+			],
+			[
+				"edit.blade.php",
+				"resources\\views\\products\\admin\\edit.blade.php"
+			],
+			[
+				"compose",
+				"composer.json"
+			],
+			[
+				"messages",
+				"resources\\views\\messages.blade.php"
+			],
+			[
+				"master",
+				"resources\\views\\phones\\master.blade.php"
+			],
+			[
+				"orderstable",
+				"public\\adminpanel\\js\\system\\views\\ordersTable.view.js"
+			],
+			[
+				"userscontroller",
+				"app\\Http\\Controllers\\UsersController.php"
+			],
+			[
 				"routes.php",
 				"app\\Http\\routes.php"
 			],
@@ -893,20 +1002,12 @@
 				"app\\Http\\Controllers\\ProductsController.php"
 			],
 			[
-				"productscontroller",
-				"app\\Http\\Controllers\\Admin\\ProductsController.php"
-			],
-			[
 				"master.blade",
 				"resources\\views\\admin\\master.blade.php"
 			],
 			[
 				"models.js",
 				"public\\adminpanel\\js\\system\\models.js"
-			],
-			[
-				"routes",
-				"app\\Http\\routes.php"
 			],
 			[
 				"userdatareq",
@@ -929,10 +1030,6 @@
 				"resources\\views\\shop\\tradepanel.blade.php"
 			],
 			[
-				"orderscontroller",
-				"app\\Http\\Controllers\\OrdersController.php"
-			],
-			[
 				"orderscont",
 				"app\\Http\\Controllers\\OrdersController.php"
 			],
@@ -943,10 +1040,6 @@
 			[
 				"404",
 				"resources\\views\\errors\\404.blade.php"
-			],
-			[
-				"categoriescont",
-				"app\\Http\\Controllers\\Admin\\CategoriesController.php"
 			],
 			[
 				"user.php",
@@ -981,10 +1074,6 @@
 				"storage\\framework\\views\\d3adf13d1b6c716674bfd85dd7915c23"
 			],
 			[
-				"edit.blade.php",
-				"resources\\views\\products\\admin\\edit.blade.php"
-			],
-			[
 				"product.blade.php",
 				"resources\\views\\products\\admin\\show.blade.php"
 			],
@@ -995,10 +1084,6 @@
 			[
 				"rou",
 				"app\\Http\\routes.php"
-			],
-			[
-				"userscontroller",
-				"app\\Http\\Controllers\\UsersController.php"
 			],
 			[
 				"cartcomposer",
@@ -1013,10 +1098,6 @@
 				"resources\\views\\products\\public\\show.blade.php"
 			],
 			[
-				"parameterscontroller",
-				"app\\Http\\Controllers\\Admin\\ParametersController.php"
-			],
-			[
 				"mess",
 				"resources\\views\\messages.blade.php"
 			],
@@ -1027,10 +1108,6 @@
 			[
 				"cartscont",
 				"app\\Http\\Controllers\\CartsController.php"
-			],
-			[
-				"messages",
-				"resources\\views\\messages.blade.php"
 			],
 			[
 				"messages.bl",
@@ -1137,10 +1214,6 @@
 				"app\\Http\\routes.php"
 			],
 			[
-				"master",
-				"resources\\views\\phones\\master.blade.php"
-			],
-			[
 				"cartscon",
 				"app\\Http\\Controllers\\CartsController.php"
 			],
@@ -1201,10 +1274,6 @@
 				"storage\\framework\\views\\14f891237e4f0497daf0fabe09101536"
 			],
 			[
-				"compos",
-				"composer.json"
-			],
-			[
 				"composer.json",
 				"composer.json"
 			],
@@ -1239,10 +1308,6 @@
 			[
 				"index.blade.php",
 				"resources\\views\\phones\\index.blade.php"
-			],
-			[
-				"route",
-				"app\\Http\\routes.php"
 			],
 			[
 				"show.",
@@ -1347,54 +1412,26 @@
 			[
 				"viewstempates",
 				"public\\js\\system\\views\\viewsTemplates.view.coffee"
-			],
-			[
-				"system.coff",
-				"public\\js\\system\\system.coffee"
-			],
-			[
-				"templates",
-				"public\\js\\system\\views\\viewsTemplates.view.coffee"
-			],
-			[
-				"inities",
-				"public\\js\\system\\inities.js"
-			],
-			[
-				"system.js",
-				"public\\js\\system\\system.js"
-			],
-			[
-				"initi",
-				"public\\js\\system\\inities.coffee"
-			],
-			[
-				"mas",
-				"resources\\views\\admin\\master.blade.php"
-			],
-			[
-				"jsobjec",
-				"resources\\views\\products\\jsobject.blade.php"
-			],
-			[
-				"model",
-				"public\\js\\system\\models.coffee"
-			],
-			[
-				"data",
-				"config\\database.php"
 			]
 		],
 		"width": 0.0
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"D:\\server\\htdocs\\self\\self.sublime-project"
+			],
+			[
+				"taxi",
+				"C:\\Users\\Pavel\\Documents\\sublime_projects\\taxi.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
@@ -1413,7 +1450,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 473.0,
+	"side_bar_width": 397.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
