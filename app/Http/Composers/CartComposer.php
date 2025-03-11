@@ -63,7 +63,7 @@ class CartComposer {
         if (Session::has('cart')) {
             return Session::get('cart');
         }else{
-            return array();
+            return [];
         }
     }
 

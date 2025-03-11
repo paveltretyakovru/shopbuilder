@@ -125,7 +125,7 @@ class ProductsTableSeeder extends Seeder{
 		$parameters = ['вес' , 'ширина' , 'ос' , 'количество ядер' , 'частота процессора' , 'оперативная память' , 'диагональ экрана'];
 
 		// Список названий тлефонов 
-		$inserted 		= array();
+		$inserted 		= [];
 		$inserted_count = 0;
 
 		$this->command->info('Inserting '.$count.' sample records using Faker ...');

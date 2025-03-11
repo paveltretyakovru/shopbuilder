@@ -18,7 +18,7 @@ class ProductsController extends Controller {
 
 	public function create()
 	{
-		$categorieslist = array();
+		$categorieslist = [];
 		$categories = $this->getCategoriesTitlesList();
 
 		for ($i=0; $i < count($categories); $i++) { 
@@ -41,7 +41,7 @@ class ProductsController extends Controller {
 
 	public function edit(Product $product)
 	{
-		$categorieslist = array();
+		$categorieslist = [];
 		$categories = $this->getCategoriesTitlesList();
 
 		for ($i=0; $i < count($categories); $i++) { 
@@ -83,14 +83,14 @@ class ProductsController extends Controller {
 	}
 
 	public function getCategoriesTitlesList(){
-		$result = array();
+		$result = [];
 		$categories = Category::all();
 
 		for ($i=0; $i < count($categories); $i++) { 
-			$result[] = array(
+			$result[] = [
 				'id'	=> $categories[$i]->id ,
 				'title' => $categories[$i]->title
-			);
+			];
 		}
 
 		return $result;

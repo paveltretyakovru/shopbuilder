@@ -15,7 +15,7 @@ class ParametersController extends Controller {
 	{
 		$category 		= Category::findOrFail($product->category);
 		$productparams 	= Parameter::where('product' , $product->id)->get()->toArray();
-		$issetparameters= array();
+		$issetparameters= [];
 
 		foreach ($productparams as $parameter) {
 			$issetparameters[$parameter['title']] = $parameter['value'];

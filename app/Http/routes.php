@@ -57,7 +57,7 @@ Route::get('admin', function(){
 	return view('admin.index');
 });
 
-Route::group(array('namespace' => 'Admin'), function(){
+Route::group(['namespace' => 'Admin'], function(){
 	// ТОВАРЫ
 	Route::resource('admin/products', 'ProductsController');
 
