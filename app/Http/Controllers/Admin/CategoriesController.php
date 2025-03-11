@@ -56,19 +56,19 @@ class CategoriesController extends Controller {
 	}
 
 	private function getParameters($category){
-		$parameters = array();
+		$parameters = [];
 
 		if(strpos($category->parameters, ',')){
 			$parameters[0] 	= explode(',', $category->parameters);
 		}else{
-			$parameters[0] 	= array();
+			$parameters[0] 	= [];
 			$parameters[0][]= $category->parameters;
 		}
 
 		if(strpos($category->searchparameters, ',')){
 			$parameters[1]		= explode(',', $category->searchparameters);
 		}else{
-			$parameters[1] 	 = array();
+			$parameters[1] 	 = [];
 			$parameters[1][] = $category->searchparameters;
 		}
 
@@ -86,7 +86,7 @@ class CategoriesController extends Controller {
 		if(strpos($category->parameters, ',')){
 			$parameters 	= explode(',', $category->parameters);
 		}else{
-			$parameters 	= array();
+			$parameters 	= [];
 			$parameters[] = $category->parameters;
 		}
 

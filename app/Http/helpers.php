@@ -9,7 +9,7 @@
 		if (strpos($parameters, ',')) {
 			return explode(',', $parameters);
 		}else{
-			return array($parameters);
+			return [$parameters];
 		}
 	}
 ?>

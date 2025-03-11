@@ -16,8 +16,8 @@ class ProductsController extends Controller {
 
 	public function index($category){
 		if ($category) {
-			$ids 	= array();
-			$images = array();
+			$ids 	= [];
+			$images = [];
 
 			// получаем товары по необходимой категории
 			$products = Product::where('category' , $category->id)->paginate(15);
@@ -63,10 +63,10 @@ class ProductsController extends Controller {
 					'cache_key' 	=> 'EQt5fc2CiZGz888J' ,
 					'updated_at'	=> 0
 				] ,
-				array(
+				[
 					'product' 		=> $product ,
 					'parameters' 	=> $parameters
-				)
+				]
 			);
 
 			//return $view;

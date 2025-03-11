@@ -30,7 +30,7 @@ Route::bind('category' , function($category){					#
 		# CartComposer возвращает возвращает переменные:
 			* carts_count - количество товаров в корзине
 	*/
-View::composer('*' , 'App\Http\Composers\CartComposer');
+View::composer('*' , \App\Http\Composers\CartComposer::class);
 
 
 // ==========================================================================#
@@ -57,7 +57,7 @@ Route::get('admin', function(){
 	return view('admin.index');
 });
 
-Route::group(array('namespace' => 'Admin'), function(){
+Route::group(['namespace' => 'Admin'], function(){
 	// ТОВАРЫ
 	Route::resource('admin/products', 'ProductsController');
 

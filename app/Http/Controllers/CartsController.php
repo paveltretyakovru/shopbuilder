@@ -123,10 +123,10 @@ class CartsController extends Controller {
 	}
 
 	protected function getCartData(){
-		$result['products']	= array();
-		$result['images'] 	= array();
-		$prices				= array();		
-		$ids		 		= array();		
+		$result['products']	= [];
+		$result['images'] 	= [];
+		$prices				= [];		
+		$ids		 		= [];		
 
 		if(Auth::check()){
 			$user 	= Auth::user();
@@ -151,7 +151,7 @@ class CartsController extends Controller {
 
 		}else{
 			if(Session::has('cart')){
-				$carts 				= array();
+				$carts 				= [];
 				$result['header'] 	= 'session';
 
 				foreach (Session::get('cart') as $product_id) {
@@ -199,7 +199,7 @@ class CartsController extends Controller {
 		if(Auth::check()){
 			$user 	= Auth::user();
 			$cart 	= Cart::where(['id' => $cart_id , 'user_id' => $user->id]);
-			$dbcart = array();
+			$dbcart = [];
 
 			if($cart){
 				if ($cart->count()) {

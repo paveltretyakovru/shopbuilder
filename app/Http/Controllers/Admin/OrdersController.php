@@ -33,11 +33,11 @@ class OrdersController extends Controller {
 	}
 
 	public function getGetorders(){
-		$return = array();
+		$return = [];
 
 		$orders = Order::all();
 		foreach ($orders as $order) {
-			$item 		= array();			
+			$item 		= [];			
 			$user 		= json_decode($order->user_data);
 			$product 	= $order->product;
 

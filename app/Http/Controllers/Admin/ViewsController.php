@@ -16,7 +16,7 @@ class ViewsController extends Controller {
 
 		// Возвращаем пустую строку, если отсутствует, иначе удаляем каретки перевода строки
 		function processVar($var){
-			return (!empty($var)) ? str_replace(array("\r\n", "\r", "\n"), '', $var) : '""';
+			return (!empty($var)) ? str_replace(["\r\n", "\r", "\n"], '', $var) : '""';
 		}
 
 		$product->view 		= processVar($product->view);
