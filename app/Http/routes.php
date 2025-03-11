@@ -30,7 +30,7 @@ Route::bind('category' , function($category){					#
 		# CartComposer возвращает возвращает переменные:
 			* carts_count - количество товаров в корзине
 	*/
-View::composer('*' , 'App\Http\Composers\CartComposer');
+View::composer('*' , \App\Http\Composers\CartComposer::class);
 
 
 // ==========================================================================#

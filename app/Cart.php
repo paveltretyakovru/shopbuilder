@@ -12,6 +12,6 @@ class Cart extends Model {
 
 	// отношение 1 к 1
 	public function product(){
-		return $this->belongsTo('App\Product');
+		return $this->belongsTo(\App\Product::class);
 	}
 }
